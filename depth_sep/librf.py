@@ -132,7 +132,7 @@ class RF:
     def __init__(self,feature,n_old_features,
         n_new_features,classes,Lambda=0.,Gamma=1.,
         loss_fn='log',log=False,initializer=None,
-        task='classification'):
+        task='classification',gpu=-1):
         self._initializer = initializer
         self._feature = feature
         self._d = n_old_features
@@ -144,7 +144,11 @@ class RF:
         self._task = task
         self.log = log
         self._total_iter = 0
-        self._graph = tf.Graph()
+        if gpu >= 0:
+            with tf.device('/gpu:'+str(gpu)):
+                self._graph = tf.Graph()
+        else:
+            self._graph = tf.Graph()
         self._sess = tf.Session(graph=self._graph)
         if self._model_fn() == 0:
             raise ValueError
