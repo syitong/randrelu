@@ -131,10 +131,20 @@ def main(N_const, NSUPP=100, mol_const=10, c_const=80, seed=0):
 
     # Save dataset
     print(x_sample.shape)
-    with open('data/eldan_x.npy','bw') as f:
-        np.save(f, x_sample)
-    with open('data/eldan_y.npy', 'bw') as f:
-        np.save(f, yg)
-    with open('data/eldan_y_mol.npy', 'bw') as f:
-        np.save(f, y_mol)
+    with open('data/eldan-train-data.npy','bw') as f:
+        np.save(f, x_sample[:int(0.8*len(x_sample))])
+    with open('data/eldan-train-label.npy', 'bw') as f:
+        np.save(f, yg[:int(0.8*len(x_sample))])
+    with open('data/eldan-test-data.npy', 'bw') as f:
+        np.save(f, x_sample[int(0.8*len(x_sample)):])
+    with open('data/eldan-test-label.npy', 'bw') as f:
+        np.save(f, yg[int(0.8*len(x_sample)):])
 
+    with open('data/eldan-smooth-train-data.npy','bw') as f:
+        np.save(f, x_sample[:int(0.8*len(x_sample))])
+    with open('data/eldan-smooth-train-label.npy', 'bw') as f:
+        np.save(f, y_mol[:int(0.8*len(x_sample))])
+    with open('data/eldan-smooth-test-data.npy', 'bw') as f:
+        np.save(f, x_sample[int(0.8*len(x_sample)):])
+    with open('data/eldan-smooth-test-label.npy', 'bw') as f:
+        np.save(f, y_mol[int(0.8*len(x_sample)):])
