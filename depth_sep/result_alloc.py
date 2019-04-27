@@ -1,5 +1,6 @@
 import numpy as np
 from numpy import array
+import argparse
 
 def read_params(filename='params'):
     with open(filename,'r') as f:
@@ -11,7 +12,8 @@ def screen_params_alloc(params):
     feature = params['feature']
     lograte = params['lograte']
     logGamma = params['logGamma']
-    filename = 'result/{0:s}-{1:s}-screen-'.format(dataset,feature)
+    N = params['N']
+    filename = 'result/{0:s}-{1:d}-screen-'.format(dataset,N)
     row = ['log(rate)\log(Gamma)']
     row.extend(logGamma)
     output = [row]
@@ -36,7 +38,8 @@ def screen_params_append(params):
     feature = params['feature']
     lograte = params['lograte']
     logGamma = params['logGamma']
-    filename = 'result/{0:s}-{1:s}-screen-'.format(dataset,feature)
+    N = params['N']
+    filename = 'result/{0:s}-{1:d}-screen-'.format(dataset,N)
     with open(filename+'alloc','r') as fr:
         result,params = eval(fr.read())
     result[0].extend(logGamma)
@@ -79,13 +82,13 @@ def train_and_test_alloc(dataset,feature,trials):
         fw.write(str(finalop))
 
 if __name__ == '__main__':
-    train_and_test_alloc('sine1','ReLU',10)
-    train_and_test_alloc('sine1','Gaussian',10)
-    train_and_test_alloc('sine1-10','ReLU',10)
-    train_and_test_alloc('sine1-10','Gaussian',10)
-    train_and_test_alloc('strips','ReLU',10)
-    train_and_test_alloc('strips','Gaussian',10)
-    train_and_test_alloc('square','ReLU',10)
-    train_and_test_alloc('square','Gaussian',10)
-    train_and_test_alloc('checkboard','ReLU',10)
-    train_and_test_alloc('checkboard','Gaussian',10)
+    ## parse command line arguments
+    parser = argparse.ArgumentParser(description="parse args")
+    parser.add_argument('--N', default=20, type=int,
+            help='width of layer')
+    parser.add_argument('--file', default='eldan-params',
+            type=str, help='file name of params')
+    args = parser.parse_args()
+    params = read_params('eldan-params')
+    params['N'] = args.N
+    screen_params_alloc(params)

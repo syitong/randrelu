@@ -4,7 +4,7 @@ import libnn
 import time
 from datetime import datetime
 from log import log
-from sys import argv
+import argparse
 from sklearn.preprocessing import StandardScaler
 from libmnist import get_train_test_data
 from multiprocessing import Pool
@@ -86,7 +86,7 @@ def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     score = sum(Ypr == Yts) / len(Yts)
     return score,sparsity,t2-t1,t3-t2
 
-def train_and_test(dataset,feature,params='auto'):
+def train_and_test(dataset,feature,params='auto',prefix='0'):
     '''
     params = {
         'dataset': ,
@@ -98,7 +98,6 @@ def train_and_test(dataset,feature,params='auto'):
         'feature': ,
         }
     '''
-    prefix = argv[1]
     if params == 'auto':
         logGamma,lograte,params = print_params(dataset,feature)
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
@@ -139,7 +138,7 @@ def train_and_test(dataset,feature,params='auto'):
     with open(filename,'w') as f:
         f.write(str(finalop))
 
-def screen_params(params):
+def screen_params(params,prefix='0'):
     '''
     params = {
         'dataset': ,
@@ -156,9 +155,10 @@ def screen_params(params):
         }
     '''
     dataset = params['dataset']
-    prefix = argv[1]
     val_size = params['val_size']
     folds = params['folds']
+    task = params['task']
+    N = params['N']
     if prefix == '0':
         # only write log file for trial 0
         logfile = log('log/experiments.log','screen params')
@@ -174,6 +174,7 @@ def screen_params(params):
         'classes':params['classes'],
         'loss_fn':params['loss_fn'],
         'feature':feature,
+        'task':task,
     }
     fit_params = {
         'opt_method':'sgd',
@@ -189,7 +190,7 @@ def screen_params(params):
         score = validate(Xtrain,Ytrain,val_size,model_type,
             model_params, fit_params, folds)
         results.append({'Gamma':Gamma,'score':score})
-    filename = 'result/{0:s}-{1:s}-screen-{2:s}'.format(dataset,feature,prefix)
+    filename = 'result/{0:s}-{1:d}-screen-{2:s}'.format(dataset,N,prefix)
     with open(filename,'w') as f:
         f.write(str(results))
 
@@ -315,8 +316,20 @@ def screen_params(params):
 #     plt.scatter(Xtrain[:,0],Xtrain[:,1],s=0.5,c=c)
 #     plt.show()
 
+def N_selecting(dataset, N, prefix='0'):
+    params = read_params(dataset)
+    params['N'] = N
+    screen_params(params, prefix)
+    # train_and_test('checkboard','Gaussian')
+
 if __name__ == '__main__':
-    train_and_test('sine1-10','ReLU')
-    train_and_test('sine1-10','Gaussian')
-    train_and_test('checkboard','ReLU')
-    train_and_test('checkboard','Gaussian')
+    ## parse command line arguments
+    parser = argparse.ArgumentParser(description="parse args")
+    parser.add_argument('--N', default=20, type=int,
+            help='width of layer')
+    parser.add_argument('--trial', default=0, type=str,
+            help='index of learning rate')
+    parser.add_argument('--file', default='eldan-params',
+            type=str, help='file name of params')
+    args = parser.parse_args()
+    N_selecting(args.file, args.N, args.trial)

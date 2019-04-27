@@ -1,5 +1,5 @@
 {
-    'dataset': 'mnist',
+    'dataset': 'eldan',
     'N': 2000,
     'bd': 100000,
     'n_epoch': 5,

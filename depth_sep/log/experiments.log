@@ -1,0 +1,350 @@
+screen params
+2019-04-27 19:47:10.164019
+lograte = [-1.]
+val_size = 30000
+n_epoch = 5
+folds = 5
+dataset = eldan
+trials = 1
+bd = 100000
+N = 10
+feature = ReLU
+classes = 0
+loss_fn = squared
+logGamma = [-7.]
+
+screen params
+2019-04-27 19:48:28.253576
+n_epoch = 5
+val_size = 30000
+N = 10
+feature = ReLU
+folds = 5
+bd = 100000
+loss_fn = squared
+lograte = [-1.]
+dataset = eldan
+logGamma = [-7.]
+trials = 1
+classes = [0]
+
+screen params
+2019-04-27 19:52:33.223908
+task = regression
+N = 10
+val_size = 30000
+dataset = eldan
+loss_fn = squared
+feature = ReLU
+n_epoch = 5
+trials = 1
+bd = 100000
+lograte = [-1.]
+logGamma = [-7.]
+classes = [0]
+folds = 5
+
+screen params
+2019-04-27 19:54:48.125271
+folds = 5
+loss_fn = squared
+val_size = 30000
+logGamma = [-7.]
+trials = 1
+n_epoch = 5
+classes = [0]
+task = regression
+bd = 100000
+feature = ReLU
+lograte = [-1.]
+dataset = eldan
+N = 10
+
+screen params
+2019-04-27 20:09:16.703052
+folds = 5
+classes = [0]
+task = regression
+val_size = 30000
+feature = ReLU
+lograte = [-1.]
+loss_fn = squared
+n_epoch = 5
+N = 10
+trials = 1
+logGamma = [-7.]
+dataset = eldan
+bd = 100000
+
+screen params
+2019-04-27 20:11:38.977602
+n_epoch = 5
+bd = 100000
+val_size = 30000
+trials = 1
+loss_fn = squared
+logGamma = [-7.]
+classes = [0]
+dataset = eldan
+lograte = [-1.]
+folds = 5
+task = regression
+N = 10
+feature = ReLU
+
+screen params
+2019-04-27 20:13:39.722260
+dataset = eldan
+n_epoch = 5
+classes = [0]
+folds = 5
+val_size = 30000
+lograte = [-1.]
+feature = ReLU
+N = 10
+loss_fn = squared
+logGamma = [-0.]
+bd = 100000
+trials = 1
+task = regression
+
+screen params
+2019-04-27 20:14:58.923048
+loss_fn = squared
+folds = 5
+trials = 1
+dataset = eldan
+classes = [0]
+feature = ReLU
+bd = 100000
+n_epoch = 5
+lograte = [2.]
+task = regression
+N = 10
+logGamma = [1.]
+val_size = 30000
+
+screen params
+2019-04-27 20:15:20.536707
+val_size = 30000
+feature = ReLU
+task = regression
+classes = [0]
+lograte = [-4.]
+logGamma = [1.]
+folds = 5
+bd = 100000
+dataset = eldan
+trials = 1
+N = 10
+loss_fn = squared
+n_epoch = 5
+
+screen params
+2019-04-27 20:16:09.806314
+val_size = 30000
+feature = ReLU
+n_epoch = 5
+lograte = [2.]
+bd = 100000
+classes = [0]
+logGamma = []
+loss_fn = squared
+N = 20
+dataset = eldan
+task = regression
+folds = 5
+trials = 1
+
+screen params
+2019-04-27 20:16:22.268639
+trials = 1
+feature = ReLU
+n_epoch = 5
+loss_fn = squared
+val_size = 30000
+folds = 5
+task = regression
+N = 20
+dataset = eldan
+bd = 100000
+lograte = [2.]
+classes = [0]
+logGamma = []
+
+screen params
+2019-04-27 20:16:33.476652
+val_size = 30000
+dataset = eldan
+N = 10
+loss_fn = squared
+bd = 100000
+trials = 1
+feature = ReLU
+folds = 5
+task = regression
+lograte = [2.]
+n_epoch = 5
+classes = [0]
+logGamma = []
+
+screen params
+2019-04-27 20:16:50.916157
+dataset = eldan
+feature = ReLU
+loss_fn = squared
+bd = 100000
+n_epoch = 5
+lograte = [-2.]
+task = regression
+trials = 1
+N = 10
+logGamma = []
+classes = [0]
+folds = 5
+val_size = 30000
+
+screen params
+2019-04-27 20:17:09.340201
+folds = 5
+task = regression
+bd = 100000
+logGamma = [0.]
+dataset = eldan
+classes = [0]
+trials = 1
+N = 10
+n_epoch = 5
+val_size = 30000
+feature = ReLU
+lograte = [-2.]
+loss_fn = squared
+
+screen params
+2019-04-27 20:17:26.890180
+feature = ReLU
+task = regression
+val_size = 30000
+logGamma = [0.]
+N = 20
+trials = 1
+classes = [0]
+lograte = [-2.]
+folds = 5
+loss_fn = squared
+bd = 100000
+dataset = eldan
+n_epoch = 5
+
+screen params
+2019-04-27 20:17:48.822137
+dataset = eldan
+logGamma = [0.]
+N = 30
+feature = ReLU
+bd = 100000
+loss_fn = squared
+folds = 5
+task = regression
+val_size = 30000
+n_epoch = 5
+classes = [0]
+trials = 1
+lograte = [-2.]
+
+screen params
+2019-04-27 20:19:15.366934
+loss_fn = log
+dataset = eldan
+val_size = 30000
+folds = 5
+trials = 1
+N = 30
+feature = ReLU
+logGamma = [0.]
+n_epoch = 5
+classes = [-1.0, 0.0, 1.0]
+task = classification
+bd = 100000
+lograte = [-2.]
+
+screen params
+2019-04-27 20:26:03.448264
+lograte = [-2.]
+n_epoch = 5
+loss_fn = log
+logGamma = [0.]
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+bd = 100000
+trials = 1
+feature = ReLU
+dataset = eldan
+N = 100
+task = classification
+val_size = 30000
+
+screen params
+2019-04-27 20:26:46.437791
+task = classification
+bd = 100000
+val_size = 30000
+folds = 5
+loss_fn = log
+lograte = [-4.]
+classes = [-1.0, 0.0, 1.0]
+trials = 1
+feature = ReLU
+logGamma = [0.]
+dataset = eldan
+N = 100
+n_epoch = 5
+
+screen params
+2019-04-27 20:27:28.178050
+folds = 5
+task = classification
+lograte = [-1.]
+N = 100
+val_size = 30000
+trials = 1
+n_epoch = 5
+bd = 100000
+logGamma = [1.]
+dataset = eldan
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+loss_fn = log
+
+screen params
+2019-04-27 21:26:15.884919
+task = classification
+trials = 2
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+val_size = 30000
+dataset = eldan
+n_epoch = 5
+lograte = [-4. -3. -2. -1.  0.  1.  2.  3.  4.]
+loss_fn = log
+folds = 5
+feature = ReLU
+N = 20
+logGamma = [-2.]
+
+screen params
+2019-04-27 21:34:58.157163
+classes = [-1.0, 0.0, 1.0]
+logGamma = [-2.]
+folds = 5
+feature = ReLU
+val_size = 30000
+bd = 100000
+lograte = [-4. -3. -2. -1.  0.  1.  2.  3.  4.]
+task = classification
+N = 20
+loss_fn = log
+n_epoch = 5
+dataset = eldan
+trials = 2
+

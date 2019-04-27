@@ -3,6 +3,7 @@ from numpy import array
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
+import argparse
 
 # def plot_learning_rate():
 #     tags = ['accuracy','sparsity','traintime','testtime']
@@ -73,8 +74,8 @@ def plot_params(dataset):
     plt.savefig('image/{}-gamma.eps'.format(dataset))
     plt.close(fig)
 
-def print_params(dataset,feature):
-    filename = 'result/{0:s}-{1:s}-screen-'.format(dataset,feature)
+def print_params(dataset,N):
+    filename = 'result/{0:s}-{1:d}-screen-'.format(dataset,N)
     with open(filename+'alloc','r') as f:
         result, params = eval(f.read())
     for row in result:
@@ -120,4 +121,11 @@ def print_test_results(dataset,feature):
     _dict_print(fit_params)
 
 if __name__ == '__main__':
-    print_params('strips','Gaussian')
+    ## parse command line arguments
+    parser = argparse.ArgumentParser(description="parse args")
+    parser.add_argument('--N', default=20, type=int,
+            help='width of layer')
+    parser.add_argument('--dataset', default='eldan',
+            type=str, help='name of dataset')
+    args = parser.parse_args()
+    print_params(args.dataset,args.N)

@@ -131,7 +131,8 @@ class RF:
     """
     def __init__(self,feature,n_old_features,
         n_new_features,classes,Lambda=0.,Gamma=1.,
-        loss_fn='log',log=False,initializer=None):
+        loss_fn='log',log=False,initializer=None,
+        task='classification'):
         self._initializer = initializer
         self._feature = feature
         self._d = n_old_features
@@ -140,6 +141,7 @@ class RF:
         self._Gamma = Gamma
         self._classes = classes
         self._loss_fn = loss_fn
+        self._task = task
         self.log = log
         self._total_iter = 0
         self._graph = tf.Graph()
@@ -217,17 +219,22 @@ class RF:
             y = tf.placeholder(dtype=tf.uint8,
                 shape=[None],name='labels')
             RF_layer = self._feature_layer(x)
-            if self._loss_fn in ('hinge','squared'):
-                if n_classes == 2:
-                    logits = self._output_layer(RF_layer,1)
-                    logits = tf.reshape(logits,shape=[-1])
-                else:
-                    print("hinge or squared loss only works for binary classificaiton.")
-                    return 0
-            elif self._loss_fn == 'log':
-                logits = self._output_layer(RF_layer,n_classes)
-                probab = tf.nn.softmax(logits, name="softmax")
-                tf.add_to_collection("Output",probab)
+            if self._task == 'classification':
+                if self._loss_fn in ('hinge','squared'):
+                    if n_classes == 2:
+                        logits = self._output_layer(RF_layer,1)
+                        logits = tf.reshape(logits,shape=[-1])
+                    else:
+                        print("hinge or squared loss only works for binary classificaiton.")
+                        return 0
+                elif self._loss_fn == 'log':
+                    logits = self._output_layer(RF_layer,n_classes)
+                    probab = tf.nn.softmax(logits, name="softmax")
+                    tf.add_to_collection("Output",probab)
+            elif self._task == 'regression':
+                logits = self._output_layer(RF_layer,1)
+                logits = tf.reshape(logits,shape=[-1])
+
             tf.add_to_collection("Output",logits)
             regularizer = tf.losses.get_regularization_loss(scope='Logits')
             if self._loss_fn == 'hinge':
@@ -278,7 +285,10 @@ class RF:
             elif self._loss_fn == 'hinge':
                 classes.extend([self._classes[index>0] for index in results['indices']])
             elif self._loss_fn == 'squared':
-                classes.extend([self._classes[index>.5] for index in results['indices']])
+                if self._task == 'classificaiton':
+                    classes.extend([self._classes[index>.5] for index in results['indices']])
+                elif self._task == 'regression':
+                    classes.extend(results['indices'])
             feature_vec = results['feature_vec']
             sparsity += np.count_nonzero(feature_vec)/feature_vec.shape[1]
         sparsity = sparsity / len(data)
@@ -286,14 +296,20 @@ class RF:
 
     def score(self,data,labels):
         predictions,_,_ = self.predict(data)
-        accuracy = sum(predictions==labels) / len(data)
+        if self._task == 'classification':
+            accuracy = sum(predictions==labels) / len(data)
+        elif self._task == 'regression':
+            accuracy = sum((predictions - labels)**2) / len(data)
         return accuracy
 
     def fit(self,data,labels,mode='layer 2',
         opt_method='sgd',opt_rate=10.,
         batch_size=200,n_epoch=5,bd=100):
-        indices = [self._classes.index(label) for label in labels]
-        indices = np.array(indices)
+        if self._task == 'classification':
+            indices = [self._classes.index(label) for label in labels]
+            indices = np.array(indices)
+        if self._task == 'regression':
+            indices = np.array(labels)
         with self._graph.as_default():
             in_weights = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
                 'RF')

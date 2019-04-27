@@ -1,6 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from joblib import Parallel, delayed
+# from joblib import Parallel, delayed
 import tensorflow as tf
 
 class fullnn:
@@ -8,10 +7,11 @@ class fullnn:
     This class is used to generate a fully L-layer and W-node-per-layer
     connected neural network that can generate and predict binary labels
     and be trained using SGD with minibatch.
-    The nonlinear node simply use ReLU. And the loss function uses log
-    loss.
+    The nonlinear node simply use ReLU.
     """
-    def __init__(self,dim,width,depth,classes,learn_rate):
+    def __init__(self,dim,width,depth,classes,learn_rate,
+            task='classification'):
+        self._task = task
         self._dim = dim
         self._width = width
         self._depth = depth
@@ -66,18 +66,30 @@ class fullnn:
                     activation=tf.nn.relu,
                     name=hl_name)
 
-            logits = tf.layers.dense(inputs=hl,units=self._n_classes,
+            if self._task == 'classification':
+                logits = tf.layers.dense(inputs=hl,units=self._n_classes,
                 # use_bias=False,
                 kernel_initializer=initializer,
                 name='Logits')
+                probabs = tf.nn.softmax(logits)
+                tf.add_to_collection("Output",probabs)
+            elif self._task == 'regression':
+                logits = tf.layers.dense(inputs=hl,units=1,
+                        use_bias=False,
+                        kernel_initializer=initializer,
+                        name='Logits')
+                logits = tf.reshape(logits,shape=[-1])
             tf.add_to_collection("Output",logits)
-            probabs = tf.nn.softmax(logits)
-            tf.add_to_collection("Output",probabs)
-            onehot_labels = tf.one_hot(indices=y,depth=self._n_classes)
-            log_loss = tf.losses.softmax_cross_entropy(
-                onehot_labels=onehot_labels,logits=logits
-            )
-            tf.add_to_collection('Loss',log_loss)
+            if self._task == 'classification':
+                onehot_labels = tf.one_hot(indices=y,depth=self._n_classes)
+                log_loss = tf.losses.softmax_cross_entropy(
+                    onehot_labels=onehot_labels,logits=logits
+                )
+                tf.add_to_collection('Loss',log_loss)
+            elif self._task == 'regression':
+                loss = tf.losses.mean_squared_error(labels=y,
+                    predictions=logits)
+                tf.add_to_collection('Loss',loss)
             # optimizer = tf.train.GradientDescentOptimizer(learning_rate=self._learn_rate)
             optimizer = tf.train.AdamOptimizer(learning_rate=self._learn_rate)
             train_op = optimizer.minimize(loss=log_loss,
@@ -86,11 +98,17 @@ class fullnn:
 
     def predict(self,data,batch_size=50):
         with self._graph.as_default():
-            logits,probabs = tf.get_collection('Output')
-            predictions = {
-                'indices':tf.argmax(input=logits,axis=1),
-                'probabilities':probabs
-            }
+            if self._task == 'classification':
+                logits,probabs = tf.get_collection('Output')
+                predictions = {
+                    'indices':tf.argmax(input=logits,axis=1),
+                    'probabilities':probabs
+                }
+            elif self._task == 'regression':
+                logits = tf.get_collection('Output')[0]
+                predictions = {
+                    'labels':logits
+                }
         classes = []
         probabilities = []
         idx = 0
@@ -101,21 +119,30 @@ class fullnn:
             idx = t
             feed_dict = {'features:0':batch}
             results = self._sess.run(predictions,feed_dict=feed_dict)
-            classes.extend([self._classes[index] for index in results['indices']])
-            probabilities.extend(results['probabilities'])
+            if self._task == 'classification':
+                classes.extend([self._classes[index] for index in results['indices']])
+                probabilities.extend(results['probabilities'])
+            elif self._task == 'regression':
+                classes.extend(results['labels'])
         return classes,probabilities
 
     def score(self,data,labels):
         predictions,_ = self.predict(data)
         s = 0.
         for idx in range(len(data)):
-            s += (predictions[idx]==labels[idx])
+            if self._task == 'classification':
+                s += (predictions[idx]==labels[idx])
+            elif self._task == 'regression':
+                s += (predictions[idx] - labels[idx])**2
         accuracy = s / len(data)
         return accuracy
 
     def fit(self,data,labels,batch_size=1,n_epoch=1):
-        label_idx = [self._classes.index(label) for label in labels]
-        label_idx = np.array(label_idx)
+        if self._task == 'classification':
+            label_idx = [self._classes.index(label) for label in labels]
+            label_idx = np.array(label_idx)
+        elif self._task == 'regression':
+            label_idx = np.array(labels)
         train_op = self._graph.get_operation_by_name('Train_op')
         with self._graph.as_default():
             loss = tf.get_collection('Loss')[0]
