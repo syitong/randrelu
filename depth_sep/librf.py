@@ -136,7 +136,7 @@ class RF:
         loss_fn='log',log=False,initializer=None,
         task='classification',gpu=-1):
         # Use the times of calls of RF
-        tf.random.set_random_seed(counter)
+        tf.set_random_seed(type(self).counter)
         type(self).counter += 1
 
         self._initializer = initializer

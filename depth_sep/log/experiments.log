@@ -540,3 +540,195 @@ bd = 100000
 loss_fn = log
 val_size = 30000
 
+screen params
+2019-04-27 21:28:04.548491
+trials = 8
+dataset = eldan
+val_size = 30000
+n_epoch = 5
+feature = ReLU
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+task = classification
+classes = [-1.0, 0.0, 1.0]
+N = 20
+bd = 100000
+loss_fn = log
+folds = 5
+
+screen params
+2019-04-27 21:28:14.893405
+trials = 8
+n_epoch = 5
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 30000
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+bd = 100000
+loss_fn = log
+dataset = eldan
+feature = ReLU
+N = 40
+task = classification
+
+screen params
+2019-04-27 21:32:28.497296
+val_size = 30000
+feature = ReLU
+loss_fn = log
+folds = 5
+task = classification
+N = 20
+dataset = eldan
+classes = [-1.0, 0.0, 1.0]
+trials = 8
+n_epoch = 5
+bd = 100000
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+
+screen params
+2019-04-27 21:33:47.224270
+trials = 8
+n_epoch = 5
+bd = 100000
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+val_size = 30000
+N = 20
+loss_fn = log
+folds = 5
+feature = ReLU
+dataset = eldan
+task = classification
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-04-27 21:41:53.471021
+dataset = eldan
+trials = 8
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = classification
+bd = 100000
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+loss_fn = log
+classes = [-1.0, 0.0, 1.0]
+N = 40
+folds = 5
+n_epoch = 5
+val_size = 30000
+feature = ReLU
+
+screen params
+2019-04-27 21:49:59.184669
+feature = ReLU
+val_size = 30000
+N = 80
+loss_fn = log
+trials = 8
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = classification
+n_epoch = 5
+dataset = eldan
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+bd = 100000
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-04-27 21:58:10.956468
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan
+classes = [-1.0, 0.0, 1.0]
+val_size = 30000
+folds = 5
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+task = classification
+loss_fn = log
+feature = ReLU
+N = 160
+bd = 100000
+trials = 8
+n_epoch = 5
+
+screen params
+2019-04-27 22:06:15.278062
+folds = 5
+val_size = 30000
+classes = [-1.0, 0.0, 1.0]
+N = 320
+dataset = eldan
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+n_epoch = 5
+bd = 100000
+feature = ReLU
+task = classification
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 8
+loss_fn = log
+
+screen params
+2019-04-27 22:14:30.273321
+N = 640
+bd = 100000
+folds = 5
+trials = 8
+val_size = 30000
+feature = ReLU
+loss_fn = log
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+task = classification
+n_epoch = 5
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-04-27 22:22:47.708781
+val_size = 30000
+n_epoch = 5
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+folds = 5
+feature = ReLU
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 1280
+task = classification
+loss_fn = log
+bd = 100000
+trials = 8
+dataset = eldan
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-04-27 22:31:13.804816
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+trials = 8
+loss_fn = log
+val_size = 30000
+feature = ReLU
+bd = 100000
+n_epoch = 5
+task = classification
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+dataset = eldan
+N = 2560
+folds = 5
+
+screen params
+2019-04-27 22:39:49.859558
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+dataset = eldan
+task = classification
+lograte = [-1.  -0.5  0.   0.5  1.   1.5  2.   2.5]
+logGamma = [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+N = 5120
+n_epoch = 5
+folds = 5
+val_size = 30000
+trials = 8
+loss_fn = log
+
