@@ -1,4 +1,5 @@
 import numpy as np
+np.random.seed(0)
 import tensorflow as tf
 
 class optRBFSampler:
@@ -123,6 +124,7 @@ class optReLUSampler:
         return X_til / np.sqrt(self.n_new)
 
 class RF:
+    counter = 0
     """
     This is a class constructing a 2-layer net with Fourier or
     ReLU nodes in the hidden layer. The weights in the first layer is
@@ -133,6 +135,10 @@ class RF:
         n_new_features,classes,Lambda=0.,Gamma=1.,
         loss_fn='log',log=False,initializer=None,
         task='classification',gpu=-1):
+        # Use the times of calls of RF
+        tf.random.set_random_seed(counter)
+        type(self).counter += 1
+
         self._initializer = initializer
         self._feature = feature
         self._d = n_old_features

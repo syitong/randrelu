@@ -331,5 +331,8 @@ if __name__ == '__main__':
             help='index of learning rate')
     parser.add_argument('--file', default='eldan-params',
             type=str, help='file name of params')
+    parser.add_argument('--seed', default=0, type=int,
+            help='random seed')
     args = parser.parse_args()
+    np.random.seed(args.seed)
     N_selecting(args.file, args.N, args.trial)
