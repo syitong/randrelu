@@ -1486,3 +1486,195 @@ folds = 5
 lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5  0.   0.5]
 N = 24
 
+screen params
+2019-04-29 12:16:21.911024
+dataset = eldan
+val_size = 20000
+H = 2
+trials = 1
+gpu = 0
+folds = 5
+logGamma = [-100]
+N = 24
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5  0.   0.5]
+n_epoch = 100
+task = classification
+feature = NN
+
+screen params
+2019-04-29 12:17:03.202726
+val_size = 20000
+n_epoch = 100
+task = classification
+H = 2
+classes = [-1, 0, 1]
+feature = NN
+trials = 1
+logGamma = [-100]
+dataset = eldan
+lograte = [-3.  -2.5 -2.  -1.5 -1.  -0.5  0.   0.5]
+folds = 5
+gpu = 0
+N = 24
+
+screen params
+2019-04-29 12:20:26.100046
+dataset = eldan
+n_epoch = 100
+lograte = [-3.  -2.5 -2.  -1.5 -1.  -0.5  0.   0.5]
+feature = NN
+task = classification
+H = 2
+gpu = 0
+folds = 5
+classes = [-1, 0, 1]
+logGamma = [-100]
+trials = 1
+val_size = 20000
+N = 24
+
+screen params
+2019-04-29 12:22:55.177491
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-100]
+classes = [-1, 0, 1]
+feature = NN
+val_size = 20000
+trials = 8
+dataset = eldan
+N = 10
+task = classification
+folds = 5
+gpu = 0
+H = 2
+n_epoch = 100
+
+screen params
+2019-04-29 12:31:47.153540
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = classification
+n_epoch = 100
+N = 16
+feature = NN
+H = 2
+folds = 5
+gpu = 0
+trials = 8
+classes = [-1, 0, 1]
+logGamma = [-100]
+dataset = eldan
+val_size = 20000
+
+screen params
+2019-04-29 12:40:43.640928
+H = 2
+val_size = 20000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+task = classification
+dataset = eldan
+classes = [-1, 0, 1]
+N = 24
+feature = NN
+n_epoch = 100
+trials = 8
+logGamma = [-100]
+folds = 5
+
+screen params
+2019-04-29 12:49:35.261750
+feature = NN
+task = classification
+N = 36
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+dataset = eldan
+folds = 5
+val_size = 20000
+trials = 8
+H = 2
+logGamma = [-100]
+classes = [-1, 0, 1]
+
+screen params
+2019-04-29 12:58:33.738636
+H = 2
+trials = 8
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-100]
+val_size = 20000
+n_epoch = 100
+feature = NN
+task = classification
+gpu = 0
+N = 54
+folds = 5
+dataset = eldan
+classes = [-1, 0, 1]
+
+screen params
+2019-04-29 13:07:26.802900
+H = 2
+feature = NN
+val_size = 20000
+logGamma = [-100]
+classes = [-1, 0, 1]
+trials = 8
+N = 78
+n_epoch = 100
+gpu = 0
+task = classification
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+dataset = eldan
+
+screen params
+2019-04-29 13:16:18.548037
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+N = 113
+logGamma = [-100]
+dataset = eldan
+feature = NN
+n_epoch = 100
+classes = [-1, 0, 1]
+trials = 8
+folds = 5
+H = 2
+task = classification
+gpu = 0
+
+screen params
+2019-04-29 13:25:10.507878
+classes = [-1, 0, 1]
+N = 162
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = NN
+val_size = 20000
+task = classification
+logGamma = [-100]
+n_epoch = 100
+dataset = eldan
+gpu = 0
+H = 2
+trials = 8
+folds = 5
+
+screen params
+2019-04-29 13:34:10.410961
+task = classification
+trials = 8
+logGamma = [-100]
+classes = [-1, 0, 1]
+folds = 5
+H = 2
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+dataset = eldan
+feature = NN
+N = 231
+gpu = 0
+

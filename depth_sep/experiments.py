@@ -127,7 +127,7 @@ def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
             'gpu':params['gpu']
         }
         fit_params = {
-            'opt_method':'sgd',
+            'opt_method':'adam',
             'n_epoch':params['n_epoch'],
             'opt_rate':10.**params['lograte'][int(prefix)],
             'bd':params['bd']
@@ -213,7 +213,7 @@ def screen_params(params,model='RF',prefix='0'):
             'gpu':params['gpu']
         }
         fit_params = {
-            'opt_method':'sgd',
+            'opt_method':'adam',
             'n_epoch':params['n_epoch'],
             'opt_rate':10.**params['lograte'][int(prefix)],
             'bd':params['bd']
