@@ -28,9 +28,9 @@ def mollify(idx_list, g, mol):
         y_list += [y]
     return np.array(y_list)
 
-def main(N_const, NSUPP=1000, mol_const=10, c_const=80, seed=0):
+def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     np.random.seed(seed)
-    d = 10
+    d = 4
     R = lambda d: gamma(d/2+1)**(1/d)/np.sqrt(np.pi)
     S = lambda d: 2*gamma(0.5)**(d+1)/gamma((d+1)/2)
     # Radial density function
@@ -78,10 +78,6 @@ def main(N_const, NSUPP=1000, mol_const=10, c_const=80, seed=0):
 
     # Construct smooth and non-smooth target functions
     jr = lambda x: jv(d/2,2*np.pi*R(d)*x)**2
-    fig = plt.figure()
-    plt.plot(R_grid[::100],jr(R_grid[::100])*R_grid[::100]*R(d)*np.pi)
-    plt.show()
-    plt.close(fig)
 
     idx = 0
     g = []
@@ -124,8 +120,8 @@ def main(N_const, NSUPP=1000, mol_const=10, c_const=80, seed=0):
     # Plot yg and y_mol
     sort_idx = np.argsort(R_sample)
     fig = plt.figure()
-    plt.plot(R_sample[sort_idx[::10]],yg[sort_idx[::10]])
-    plt.plot(R_sample[sort_idx[::10]],y_mol[sort_idx[::10]])
+    plt.scatter(R_sample[sort_idx[::10]],yg[sort_idx[::10]],c='r')
+    plt.plot(R_sample[sort_idx[::10]],y_mol[sort_idx[::10]],c='b')
     plt.title("g and smoothed g")
     plt.savefig('fig/gplot.png')
 
@@ -148,3 +144,6 @@ def main(N_const, NSUPP=1000, mol_const=10, c_const=80, seed=0):
         np.save(f, x_sample[int(0.8*len(x_sample)):])
     with open('data/eldan-smooth-test-label.npy', 'bw') as f:
         np.save(f, y_mol[int(0.8*len(x_sample)):])
+
+if __name__ == '__main__':
+    main(N_const=0.01,NSUPP=100000,mol_const=10000)
