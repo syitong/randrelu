@@ -10,7 +10,7 @@ class fullnn:
     and be trained using SGD with minibatch.
     The nonlinear node simply use ReLU.
     """
-    def __init__(self,dim,width,depth,classes,learn_rate,
+    def __init__(self,dim,width,depth,classes,
             task='classification',gpu=-1):
         # Use the times of calls of class as random seed
         tf.set_random_seed(type(self).counter)
@@ -20,7 +20,7 @@ class fullnn:
         self._width = width
         self._depth = depth
         self._classes = classes
-        self._learn_rate = learn_rate
+        self._learn_rate = 0.
         self._n_classes = len(classes)
         self._total_iter = 0
         self._total_epoch = 0
@@ -29,7 +29,6 @@ class fullnn:
                 self._graph = tf.Graph()
         else:
             self._graph = tf.Graph()
-        self._graph = tf.Graph()
         self._sess = tf.Session(graph=self._graph)
         self._model_fn()
 
@@ -61,7 +60,6 @@ class fullnn:
 
     def _model_fn(self):
         with self._graph.as_default():
-            global_step = tf.Variable(0,trainable=False,name='global')
             x = tf.placeholder(dtype=tf.float32,
                 shape=[None,self._dim],name='features')
             y = tf.placeholder(dtype=tf.uint8,
@@ -142,21 +140,23 @@ class fullnn:
         accuracy = s / len(data)
         return accuracy
 
-    def fit(self,data,labels,opt_method='sgd',batch_size=200,n_epoch=5):
-        if self._task == 'classification':
-            label_idx = [self._classes.index(label) for label in labels]
-            label_idx = np.array(label_idx)
-        elif self._task == 'regression':
-            label_idx = np.array(labels)
-        if opt_method == 'sgd':
-            optimizer = tf.train.GradientDescentOptimizer(learning_rate=self._learn_rate)
-        elif opt_method == 'adam':
-            optimizer = tf.train.AdamOptimizer(learning_rate=self._learn_rate)
-        train_op = optimizer.minimize(loss=log_loss,
-            global_step=global_step,name='Train_op')
-        self._sess.run(tf.global_variables_initializer())
+    def fit(self,data,labels,opt_rate=1.,opt_method='sgd',batch_size=200,n_epoch=5):
+        self._learn_rate = opt_rate
         with self._graph.as_default():
             loss = tf.get_collection('Loss')[0]
+            if self._task == 'classification':
+                label_idx = [self._classes.index(label) for label in labels]
+                label_idx = np.array(label_idx)
+            elif self._task == 'regression':
+                label_idx = np.array(labels)
+            if opt_method == 'sgd':
+                optimizer = tf.train.GradientDescentOptimizer(learning_rate=self._learn_rate)
+            elif opt_method == 'adam':
+                optimizer = tf.train.AdamOptimizer(learning_rate=self._learn_rate)
+            global_step = tf.Variable(0,trainable=False,name='global')
+            train_op = optimizer.minimize(loss=loss,
+                global_step=global_step,name='Train_op')
+            self._sess.run(tf.global_variables_initializer())
         for idx in range(n_epoch):
             rand_indices = np.random.permutation(len(data)) - 1
             for jdx in range(len(data)//batch_size):

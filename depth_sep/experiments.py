@@ -103,7 +103,7 @@ def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
     if model == 'NN':
         model_params = {
-            'd':len(Xtrain[0]),
+            'dim':len(Xtrain[0]),
             'width':params['N'],
             'depth':params['H'],
             'classes':params['classes'],
@@ -116,13 +116,13 @@ def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
             'opt_rate':10.**params['lograte'][int(prefix)],
         }
         model_type = libnn.fullnn
-    else:
+    elif model == 'RF':
         model_params = {
             'n_old_features':len(Xtrain[0]),
             'n_new_features':params['N'],
             'classes':params['classes'],
             'loss_fn':params['loss_fn'],
-            'feature':feature,
+            'feature':params['feature'],
             'task':task,
             'gpu':params['gpu']
         }
@@ -133,8 +133,7 @@ def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
             'bd':params['bd']
         }
         model_type = librf.RF
-    model_params['Gamma'] = 10. ** logGamma
-    model_params['feature'] = feature
+        model_params['Gamma'] = 10. ** logGamma
     fit_params['opt_rate'] = 10. ** lograte
     if prefix == '0':
         # only write log file for trial 0
@@ -188,10 +187,9 @@ def screen_params(params,model='RF',prefix='0'):
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
     Xtrain,Ytrain,_,_ = read_data(dataset)
-    feature = params['feature']
     if model == 'NN':
         model_params = {
-            'd':len(Xtrain[0]),
+            'dim':len(Xtrain[0]),
             'width':params['N'],
             'depth':params['H'],
             'classes':params['classes'],
@@ -210,7 +208,7 @@ def screen_params(params,model='RF',prefix='0'):
             'n_new_features':params['N'],
             'classes':params['classes'],
             'loss_fn':params['loss_fn'],
-            'feature':feature,
+            'feature':params['feature'],
             'task':task,
             'gpu':params['gpu']
         }
@@ -362,7 +360,7 @@ def screen_params(params,model='RF',prefix='0'):
 def N_selecting(dataset, N, model='RF', prefix='0'):
     params = read_params(dataset)
     params['N'] = N
-    screen_params(params, prefix)
+    screen_params(params, model, prefix)
     # train_and_test('checkboard','Gaussian')
 
 if __name__ == '__main__':
