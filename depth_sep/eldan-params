@@ -6,11 +6,11 @@
     'classes': [-1.,0.,1.],
     'loss_fn': 'log',
     'feature': 'ReLU',
-    'logGamma': np.arange(-5.,0,0.5),
-    'lograte': np.arange(-4.,0,0.5),
+    'logGamma': np.arange(0.,1,2),
+    'lograte': np.arange(-3.,0,4),
     'val_size': 20000,
     'folds': 5,
-    'trials': 8,
+    'trials': 1,
     'task': 'classification',
     'gpu': 0
 }
