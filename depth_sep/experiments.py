@@ -86,7 +86,7 @@ def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     score = sum(Ypr == Yts) / len(Yts)
     return score,sparsity,t2-t1,t3-t2
 
-def train_and_test(dataset,feature,params='auto',prefix='0'):
+def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
     '''
     params = {
         'dataset': ,
@@ -101,16 +101,38 @@ def train_and_test(dataset,feature,params='auto',prefix='0'):
     if params == 'auto':
         logGamma,lograte,params = print_params(dataset,feature)
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
-    model_params = {
-        'n_old_features':len(Xtrain[0]),
-        'n_new_features':params['N'],
-        'classes':params['classes'],
-        'loss_fn':params['loss_fn']
-    }
-    fit_params = {
-        'n_epoch':params['n_epoch'],
-        'bd':params['bd']
-    }
+    if model == 'NN':
+        model_params = {
+            'd':len(Xtrain[0]),
+            'width':params['N'],
+            'depth':params['H'],
+            'classes':params['classes'],
+            'task':task,
+            'gpu':params['gpu']
+        }
+        fit_params = {
+            'opt_method':'sgd',
+            'n_epoch':params['n_epoch'],
+            'opt_rate':10.**params['lograte'][int(prefix)],
+        }
+        model_type = libnn.fullnn
+    else:
+        model_params = {
+            'n_old_features':len(Xtrain[0]),
+            'n_new_features':params['N'],
+            'classes':params['classes'],
+            'loss_fn':params['loss_fn'],
+            'feature':feature,
+            'task':task,
+            'gpu':params['gpu']
+        }
+        fit_params = {
+            'opt_method':'sgd',
+            'n_epoch':params['n_epoch'],
+            'opt_rate':10.**params['lograte'][int(prefix)],
+            'bd':params['bd']
+        }
+        model_type = librf.RF
     model_params['Gamma'] = 10. ** logGamma
     model_params['feature'] = feature
     fit_params['opt_rate'] = 10. ** lograte
@@ -124,7 +146,6 @@ def train_and_test(dataset,feature,params='auto',prefix='0'):
         for key,val in fit_params.items():
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
-    model_type = librf.RF
     score1,sparsity1,traintime1,testtime1 = _train_and_test(Xtrain,
         Ytrain,Xtest,Ytest,model_type,model_params,fit_params)
     output = {
@@ -138,7 +159,7 @@ def train_and_test(dataset,feature,params='auto',prefix='0'):
     with open(filename,'w') as f:
         f.write(str(finalop))
 
-def screen_params(params,prefix='0'):
+def screen_params(params,model='RF',prefix='0'):
     '''
     params = {
         'dataset': ,
@@ -168,28 +189,50 @@ def screen_params(params,prefix='0'):
         logfile.save()
     Xtrain,Ytrain,_,_ = read_data(dataset)
     feature = params['feature']
-    model_params = {
-        'n_old_features':len(Xtrain[0]),
-        'n_new_features':params['N'],
-        'classes':params['classes'],
-        'loss_fn':params['loss_fn'],
-        'feature':feature,
-        'task':task,
-    }
-    fit_params = {
-        'opt_method':'sgd',
-        'n_epoch':params['n_epoch'],
-        'opt_rate':10.**params['lograte'][int(prefix)],
-        'bd':params['bd']
-    }
-    model_type = librf.RF
+    if model == 'NN':
+        model_params = {
+            'd':len(Xtrain[0]),
+            'width':params['N'],
+            'depth':params['H'],
+            'classes':params['classes'],
+            'task':task,
+            'gpu':params['gpu']
+        }
+        fit_params = {
+            'opt_method':'sgd',
+            'n_epoch':params['n_epoch'],
+            'opt_rate':10.**params['lograte'][int(prefix)],
+        }
+        model_type = libnn.fullnn
+    else:
+        model_params = {
+            'n_old_features':len(Xtrain[0]),
+            'n_new_features':params['N'],
+            'classes':params['classes'],
+            'loss_fn':params['loss_fn'],
+            'feature':feature,
+            'task':task,
+            'gpu':params['gpu']
+        }
+        fit_params = {
+            'opt_method':'sgd',
+            'n_epoch':params['n_epoch'],
+            'opt_rate':10.**params['lograte'][int(prefix)],
+            'bd':params['bd']
+        }
+        model_type = librf.RF
     results = []
-    Gamma_list = 10. ** params['logGamma']
-    for Gamma in Gamma_list:
-        model_params['Gamma'] = Gamma
+    if model == 'RF':
+        Gamma_list = 10. ** params['logGamma']
+        for Gamma in Gamma_list:
+            model_params['Gamma'] = Gamma
+            score = validate(Xtrain,Ytrain,val_size,model_type,
+                model_params, fit_params, folds)
+            results.append({'Gamma':Gamma,'score':score})
+    else:
         score = validate(Xtrain,Ytrain,val_size,model_type,
             model_params, fit_params, folds)
-        results.append({'Gamma':Gamma,'score':score})
+        results.append({'Gamma':-1,'score':score})
     filename = 'result/{0:s}-{1:d}-screen-{2:s}'.format(dataset,N,prefix)
     with open(filename,'w') as f:
         f.write(str(results))
@@ -204,7 +247,7 @@ def screen_params(params,prefix='0'):
 #     rate_list = 10. ** np.arange(-3.,3,0.5) # np.arange(0.8,2.8,0.2)
 #     classes = list(range(1,8)) # list(range(10))
 #     loss_fn = 'log'
-# 
+#
 #     prefix = argv[1]
 #     params = {}
 #     params['model'] = {
@@ -223,7 +266,7 @@ def screen_params(params,prefix='0'):
 #     filename = 'result/covtype-nn-{0:s}'.format(prefix)
 #     with open(filename,'w') as f:
 #         f.write(str(score))
-# 
+#
 # def screen_params_svm_covtype(val_size=30000,folds=5):
 #     Xtrain = read_data('covtype-train-data.npy')
 #     Ytrain = read_data('covtype-train-binary-label.npy')
@@ -243,7 +286,7 @@ def screen_params(params,prefix='0'):
 #     filename = 'result/covtype-svm-{0:s}'.format(prefix)
 #     with open(filename,'w') as f:
 #         f.write(str(score))
-# 
+#
 # def train_test_covtype_nn():
 #     Xtrain = read_data('covtype-train-data.npy')
 #     Ytrain = read_data('covtype-train-binary-label.npy')
@@ -270,13 +313,13 @@ def screen_params(params,prefix='0'):
 #     clf.fit(Xtrain,Ytrain,**fitparams)
 #     score = clf.score(Xtest,Ytest)
 #     print(score)
-# 
+#
 # def plot_clf_boundary(samplesize=500):
 #     import matplotlib.pyplot as plt
 #     Xtrain = read_data('checkboard-train-data.npy')[:samplesize]
 #     N = 200 # 10000
 #     bd = 1000 # 100000
-#     n_epoch = 5 
+#     n_epoch = 5
 #     Gamma = 10.
 #     classes = [0.,1.]
 #     loss_fn = 'hinge'
@@ -316,7 +359,7 @@ def screen_params(params,prefix='0'):
 #     plt.scatter(Xtrain[:,0],Xtrain[:,1],s=0.5,c=c)
 #     plt.show()
 
-def N_selecting(dataset, N, prefix='0'):
+def N_selecting(dataset, N, model='RF', prefix='0'):
     params = read_params(dataset)
     params['N'] = N
     screen_params(params, prefix)
@@ -333,6 +376,8 @@ if __name__ == '__main__':
             type=str, help='file name of params')
     parser.add_argument('--seed', default=0, type=int,
             help='random seed')
+    parser.add_argument('--model', default='RF', type=str,
+            help='RF or NN')
     args = parser.parse_args()
     np.random.seed(args.seed)
-    N_selecting(args.file, args.N, args.trial)
+    N_selecting(args.file, args.N, args.model, args.trial)

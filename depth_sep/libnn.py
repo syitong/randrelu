@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 class fullnn:
+    counter = 0
     """
     This class is used to generate a fully L-layer and W-node-per-layer
     connected neural network that can generate and predict binary labels
@@ -10,7 +11,10 @@ class fullnn:
     The nonlinear node simply use ReLU.
     """
     def __init__(self,dim,width,depth,classes,learn_rate,
-            task='classification'):
+            task='classification',gpu=-1):
+        # Use the times of calls of class as random seed
+        tf.set_random_seed(type(self).counter)
+        type(self).counter += 1
         self._task = task
         self._dim = dim
         self._width = width
@@ -20,6 +24,11 @@ class fullnn:
         self._n_classes = len(classes)
         self._total_iter = 0
         self._total_epoch = 0
+        if gpu >= 0:
+            with tf.device('/gpu:'+str(gpu)):
+                self._graph = tf.Graph()
+        else:
+            self._graph = tf.Graph()
         self._graph = tf.Graph()
         self._sess = tf.Session(graph=self._graph)
         self._model_fn()
@@ -90,10 +99,6 @@ class fullnn:
                 loss = tf.losses.mean_squared_error(labels=y,
                     predictions=logits)
                 tf.add_to_collection('Loss',loss)
-            # optimizer = tf.train.GradientDescentOptimizer(learning_rate=self._learn_rate)
-            optimizer = tf.train.AdamOptimizer(learning_rate=self._learn_rate)
-            train_op = optimizer.minimize(loss=log_loss,
-                global_step=global_step,name='Train_op')
             self._sess.run(tf.global_variables_initializer())
 
     def predict(self,data,batch_size=50):
@@ -137,13 +142,19 @@ class fullnn:
         accuracy = s / len(data)
         return accuracy
 
-    def fit(self,data,labels,batch_size=1,n_epoch=1):
+    def fit(self,data,labels,opt_method='sgd',batch_size=200,n_epoch=5):
         if self._task == 'classification':
             label_idx = [self._classes.index(label) for label in labels]
             label_idx = np.array(label_idx)
         elif self._task == 'regression':
             label_idx = np.array(labels)
-        train_op = self._graph.get_operation_by_name('Train_op')
+        if opt_method == 'sgd':
+            optimizer = tf.train.GradientDescentOptimizer(learning_rate=self._learn_rate)
+        elif opt_method == 'adam':
+            optimizer = tf.train.AdamOptimizer(learning_rate=self._learn_rate)
+        train_op = optimizer.minimize(loss=log_loss,
+            global_step=global_step,name='Train_op')
+        self._sess.run(tf.global_variables_initializer())
         with self._graph.as_default():
             loss = tf.get_collection('Loss')[0]
         for idx in range(n_epoch):

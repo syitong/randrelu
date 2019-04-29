@@ -135,7 +135,7 @@ class RF:
         n_new_features,classes,Lambda=0.,Gamma=1.,
         loss_fn='log',log=False,initializer=None,
         task='classification',gpu=-1):
-        # Use the times of calls of RF
+        # Use the times of calls of class as random seed
         tf.set_random_seed(type(self).counter)
         type(self).counter += 1
 
@@ -235,7 +235,7 @@ class RF:
                         logits = self._output_layer(RF_layer,1)
                         logits = tf.reshape(logits,shape=[-1])
                     else:
-                        print("hinge or squared loss only works for binary classificaiton.")
+                        print("hinge or squared loss only works for binary classification.")
                         return 0
                 elif self._loss_fn == 'log':
                     logits = self._output_layer(RF_layer,n_classes)
@@ -295,7 +295,7 @@ class RF:
             elif self._loss_fn == 'hinge':
                 classes.extend([self._classes[index>0] for index in results['indices']])
             elif self._loss_fn == 'squared':
-                if self._task == 'classificaiton':
+                if self._task == 'classification':
                     classes.extend([self._classes[index>.5] for index in results['indices']])
                 elif self._task == 'regression':
                     classes.extend(results['indices'])
