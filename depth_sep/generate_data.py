@@ -28,7 +28,7 @@ def mollify(idx_list, g, mol):
         y_list += [y]
     return np.array(y_list)
 
-def main(N_const, NSUPP=100, mol_const=10, c_const=80, seed=0):
+def main(N_const, NSUPP=1000, mol_const=10, c_const=80, seed=0):
     np.random.seed(seed)
     d = 10
     R = lambda d: gamma(d/2+1)**(1/d)/np.sqrt(np.pi)

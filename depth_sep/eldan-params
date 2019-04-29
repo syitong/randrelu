@@ -4,12 +4,12 @@
     'H': 2,
     'feature': 'NN',
     'logGamma': [-100],
-    'n_epoch': 5,
-    'classes': [-1.,0.,1.],
-    'lograte': np.arange(-1.,3,0.5),
-    'val_size': 30000,
+    'n_epoch': 100,
+    'classes': [-1,0,1],
+    'lograte': np.arange(-4.,1,0.5),
+    'val_size': 20000,
     'folds': 5,
-    'trials': 8,
+    'trials': 1,
     'task': 'classification',
-    'gpu': -1
+    'gpu': 0
 }
