@@ -3105,3 +3105,31 @@ N = 5120
 loss_fn = log
 feature = ReLU
 
+train and test
+2019-04-30 14:37:49.925783
+dataset = eldan
+dim = 4
+task = classification
+width = 10
+gpu = 0
+classes = [-1, 0, 1]
+depth = 2
+tbdir = ./result/eldan-NN-test-N10-ep100/tf/tensorboard-0/
+n_epoch = 100
+opt_rate = 0.01
+opt_method = adam
+
+train and test
+2019-04-30 14:44:59.224228
+dataset = eldan
+dim = 4
+classes = [-1, 0, 1]
+tbdir = ./result/eldan-NN-test-N10-ep100/tf/tensorboard-0/
+width = 10
+gpu = 0
+task = classification
+depth = 2
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.01
+
