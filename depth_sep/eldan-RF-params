@@ -2,7 +2,7 @@
     'dataset': 'eldan',
     'N': 100,
     'bd': 100000,
-    'mode': 'over all',
+    'mode': 'layer 2',
     'n_epoch': 100,
     'classes': [-1.,0.,1.],
     'loss_fn': 'log',
