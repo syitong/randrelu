@@ -2534,3 +2534,35 @@ val_size = 20000
 task = classification
 logGamma = [-100]
 
+screen params
+2019-04-30 09:37:08.152274
+dataset = eldan
+N = 10
+H = 2
+model = NN
+logGamma = [-100]
+n_epoch = 100
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+folds = 5
+trials = 8
+task = classification
+gpu = 0
+
+screen params
+2019-04-30 09:40:17.358589
+dataset = eldan
+N = 10
+H = 2
+model = NN
+logGamma = [-100]
+n_epoch = 100
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+folds = 5
+trials = 8
+task = classification
+gpu = 0
+
