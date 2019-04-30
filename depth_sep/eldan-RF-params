@@ -8,7 +8,7 @@
     'loss_fn': 'log',
     'model': 'RF',
     'feature': 'ReLU',
-    'logGamma': np.arange(-4.,2,2),
+    'logGamma': np.arange(-4.,0,0.5),
     'lograte': np.arange(-4.,0,0.5),
     'val_size': 20000,
     'folds': 5,
