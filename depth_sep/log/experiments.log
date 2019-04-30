@@ -3701,3 +3701,156 @@ n_epoch = 100
 opt_rate = 0.00031622776601683794
 opt_method = adam
 
+train and test
+2019-04-30 18:49:33.748870
+dataset = eldan
+n_new_features = 20
+loss_fn = log
+Gamma = 0.1
+task = classification
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+tbdir = ./result/eldan-RF-test-N20-ep100/tf/tensorboard-0/
+n_old_features = 4
+gpu = 0
+opt_rate = 0.00031622776601683794
+bd = 100000
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-04-30 18:51:24.532696
+dataset = eldan
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+tbdir = ./result/eldan-RF-test-N40-ep100/tf/tensorboard-0/
+task = classification
+n_new_features = 40
+n_old_features = 4
+Gamma = 0.31622776601683794
+loss_fn = log
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.1
+bd = 100000
+
+train and test
+2019-04-30 18:52:44.390604
+dataset = eldan
+n_new_features = 80
+Gamma = 0.1
+task = classification
+gpu = 0
+n_old_features = 4
+classes = [-1.0, 0.0, 1.0]
+tbdir = ./result/eldan-RF-test-N80-ep100/tf/tensorboard-0/
+feature = ReLU
+loss_fn = log
+bd = 100000
+opt_rate = 0.31622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-04-30 18:54:09.913721
+dataset = eldan
+n_old_features = 4
+task = classification
+n_new_features = 160
+feature = ReLU
+gpu = 0
+classes = [-1.0, 0.0, 1.0]
+loss_fn = log
+Gamma = 0.1
+tbdir = ./result/eldan-RF-test-N160-ep100/tf/tensorboard-0/
+opt_method = adam
+bd = 100000
+opt_rate = 0.1
+n_epoch = 100
+
+train and test
+2019-04-30 18:55:49.250534
+dataset = eldan
+n_old_features = 4
+n_new_features = 320
+tbdir = ./result/eldan-RF-test-N320-ep100/tf/tensorboard-0/
+feature = ReLU
+task = classification
+classes = [-1.0, 0.0, 1.0]
+loss_fn = log
+Gamma = 0.1
+gpu = 0
+bd = 100000
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.1
+
+train and test
+2019-04-30 18:57:53.573262
+dataset = eldan
+Gamma = 0.1
+n_new_features = 640
+classes = [-1.0, 0.0, 1.0]
+tbdir = ./result/eldan-RF-test-N640-ep100/tf/tensorboard-0/
+task = classification
+feature = ReLU
+loss_fn = log
+gpu = 0
+n_old_features = 4
+opt_method = adam
+opt_rate = 0.1
+bd = 100000
+n_epoch = 100
+
+train and test
+2019-04-30 19:00:49.575326
+dataset = eldan
+gpu = 0
+n_new_features = 1280
+Gamma = 0.03162277660168379
+n_old_features = 4
+tbdir = ./result/eldan-RF-test-N1280-ep100/tf/tensorboard-0/
+task = classification
+loss_fn = log
+classes = [-1.0, 0.0, 1.0]
+feature = ReLU
+opt_rate = 0.03162277660168379
+opt_method = adam
+n_epoch = 100
+bd = 100000
+
+train and test
+2019-04-30 19:05:37.072732
+dataset = eldan
+gpu = 0
+n_old_features = 4
+task = classification
+loss_fn = log
+tbdir = ./result/eldan-RF-test-N2560-ep100/tf/tensorboard-0/
+n_new_features = 2560
+Gamma = 0.03162277660168379
+classes = [-1.0, 0.0, 1.0]
+feature = ReLU
+opt_method = adam
+opt_rate = 0.1
+bd = 100000
+n_epoch = 100
+
+train and test
+2019-04-30 19:14:03.013963
+dataset = eldan
+tbdir = ./result/eldan-RF-test-N5120-ep100/tf/tensorboard-0/
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+task = classification
+Gamma = 0.1
+loss_fn = log
+n_new_features = 5120
+gpu = 0
+n_old_features = 4
+opt_rate = 0.03162277660168379
+n_epoch = 100
+bd = 100000
+opt_method = adam
+
