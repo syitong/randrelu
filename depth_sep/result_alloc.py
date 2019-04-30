@@ -65,8 +65,10 @@ def screen_params_append(params):
     with open(filename+'alloc','w') as f:
         f.write(str(finalop))
 
-def train_and_test_alloc(dataset,feature,trials):
-    filename = 'result/{0:s}-{1:s}-test-'.format(dataset,feature)
+def train_and_test_alloc(dataset,model,N,n_epoch,trials):
+    dirname = '{0:s}-{1:s}-test-N{2:d}-ep{3:d}'.format(dataset,model,N,n_epoch)
+    _, resdir, _, _ = mkdir(dirname)
+    filename = resdir + 'output-'
     tags = ['accuracy','sparsity','traintime','testtime']
     alloc = {}
     for idx in range(4):
@@ -88,9 +90,19 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="parse args")
     parser.add_argument('--N', default=20, type=int,
             help='width of layer')
+    parser.add_argument('--dataset', default='eldan', type=str,
+            help='name of dataset')
+    parser.add_argument('--model', default='RF', type=str,
+            help='type of model')
+    parser.add_argument('--n_epoch', default=100, type=int,
+            help='number of epochs')
+    parser.add_argument('--trials', default=1, type=int,
+            help='number of trials')
     parser.add_argument('--file', default='eldan-params',
             type=str, help='file name of params')
     args = parser.parse_args()
-    params = read_params(args.file)
-    params['N'] = args.N
-    screen_params_alloc(params)
+    # params = read_params(args.file)
+    # params['N'] = args.N
+    # screen_params_alloc(params)
+    train_and_test_alloc(args.dataset,args.model,args.N,
+        args.n_epoch,args.trials)

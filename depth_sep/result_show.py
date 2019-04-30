@@ -110,11 +110,9 @@ def _dict_print(dictx,loc=0):
             print(': {}'.format(value))
     return 1
 
-def print_test_results(dataset,feature):
-    filename = 'result/{0:s}-{1:s}-test-'.format(dataset,feature)
-    with open(filename+'alloc','r') as f:
+def print_test_results(filename):
+    with open(filename,'r') as f:
         result,_,model_params,fit_params = eval(f.read())
-    print(dataset)
     _dict_print(result)
     _dict_print(model_params)
     _dict_print(fit_params)
@@ -124,4 +122,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="parse args")
     parser.add_argument('--file', type=str, help='name of result file')
     args = parser.parse_args()
-    print_params(args.file)
+    # print_params(args.file)
+    print_test_results(args.file)

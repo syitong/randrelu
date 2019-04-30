@@ -127,7 +127,7 @@ def train_and_test(dataset,model='RF',params='auto',
     # If params is a string, treat it as the allocated
     # params screen results. And choose the best params
     # config.
-    if type(params) == 'str':
+    if type(params) == str:
         logGamma,lograte,params = print_params(params)
     else:
         logGamma = params['logGamma']
@@ -139,7 +139,7 @@ def train_and_test(dataset,model='RF',params='auto',
 
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
     model_params, fit_params, model_type = params_process(
-        model, logGamma, lograte, params, tbdir)
+        model, logGamma, lograte, params, tbdir, len(Xtrain[0]))
 
     # only write log file for trial 0
     if prefix == '0':
@@ -215,16 +215,15 @@ def N_selecting(paramsfile, N, prefix='0'):
 
 def N_testing(dataset, model, N, H, prefix='0'):
     if model == 'NN':
-        root = '.result/' + dataset + '-NN-H' + str(H) + '/'
+        root = './result/' + dataset + '-NN-H' + str(H) + '/'
         dir = root + dataset + '-NN-N' + str(N) + '-screen/'
         paramsfile = dir + 'results/output-alloc'
     elif model == 'RF':
-        root = '.result/'
+        root = './result/'
         dir = root + dataset + '-RF-N' + str(N) + '-screen/'
         paramsfile = dir + 'results/output-alloc'
 
-    train_and_test(dataset,model,params=paramsfile,
-    prefix)
+    train_and_test(dataset,model,params=paramsfile,prefix=prefix)
 
 if __name__ == '__main__':
     ## parse command line arguments
@@ -245,5 +244,5 @@ if __name__ == '__main__':
             help='random seed')
     args = parser.parse_args()
     np.random.seed(args.seed)
-    N_selecting(args.file, args.N, args.trial)
-    # N_testing(args.dataset,args.model,args.N,args.H,args.trial)
+    # N_selecting(args.file, args.N, args.trial)
+    N_testing(args.dataset,args.model,args.N,args.H,args.trial)

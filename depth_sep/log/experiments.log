@@ -2711,3 +2711,17 @@ trials = 8
 task = classification
 gpu = 0
 
+train and test
+2019-04-30 11:46:40.463213
+dataset = eldan
+dim = 4
+width = 10
+depth = 2
+tbdir = ./result/eldan-NN-test-N10-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+task = classification
+gpu = 0
+n_epoch = 100
+opt_rate = 0.01
+opt_method = adam
+
