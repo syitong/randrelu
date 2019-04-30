@@ -219,7 +219,7 @@ def N_testing(dataset, model, N, H, prefix='0'):
         dir = root + dataset + '-NN-N' + str(N) + '-screen/'
         paramsfile = dir + 'results/output-alloc'
     elif model == 'RF':
-        root = './result/'
+        root = './result/' + dataset + '-RF/'
         dir = root + dataset + '-RF-N' + str(N) + '-screen/'
         paramsfile = dir + 'results/output-alloc'
 
@@ -244,5 +244,5 @@ if __name__ == '__main__':
             help='random seed')
     args = parser.parse_args()
     np.random.seed(args.seed)
-    N_selecting(args.file, args.N, args.trial)
-    # N_testing(args.dataset,args.model,args.N,args.H,args.trial)
+    # N_selecting(args.file, args.N, args.trial)
+    N_testing(args.dataset,args.model,args.N,args.H,args.trial)

@@ -3684,3 +3684,20 @@ bd = 100000
 loss_fn = log
 N = 5120
 
+train and test
+2019-04-30 18:36:24.510691
+dataset = eldan
+n_old_features = 4
+n_new_features = 20
+loss_fn = log
+feature = ReLU
+Gamma = 0.1
+tbdir = ./result/eldan-RF-test-N20-ep100/tf/tensorboard-0/
+classes = [-1.0, 0.0, 1.0]
+task = classification
+gpu = 0
+bd = 100000
+n_epoch = 100
+opt_rate = 0.00031622776601683794
+opt_method = adam
+
