@@ -63,7 +63,7 @@ class fullnn:
         with self._graph.as_default():
             x = tf.placeholder(dtype=tf.float32,
                 shape=[None,self._dim],name='features')
-            y = tf.placeholder(dtype=tf.uint8,
+            y = tf.placeholder(dtype=tf.int64,
                 shape=[None],name='labels')
             hl = x
             initializer = tf.glorot_normal_initializer()
@@ -79,7 +79,7 @@ class fullnn:
                 # use_bias=False,
                 kernel_initializer=initializer,
                 name='Logits')
-                self._probabs = tf.nn.softmax(logits)
+                probabs = tf.nn.softmax(logits)
             elif self._task == 'regression':
                 logits = tf.layers.dense(inputs=hl,units=1,
                         use_bias=False,
@@ -101,7 +101,8 @@ class fullnn:
                     'indices':indices,
                     'probabilities':probabs
                 }
-                train_err = tf.reduce_mean(tf.equal(y,indices))
+                tmp = tf.cast(tf.equal(indices,y),dtype=tf.float32)
+                train_err = tf.reduce_mean(tmp)
             elif self._task == 'regression':
                 self._predictions = {
                     'labels':logits
@@ -134,7 +135,7 @@ class fullnn:
         return classes,probabilities,sparsity
 
     def score(self,data,labels):
-        predictions,_ = self.predict(data)
+        predictions,_,_ = self.predict(data)
         s = 0.
         for idx in range(len(data)):
             if self._task == 'classification':

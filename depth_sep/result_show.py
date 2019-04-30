@@ -122,9 +122,6 @@ def print_test_results(dataset,feature):
 if __name__ == '__main__':
     ## parse command line arguments
     parser = argparse.ArgumentParser(description="parse args")
-    parser.add_argument('--N', default=20, type=int,
-            help='width of layer')
-    parser.add_argument('--dataset', default='eldan',
-            type=str, help='name of dataset')
+    parser.add_argument('--file', type=str, help='name of result file')
     args = parser.parse_args()
-    print_params(args.dataset,args.N)
+    print_params(args.file)

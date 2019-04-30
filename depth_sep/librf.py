@@ -226,7 +226,7 @@ class RF:
             # one_hot for log loss or reshape for hinge and squared loss
             x = tf.placeholder(dtype=tf.float32,
                 shape=[None,d],name='features')
-            y = tf.placeholder(dtype=tf.uint8,
+            y = tf.placeholder(dtype=tf.int64,
                 shape=[None],name='labels')
             RF_layer = self._feature_layer(x)
             if self._task == 'classification':
@@ -263,11 +263,11 @@ class RF:
             if self._loss_fn in ('hinge'):
                 self._predictions = {"indices": logits,
                     "feature_vec": self._RF_layer}
-                indices = tf.greater(logits, 0)
+                indices = tf.cast(tf.greater(logits, 0.), dtype=tf.int64)
             elif self._loss_fn == 'log':
                 indices = tf.argmax(input=logits,axis=1)
                 self._predictions = {
-                    "indices": ,
+                    "indices": indices,
                     "probabilities": probab,
                     "feature_vec": self._RF_layer}
             train_err = tf.reduce_mean(tf.equal(y,indices))

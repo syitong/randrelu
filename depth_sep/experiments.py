@@ -3,6 +3,7 @@ import os
 import librf
 import libnn
 import time
+from lib.utils import mkdir
 from datetime import datetime
 from log import log
 import argparse
@@ -13,26 +14,6 @@ from functools import partial
 from result_show import print_params
 from sklearn.svm import SVC
 DATA_PATH = 'data/'
-
-def mkdir(name, prefix):
-    root_dir = './result/'
-    dirname = root_dir + name
-    if not os.path.exists(os.path.dirname(dirname)):
-        os.makedirs(os.path.dirname(dirname))
-    plotdir = dirname + '/plots/'
-    if not os.path.exists(os.path.dirname(plotdir)):
-        os.makedirs(os.path.dirname(plotdir))
-    resdir = dirname + '/results/'
-    if not os.path.exists(os.path.dirname(resdir)):
-        os.makedirs(os.path.dirname(resdir))
-    modeldir = dirname + '/model/'
-    if not os.path.exists(os.path.dirname(modeldir)):
-        os.makedirs(os.path.dirname(modeldir))
-    tbdir = dirname + '/tensorboard-' + prefix + '/'
-    if not os.path.exists(os.path.dirname(tbdir)):
-        os.makedirs(os.path.dirname(tbdir))
-    print("Results saved in " + dirname)
-    return plotdir, resdir, modeldir, tbdir
 
 def read_params(filename='params'):
     with open(filename,'r') as f:
@@ -84,17 +65,21 @@ def _validate(data,labels,folds,model_type,model_params,fit_params,index):
     score = clf.score(Xts,Yts)
     return score
 
-def validate(data,labels,val_size,model_type,model_params,fit_params,folds=5):
+def validate(data,labels,val_size,model_type,model_params,fit_params,folds=5,holdout=True):
     rand_list = np.random.permutation(len(data))
     X = data[rand_list[:val_size]]
     Y = labels[rand_list[:val_size]]
     f = partial(_validate,X,Y,folds,model_type,model_params,fit_params)
-    # with Pool() as p:
-    #     score_list = p.map(f,range(folds))
-    score_list = []
-    for idx in range(folds):
-        score_list.append(f(idx))
-    return sum(score_list) / folds
+    if holdout:
+        score = f(0)
+        return score
+    else:
+        # with Pool() as p:
+        #     score_list = p.map(f,range(folds))
+        score_list = []
+        for idx in range(folds):
+            score_list.append(f(idx))
+        return sum(score_list) / folds
 
 def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     clf = model_type(**model_params)
@@ -106,19 +91,19 @@ def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     score = sum(Ypr == Yts) / len(Yts)
     return score,sparsity,t2-t1,t3-t2
 
-def params_process(model, logGamma, lograte, params, tbdir):
+def params_process(model, logGamma, lograte, params, tbdir, d):
     model_params = {}
     fit_params = {}
     if model == 'NN':
         model_params = {
-            'dim':len(Xtrain[0]),
+            'dim':d,
             'width':params['N'],
             'depth':params['H'],
         }
         model_type = libnn.fullnn
     elif model == 'RF':
         model_params = {
-            'n_old_features':len(Xtrain[0]),
+            'n_old_features':d,
             'n_new_features':params['N'],
             'loss_fn':params['loss_fn'],
             'feature':params['feature'],
@@ -147,13 +132,14 @@ def train_and_test(dataset,model='RF',params='auto',
     else:
         logGamma = params['logGamma']
         lograte = params['lograte']
+    model = params['model']
 
     dirname = '{0:s}-{1:s}-test-N{2:d}-ep{3:d}'.format(dataset,model,params['N'],params['n_epoch'])
     _, resdir, _, tbdir = mkdir(dirname, prefix)
 
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
     model_params, fit_params, model_type = params_process(
-        model, logGamma, lograte, params)
+        model, logGamma, lograte, params, tbdir)
 
     # only write log file for trial 0
     if prefix == '0':
@@ -180,27 +166,14 @@ def train_and_test(dataset,model='RF',params='auto',
     with open(filename,'w') as f:
         f.write(str(finalop))
 
-def screen_params(params,model='RF',prefix='0'):
-    '''
-    params = {
-        'dataset': ,
-        'N': ,
-        'bd': ,
-        'n_epoch': ,
-        'classes': ,
-        'loss_fn': ,
-        'feature': ,
-        'logGamma': ,
-        'lograte': ,
-        'val_size': ,
-        'folds': ,
-        }
-    '''
+def screen_params(params,prefix='0'):
+    model = params['model']
     dataset = params['dataset']
     val_size = params['val_size']
     folds = params['folds']
     task = params['task']
     N = params['N']
+    lograte = params['lograte'][int(prefix)]
     if prefix == '0':
         # only write log file for trial 0
         logfile = log('log/experiments.log','screen params')
@@ -209,181 +182,36 @@ def screen_params(params,model='RF',prefix='0'):
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
     Xtrain,Ytrain,_,_ = read_data(dataset)
-    if model == 'NN':
-        model_params = {
-            'dim':len(Xtrain[0]),
-            'width':params['N'],
-            'depth':params['H'],
-            'classes':params['classes'],
-            'task':task,
-            'gpu':params['gpu']
-        }
-        fit_params = {
-            'opt_method':'adam',
-            'n_epoch':params['n_epoch'],
-            'opt_rate':10.**params['lograte'][int(prefix)],
-        }
-        model_type = libnn.fullnn
-    else:
-        model_params = {
-            'n_old_features':len(Xtrain[0]),
-            'n_new_features':params['N'],
-            'classes':params['classes'],
-            'loss_fn':params['loss_fn'],
-            'feature':params['feature'],
-            'task':task,
-            'gpu':params['gpu']
-        }
-        fit_params = {
-            'opt_method':'adam',
-            'n_epoch':params['n_epoch'],
-            'opt_rate':10.**params['lograte'][int(prefix)],
-            'bd':params['bd']
-        }
-        model_type = librf.RF
+
     results = []
+    dirname = '{0:s}-{1:s}-N{2:d}-screen'.format(dataset,model,N)
     if model == 'RF':
-        Gamma_list = 10. ** params['logGamma']
-        for Gamma in Gamma_list:
+        for logGamma in params['logGamma']:
+            Gamma = 10**logGamma
+            _, resdir, _, tbdir = mkdir(dirname, '{:.1f}-{:.1f}'.format(lograte,logGamma))
+            model_params, fit_params, model_type = params_process(
+                model, logGamma, lograte, params, tbdir, len(Xtrain[0]))
+
             model_params['Gamma'] = Gamma
             score = validate(Xtrain,Ytrain,val_size,model_type,
                 model_params, fit_params, folds)
             results.append({'Gamma':Gamma,'score':score})
     else:
+        logGamma = -100
+        _, resdir, _, tbdir = mkdir(dirname, '{:.1f}-{:.1f}'.format(lograte,logGamma))
+        model_params, fit_params, model_type = params_process(
+            model, logGamma, lograte, params, tbdir, len(Xtrain[0]))
         score = validate(Xtrain,Ytrain,val_size,model_type,
             model_params, fit_params, folds)
-        results.append({'Gamma':-1,'score':score})
-    filename = 'result/{0:s}-{1:d}-screen-{2:s}'.format(dataset,N,prefix)
+        results.append({'Gamma':-100,'score':score})
+    filename = resdir + 'output-' + prefix
     with open(filename,'w') as f:
         f.write(str(results))
 
-# def screen_params_fnn_covtype(val_size=30000,folds=5):
-#     Xtrain = read_data('covtype-train-data.npy')
-#     # Ytrain = read_data('covtype-train-binary-label.npy')
-#     Xtest = read_data('covtype-test-data.npy')
-#     # Ytest = read_data('covtype-test-binary-label.npy')
-#     Ytrain = read_data('covtype-train-label.npy')
-#     Ytest = read_data('covtype-test-label.npy')
-#     rate_list = 10. ** np.arange(-3.,3,0.5) # np.arange(0.8,2.8,0.2)
-#     classes = list(range(1,8)) # list(range(10))
-#     loss_fn = 'log'
-#
-#     prefix = argv[1]
-#     params = {}
-#     params['model'] = {
-#         'dim':len(Xtrain[0]),
-#         'width':20,
-#         'depth':4,
-#         'classes':classes,
-#         'learn_rate':rate_list[int(prefix)]
-#     }
-#     params['fit'] = {
-#         'n_epoch':3,
-#         'batch_size':100
-#     }
-#     model_type = libnn.fullnn
-#     score = validate(Xtrain,Ytrain,val_size,model_type,folds,**params)
-#     filename = 'result/covtype-nn-{0:s}'.format(prefix)
-#     with open(filename,'w') as f:
-#         f.write(str(score))
-#
-# def screen_params_svm_covtype(val_size=30000,folds=5):
-#     Xtrain = read_data('covtype-train-data.npy')
-#     Ytrain = read_data('covtype-train-binary-label.npy')
-#     Xtest = read_data('covtype-test-data.npy')
-#     Ytest = read_data('covtype-test-binary-label.npy')
-#     C_list = 10. ** np.arange(2.,6,1)
-#     gamma = 10. ** 1.5
-#     prefix = argv[1]
-#     params = {}
-#     params['model'] = {
-#         'C':C_list[int(prefix)],
-#         'gamma':gamma
-#     }
-#     params['fit'] = {}
-#     model_type = SVC
-#     score = validate(Xtrain,Ytrain,val_size,model_type,folds,**params)
-#     filename = 'result/covtype-svm-{0:s}'.format(prefix)
-#     with open(filename,'w') as f:
-#         f.write(str(score))
-#
-# def train_test_covtype_nn():
-#     Xtrain = read_data('covtype-train-data.npy')
-#     Ytrain = read_data('covtype-train-binary-label.npy')
-#     Xtest = read_data('covtype-test-data.npy')
-#     Ytest = read_data('covtype-test-binary-label.npy')
-#     # Ytrain = read_data('covtype-train-label.npy')
-#     # Ytest = read_data('covtype-test-label.npy')
-#     rate_list = 10. ** np.arange(-3.,3,0.5) # np.arange(0.8,2.8,0.2)
-#     classes = [0.,1.] # list(range(1,8))
-#     loss_fn = 'log'
-#     modelparams = {
-#         'dim':len(Xtrain[0]),
-#         'width':50,
-#         'depth':5,
-#         'classes':classes,
-#         'learn_rate':rate_list[0]
-#     }
-#     fitparams = {
-#         'n_epoch':5,
-#         'batch_size':100
-#     }
-#     model_type = libnn.fullnn
-#     clf = model_type(**modelparams)
-#     clf.fit(Xtrain,Ytrain,**fitparams)
-#     score = clf.score(Xtest,Ytest)
-#     print(score)
-#
-# def plot_clf_boundary(samplesize=500):
-#     import matplotlib.pyplot as plt
-#     Xtrain = read_data('checkboard-train-data.npy')[:samplesize]
-#     N = 200 # 10000
-#     bd = 1000 # 100000
-#     n_epoch = 5
-#     Gamma = 10.
-#     classes = [0.,1.]
-#     loss_fn = 'hinge'
-#     params = {}
-#     feature = 'Gaussian'
-#     params['model'] = {
-#         'feature':feature,
-#         'n_old_features':len(Xtrain[0]),
-#         'n_new_features':N,
-#         'classes':classes,
-#         'loss_fn':loss_fn
-#     }
-#     model_type = librf.RF
-#     params['model']['Gamma'] = Gamma
-#     clf = model_type(**params['model'])
-#     Ypred,_,_ = clf.predict(Xtrain)
-#     c = []
-#     for idx in range(samplesize):
-#         if Ypred[idx] == 0:
-#             c.append('r')
-#         else:
-#             c.append('b')
-#     fig = plt.figure()
-#     plt.scatter(Xtrain[:,0],Xtrain[:,1],s=0.5,c=c)
-#     plt.show()
-#     feature = 'ReLU'
-#     params['model']['feature'] = feature
-#     clf = model_type(**params['model'])
-#     Ypred,_,_ = clf.predict(Xtrain)
-#     c = []
-#     for idx in range(samplesize):
-#         if Ypred[idx] == 0:
-#             c.append('r')
-#         else:
-#             c.append('b')
-#     fig = plt.figure()
-#     plt.scatter(Xtrain[:,0],Xtrain[:,1],s=0.5,c=c)
-#     plt.show()
-
-def N_selecting(dataset, N, model='RF', prefix='0'):
+def N_selecting(dataset, N, prefix='0'):
     params = read_params(dataset)
     params['N'] = N
-    screen_params(params, model, prefix)
-    # train_and_test('checkboard','Gaussian')
+    screen_params(params, prefix)
 
 if __name__ == '__main__':
     ## parse command line arguments
@@ -396,8 +224,6 @@ if __name__ == '__main__':
             type=str, help='file name of params')
     parser.add_argument('--seed', default=0, type=int,
             help='random seed')
-    parser.add_argument('--model', default='RF', type=str,
-            help='RF or NN')
     args = parser.parse_args()
     np.random.seed(args.seed)
-    N_selecting(args.file, args.N, args.model, args.trial)
+    N_selecting(args.file, args.N, args.trial)

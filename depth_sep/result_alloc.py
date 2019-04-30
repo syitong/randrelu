@@ -1,4 +1,5 @@
 import numpy as np
+from lib.utils import mkdir
 from numpy import array
 import argparse
 
@@ -9,11 +10,13 @@ def read_params(filename='params'):
 
 def screen_params_alloc(params):
     dataset = params['dataset']
-    feature = params['feature']
+    model = params['model']
     lograte = params['lograte']
     logGamma = params['logGamma']
     N = params['N']
-    filename = 'result/{0:s}-{1:d}-screen-'.format(dataset,N)
+    dirname = '{0:s}-{1:s}-N{2:d}-screen'.format(dataset,model,N)
+    _, resdir, _, _ = mkdir(dirname)
+    filename = resdir + 'output-'
     row = ['log(rate)\log(Gamma)']
     row.extend(logGamma)
     output = [row]
@@ -35,7 +38,6 @@ def screen_params_alloc(params):
 
 def screen_params_append(params):
     dataset = params['dataset']
-    feature = params['feature']
     lograte = params['lograte']
     logGamma = params['logGamma']
     N = params['N']
@@ -89,6 +91,6 @@ if __name__ == '__main__':
     parser.add_argument('--file', default='eldan-params',
             type=str, help='file name of params')
     args = parser.parse_args()
-    params = read_params('eldan-params')
+    params = read_params(args.file)
     params['N'] = args.N
     screen_params_alloc(params)

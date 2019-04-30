@@ -5,6 +5,7 @@
     'n_epoch': 100,
     'classes': [-1.,0.,1.],
     'loss_fn': 'log',
+    'model': 'RF',
     'feature': 'ReLU',
     'logGamma': np.arange(-5.,0,0.5),
     'lograte': np.arange(-4.,0,0.5),
