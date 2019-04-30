@@ -202,10 +202,10 @@ class RF:
         np_init = np.random.choice([-1,1],size=(N,n_outputs))
         logits_init = tf.constant_initializer(np_init,dtype=tf.float32)
         logits = tf.layers.dense(inputs=x,
-            # use_bias = False,
+            use_bias = False,
             kernel_regularizer=tf.contrib.layers.l2_regularizer(scale=
                 self._Lambda),
-            # kernel_initializer=logits_init,
+            kernel_initializer=logits_init,
             units=n_outputs,name='Logits')
         tf.summary.histogram('outer weights',
             self._graph.get_tensor_by_name('Logits/kernel:0'))
