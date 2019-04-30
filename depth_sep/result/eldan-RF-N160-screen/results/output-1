@@ -1,1 +1,1 @@
-[{'Gamma': 0.0001, 'score': 0.445}, {'Gamma': 0.01, 'score': 0.459}, {'Gamma': 1.0, 'score': 0.45975}]
+[{'score': 0.445, 'Gamma': 0.0001}, {'score': 0.459, 'Gamma': 0.01}, {'score': 0.45975, 'Gamma': 1.0}]

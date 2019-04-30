@@ -3342,3 +3342,174 @@ N = 5120
 classes = [-1.0, 0.0, 1.0]
 n_epoch = 100
 
+screen params
+2019-04-30 16:41:12.860467
+trials = 8
+n_epoch = 100
+N = 20
+task = classification
+val_size = 20000
+loss_fn = log
+dataset = eldan
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+model = RF
+logGamma = [-4. -2.  0.]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+mode = layer 2
+feature = ReLU
+folds = 5
+
+screen params
+2019-04-30 16:41:49.972741
+classes = [-1.0, 0.0, 1.0]
+model = RF
+N = 40
+n_epoch = 100
+val_size = 20000
+mode = layer 2
+dataset = eldan
+folds = 5
+trials = 8
+gpu = 0
+loss_fn = log
+task = classification
+bd = 100000
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-4. -2.  0.]
+
+screen params
+2019-04-30 16:42:24.003209
+val_size = 20000
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+trials = 8
+loss_fn = log
+model = RF
+mode = layer 2
+logGamma = [-4. -2.  0.]
+N = 80
+n_epoch = 100
+task = classification
+bd = 100000
+feature = ReLU
+dataset = eldan
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-04-30 16:43:00.121409
+N = 160
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+loss_fn = log
+logGamma = [-4. -2.  0.]
+n_epoch = 100
+model = RF
+feature = ReLU
+trials = 8
+gpu = 0
+bd = 100000
+task = classification
+dataset = eldan
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+mode = layer 2
+
+screen params
+2019-04-30 16:43:38.827026
+bd = 100000
+loss_fn = log
+mode = layer 2
+folds = 5
+val_size = 20000
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 8
+N = 320
+logGamma = [-4. -2.  0.]
+feature = ReLU
+model = RF
+classes = [-1.0, 0.0, 1.0]
+dataset = eldan
+task = classification
+gpu = 0
+
+screen params
+2019-04-30 16:44:25.060532
+task = classification
+trials = 8
+dataset = eldan
+gpu = 0
+n_epoch = 100
+loss_fn = log
+classes = [-1.0, 0.0, 1.0]
+logGamma = [-4. -2.  0.]
+feature = ReLU
+folds = 5
+bd = 100000
+model = RF
+mode = layer 2
+val_size = 20000
+N = 640
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-04-30 16:45:28.508119
+dataset = eldan
+loss_fn = log
+bd = 100000
+mode = layer 2
+logGamma = [-4. -2.  0.]
+gpu = 0
+model = RF
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+task = classification
+folds = 5
+n_epoch = 100
+classes = [-1.0, 0.0, 1.0]
+N = 1280
+trials = 8
+feature = ReLU
+
+screen params
+2019-04-30 16:47:00.316972
+loss_fn = log
+classes = [-1.0, 0.0, 1.0]
+val_size = 20000
+N = 2560
+task = classification
+logGamma = [-4. -2.  0.]
+gpu = 0
+dataset = eldan
+folds = 5
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+trials = 8
+bd = 100000
+model = RF
+mode = layer 2
+
+screen params
+2019-04-30 16:49:34.007374
+feature = ReLU
+N = 5120
+classes = [-1.0, 0.0, 1.0]
+loss_fn = log
+model = RF
+val_size = 20000
+mode = layer 2
+bd = 100000
+logGamma = [-4. -2.  0.]
+task = classification
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+trials = 8
+folds = 5
+dataset = eldan
+
