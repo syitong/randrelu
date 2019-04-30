@@ -110,7 +110,7 @@ def params_process(model, logGamma, lograte, params, tbdir, d):
             'Gamma':10. ** logGamma
         }
         fit_params = {
-            'bd':params['bd']
+            'bd':params['bd'],
         }
         model_type = librf.RF
     fit_params['n_epoch'] = params['n_epoch']
@@ -208,16 +208,35 @@ def screen_params(params,prefix='0'):
     with open(filename,'w') as f:
         f.write(str(results))
 
-def N_selecting(dataset, N, prefix='0'):
-    params = read_params(dataset)
+def N_selecting(paramsfile, N, prefix='0'):
+    params = read_params(paramsfile)
     params['N'] = N
     screen_params(params, prefix)
+
+def N_testing(dataset, model, N, H, prefix='0'):
+    if model == 'NN':
+        root = '.result/' + dataset + '-NN-H' + str(H) + '/'
+        dir = root + dataset + '-NN-N' + str(N) + '-screen/'
+        paramsfile = dir + 'results/output-alloc'
+    elif model == 'RF':
+        root = '.result/'
+        dir = root + dataset + '-RF-N' + str(N) + '-screen/'
+        paramsfile = dir + 'results/output-alloc'
+
+    train_and_test(dataset,model,params=paramsfile,
+    prefix)
 
 if __name__ == '__main__':
     ## parse command line arguments
     parser = argparse.ArgumentParser(description="parse args")
+    parser.add_argument('--dataset', default='eldan', type=str,
+            help='name of dataset')
+    parser.add_argument('--model', default='NN', type=str,
+            help='type of model')
     parser.add_argument('--N', default=20, type=int,
             help='width of layer')
+    parser.add_argument('--H', default=2, type=int,
+            help='depth of net')
     parser.add_argument('--trial', default=0, type=str,
             help='index of learning rate')
     parser.add_argument('--file', default='eldan-params',
@@ -227,3 +246,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     np.random.seed(args.seed)
     N_selecting(args.file, args.N, args.trial)
+    # N_testing(args.dataset,args.model,args.N,args.H,args.trial)

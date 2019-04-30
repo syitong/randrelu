@@ -133,7 +133,7 @@ class RF:
     """
     def __init__(self,feature,n_old_features,
         n_new_features,classes,tbdir,Lambda=0.,Gamma=1.,
-        loss_fn='log',log=False,initializer=None,
+        loss_fn='log',log=True,initializer=None,
         task='classification',gpu=-1):
         # Use the times of calls of class as random seed
         tf.set_random_seed(type(self).counter)
@@ -202,7 +202,7 @@ class RF:
         np_init = np.random.choice([-1,1],size=(N,n_outputs))
         logits_init = tf.constant_initializer(np_init,dtype=tf.float32)
         logits = tf.layers.dense(inputs=x,
-            use_bias = False,
+            # use_bias = False,
             kernel_regularizer=tf.contrib.layers.l2_regularizer(scale=
                 self._Lambda),
             kernel_initializer=logits_init,
@@ -270,12 +270,12 @@ class RF:
                     "indices": indices,
                     "probabilities": probab,
                     "feature_vec": self._RF_layer}
-            train_err = tf.reduce_mean(tf.equal(y,indices))
+            tmp = tf.cast(tf.equal(y,indices), dtype=tf.float32)
+            train_err = tf.reduce_mean(tmp)
             tf.summary.scalar('train err', train_err)
 
             self._merged = tf.summary.merge_all()
-            self._train_writer = tf.summary.FileWriter(self._tbdir,
-                tf.get_default_graph())
+            self._train_writer = tf.summary.FileWriter(self._tbdir)
             self._sess.run(tf.global_variables_initializer())
         return 1
 
@@ -331,7 +331,6 @@ class RF:
             loss = self._reg_loss
             global_step_1 = self._graph.get_tensor_by_name('global1:0')
             global_step_2 = self._graph.get_tensor_by_name('global2:0')
-            merged = tf.get_collection('Summary')[0]
             if opt_method == 'adam':
                 optimizer = tf.train.AdamOptimizer(learning_rate=opt_rate)
             elif opt_method == 'sgd':
@@ -365,11 +364,11 @@ class RF:
                 batch_indices = rand_indices[jdx*batch_size:(jdx+1)*batch_size]
                 feed_dict = {'features:0':data[batch_indices,:],
                              'labels:0':indices[batch_indices]}
-                if jdx % 10 == 1:
-                    print('RF, N: {1:d}, epoch: {2:d}, iter: {0:d}'.format(
-                        jdx, self._N,idx))
+                if jdx % 100 == 1:
+                    print('RF: {2:d}, epoch: {1:d}, iter: {0:d}'.format(
+                        self._total_iter, idx, self._N))
                     if self.log:
-                        summary = self._sess.run(merged, feed_dict)
+                        summary = self._sess.run(self._merged, feed_dict)
                         self._train_writer.add_summary(summary,self._total_iter)
                 self._sess.run(train_op,feed_dict)
                 if mode == 'layer 2' and self._Lambda == 0:
