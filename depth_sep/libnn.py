@@ -11,7 +11,7 @@ class fullnn:
     The nonlinear node simply use ReLU.
     """
     def __init__(self,dim,width,depth,classes,
-            task='classification',gpu=-1):
+            tbdir,task='classification',gpu=-1):
         # Use the times of calls of class as random seed
         tf.set_random_seed(type(self).counter)
         type(self).counter += 1
@@ -24,6 +24,7 @@ class fullnn:
         self._n_classes = len(classes)
         self._total_iter = 0
         self._total_epoch = 0
+        self._tbdir = tbdir
         if gpu >= 0:
             with tf.device('/gpu:'+str(gpu)):
                 self._graph = tf.Graph()
@@ -78,43 +79,44 @@ class fullnn:
                 # use_bias=False,
                 kernel_initializer=initializer,
                 name='Logits')
-                probabs = tf.nn.softmax(logits)
-                tf.add_to_collection("Output",probabs)
+                self._probabs = tf.nn.softmax(logits)
             elif self._task == 'regression':
                 logits = tf.layers.dense(inputs=hl,units=1,
                         use_bias=False,
                         kernel_initializer=initializer,
                         name='Logits')
                 logits = tf.reshape(logits,shape=[-1])
-            tf.add_to_collection("Output",logits)
             if self._task == 'classification':
                 onehot_labels = tf.one_hot(indices=y,depth=self._n_classes)
-                log_loss = tf.losses.softmax_cross_entropy(
+                self._tf_loss = tf.losses.softmax_cross_entropy(
                     onehot_labels=onehot_labels,logits=logits
                 )
-                tf.add_to_collection('Loss',log_loss)
             elif self._task == 'regression':
-                loss = tf.losses.mean_squared_error(labels=y,
+                self._tf_loss = tf.losses.mean_squared_error(labels=y,
                     predictions=logits)
-                tf.add_to_collection('Loss',loss)
+
+            if self._task == 'classification':
+                indices = tf.argmax(input=logits,axis=1)
+                self._predictions = {
+                    'indices':indices,
+                    'probabilities':probabs
+                }
+                train_err = tf.reduce_mean(tf.equal(y,indices))
+            elif self._task == 'regression':
+                self._predictions = {
+                    'labels':logits
+                }
+                train_err = loss
+            tf.summary.scalar('train err',train_err)
+            self._merged = tf.summary.merge_all()
+            self._train_writer = tf.summary.FileWriter(self._tbdir)
             self._sess.run(tf.global_variables_initializer())
 
     def predict(self,data,batch_size=50):
-        with self._graph.as_default():
-            if self._task == 'classification':
-                logits,probabs = tf.get_collection('Output')
-                predictions = {
-                    'indices':tf.argmax(input=logits,axis=1),
-                    'probabilities':probabs
-                }
-            elif self._task == 'regression':
-                logits = tf.get_collection('Output')[0]
-                predictions = {
-                    'labels':logits
-                }
         classes = []
         probabilities = []
         idx = 0
+        predictions = self._predictions
         while idx < len(data):
             t = idx + batch_size
             batch = data[idx:t,:]
@@ -127,7 +129,9 @@ class fullnn:
                 probabilities.extend(results['probabilities'])
             elif self._task == 'regression':
                 classes.extend(results['labels'])
-        return classes,probabilities
+        # Dummy result
+        sparsity = 0.
+        return classes,probabilities,sparsity
 
     def score(self,data,labels):
         predictions,_ = self.predict(data)
@@ -143,7 +147,7 @@ class fullnn:
     def fit(self,data,labels,opt_rate=1.,opt_method='sgd',batch_size=200,n_epoch=5):
         self._learn_rate = opt_rate
         with self._graph.as_default():
-            loss = tf.get_collection('Loss')[0]
+            loss = self._tf_loss
             if self._task == 'classification':
                 label_idx = [self._classes.index(label) for label in labels]
                 label_idx = np.array(label_idx)
@@ -166,8 +170,11 @@ class fullnn:
                     'labels:0':label_idx[batch_indices]
                 }
                 if jdx % 100 == 1:
-                    print('epoch: {2:d}, iter: {0:d}, loss: {1:.4f}'.format(
-                        self.total_iter, self._sess.run(loss,feed_dict), self.total_epoch))
+                    print('NN: {2:d}, epoch: {1:d}, iter: {0:d}'.format(
+                        self.total_iter, self.total_epoch,
+                        self._width))
+                    summary = self._sess.run(self._merged,feed_dict)
+                    self._train_writer.add_summary(summary, self._total_iter)
                 self._sess.run(train_op,feed_dict)
                 self._total_iter += 1
             self._total_epoch += 1

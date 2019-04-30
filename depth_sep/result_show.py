@@ -21,7 +21,7 @@ import argparse
 #             urfsvm[prefix-1,:] = np.loadtxt(
 #                 'result/covtype_{0:s}{2:s}{1:s}'.format(
 #                     'ReLU',str(prefix),'layer 2'))[:,idx]
-# 
+#
 #         orfmean = np.mean(orfsvm,axis=0)
 #         urfmean = np.mean(urfsvm,axis=0)
 #         orfstd = np.std(orfsvm,axis=0)
@@ -74,9 +74,8 @@ def plot_params(dataset):
     plt.savefig('image/{}-gamma.eps'.format(dataset))
     plt.close(fig)
 
-def print_params(dataset,N):
-    filename = 'result/{0:s}-{1:d}-screen-'.format(dataset,N)
-    with open(filename+'alloc','r') as f:
+def print_params(filename):
+    with open(filename,'r') as f:
         result, params = eval(f.read())
     for row in result:
         if type(row[0]) == str:

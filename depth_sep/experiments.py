@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import librf
 import libnn
 import time
@@ -12,6 +13,26 @@ from functools import partial
 from result_show import print_params
 from sklearn.svm import SVC
 DATA_PATH = 'data/'
+
+def mkdir(name, prefix):
+    root_dir = './result/'
+    dirname = root_dir + name
+    if not os.path.exists(os.path.dirname(dirname)):
+        os.makedirs(os.path.dirname(dirname))
+    plotdir = dirname + '/plots/'
+    if not os.path.exists(os.path.dirname(plotdir)):
+        os.makedirs(os.path.dirname(plotdir))
+    resdir = dirname + '/results/'
+    if not os.path.exists(os.path.dirname(resdir)):
+        os.makedirs(os.path.dirname(resdir))
+    modeldir = dirname + '/model/'
+    if not os.path.exists(os.path.dirname(modeldir)):
+        os.makedirs(os.path.dirname(modeldir))
+    tbdir = dirname + '/tensorboard-' + prefix + '/'
+    if not os.path.exists(os.path.dirname(tbdir)):
+        os.makedirs(os.path.dirname(tbdir))
+    print("Results saved in " + dirname)
+    return plotdir, resdir, modeldir, tbdir
 
 def read_params(filename='params'):
     with open(filename,'r') as f:
@@ -64,7 +85,6 @@ def _validate(data,labels,folds,model_type,model_params,fit_params,index):
     return score
 
 def validate(data,labels,val_size,model_type,model_params,fit_params,folds=5):
-    # set up timer and progress tracker
     rand_list = np.random.permutation(len(data))
     X = data[rand_list[:val_size]]
     Y = labels[rand_list[:val_size]]
@@ -86,57 +106,57 @@ def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     score = sum(Ypr == Yts) / len(Yts)
     return score,sparsity,t2-t1,t3-t2
 
-def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
-    '''
-    params = {
-        'dataset': ,
-        'N': ,
-        'bd': ,
-        'n_epoch': ,
-        'classes': ,
-        'loss_fn': ,
-        'feature': ,
-        }
-    '''
-    if params == 'auto':
-        logGamma,lograte,params = print_params(dataset,feature)
-    Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
+def params_process(model, logGamma, lograte, params, tbdir):
+    model_params = {}
+    fit_params = {}
     if model == 'NN':
         model_params = {
             'dim':len(Xtrain[0]),
             'width':params['N'],
             'depth':params['H'],
-            'classes':params['classes'],
-            'task':task,
-            'gpu':params['gpu']
-        }
-        fit_params = {
-            'opt_method':'adam',
-            'n_epoch':params['n_epoch'],
-            'opt_rate':10.**params['lograte'][int(prefix)],
         }
         model_type = libnn.fullnn
     elif model == 'RF':
         model_params = {
             'n_old_features':len(Xtrain[0]),
             'n_new_features':params['N'],
-            'classes':params['classes'],
             'loss_fn':params['loss_fn'],
             'feature':params['feature'],
-            'task':task,
-            'gpu':params['gpu']
+            'Gamma':10. ** logGamma
         }
         fit_params = {
-            'opt_method':'adam',
-            'n_epoch':params['n_epoch'],
-            'opt_rate':10.**params['lograte'][int(prefix)],
             'bd':params['bd']
         }
         model_type = librf.RF
-        model_params['Gamma'] = 10. ** logGamma
+    fit_params['n_epoch'] = params['n_epoch']
     fit_params['opt_rate'] = 10. ** lograte
+    fit_params['opt_method'] = 'adam'
+    model_params['tbdir'] = tbdir
+    model_params['classes'] = params['classes']
+    model_params['task'] = params['task']
+    model_params['gpu'] = params['gpu']
+    return model_params, fit_params, model_type
+
+def train_and_test(dataset,model='RF',params='auto',
+    prefix='0'):
+    # If params is a string, treat it as the allocated
+    # params screen results. And choose the best params
+    # config.
+    if type(params) == 'str':
+        logGamma,lograte,params = print_params(params)
+    else:
+        logGamma = params['logGamma']
+        lograte = params['lograte']
+
+    dirname = '{0:s}-{1:s}-test-N{2:d}-ep{3:d}'.format(dataset,model,params['N'],params['n_epoch'])
+    _, resdir, _, tbdir = mkdir(dirname, prefix)
+
+    Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
+    model_params, fit_params, model_type = params_process(
+        model, logGamma, lograte, params)
+
+    # only write log file for trial 0
     if prefix == '0':
-        # only write log file for trial 0
         logfile = log('log/experiments.log','train and test')
         logfile.record(str(datetime.now()))
         logfile.record('{0} = {1}'.format('dataset',dataset))
@@ -145,16 +165,18 @@ def train_and_test(dataset,feature,model='RF',params='auto',prefix='0'):
         for key,val in fit_params.items():
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
+
     score1,sparsity1,traintime1,testtime1 = _train_and_test(Xtrain,
-        Ytrain,Xtest,Ytest,model_type,model_params,fit_params)
+        Ytrain,Xtest,Ytest,model_type,model_params,fit_params
+        )
     output = {
             'accuracy':score1,
             'sparsity':sparsity1,
             'traintime':traintime1,
             'testtime':testtime1
         }
-    filename = 'result/{0:s}-{1:s}-test-{2:s}'.format(dataset,feature,prefix)
     finalop = [output,dataset,model_params,fit_params]
+    filename = resdir + 'output-' + prefix
     with open(filename,'w') as f:
         f.write(str(finalop))
 

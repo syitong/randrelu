@@ -132,7 +132,7 @@ class RF:
     respectively. Layerwise training can be applied.
     """
     def __init__(self,feature,n_old_features,
-        n_new_features,classes,Lambda=0.,Gamma=1.,
+        n_new_features,classes,tbdir,Lambda=0.,Gamma=1.,
         loss_fn='log',log=False,initializer=None,
         task='classification',gpu=-1):
         # Use the times of calls of class as random seed
@@ -150,6 +150,7 @@ class RF:
         self._task = task
         self.log = log
         self._total_iter = 0
+        self._tbdir = tbdir
         if gpu >= 0:
             with tf.device('/gpu:'+str(gpu)):
                 self._graph = tf.Graph()
@@ -191,11 +192,10 @@ class RF:
             bias_initializer=b_initializer,
             activation=activation_node,
             name='RF')
-        RF_layer = tf.div(trans_layer,tf.sqrt(N*1.0))
-        tf.add_to_collection('Hidden',RF_layer)
+        self._RF_layer = tf.div(trans_layer,tf.sqrt(N*1.0))
         tf.summary.histogram('inner weights',
             self._graph.get_tensor_by_name('RF/kernel:0'))
-        return RF_layer
+        return self._RF_layer
 
     def _output_layer(self,x,n_outputs):
         N = self._N
@@ -230,54 +230,57 @@ class RF:
                 shape=[None],name='labels')
             RF_layer = self._feature_layer(x)
             if self._task == 'classification':
-                if self._loss_fn in ('hinge','squared'):
+                if self._loss_fn in ('hinge'):
                     if n_classes == 2:
                         logits = self._output_layer(RF_layer,1)
                         logits = tf.reshape(logits,shape=[-1])
                     else:
-                        print("hinge or squared loss only works for binary classification.")
+                        print("hinge loss only works for binary classification.")
                         return 0
                 elif self._loss_fn == 'log':
                     logits = self._output_layer(RF_layer,n_classes)
                     probab = tf.nn.softmax(logits, name="softmax")
-                    tf.add_to_collection("Output",probab)
             elif self._task == 'regression':
                 logits = self._output_layer(RF_layer,1)
                 logits = tf.reshape(logits,shape=[-1])
 
-            tf.add_to_collection("Output",logits)
+            # Add the regularizer in the output layer,
+            # controlled by Lambda.
             regularizer = tf.losses.get_regularization_loss(scope='Logits')
+            # Internally the {0,1} labels are converted to {-1,1}
             if self._loss_fn == 'hinge':
-                reg_loss = tf.losses.hinge_loss(labels=y,
+                self._reg_loss = tf.losses.hinge_loss(labels=y,
                     logits=logits) + regularizer
             elif self._loss_fn == 'squared':
-                reg_loss = tf.losses.mean_squared_error(labels=y,
+                self._reg_loss = tf.losses.mean_squared_error(labels=y,
                     predictions=logits) + regularizer
             elif self._loss_fn == 'log':
                 onehot_labels = tf.one_hot(indices=y, depth=n_classes)
                 loss_log = tf.losses.softmax_cross_entropy(
                     onehot_labels=onehot_labels, logits=logits)
-                reg_loss = loss_log + regularizer
-            tf.add_to_collection('Output',reg_loss)
+                self._reg_loss = loss_log + regularizer
 
-            merged = tf.summary.merge_all()
-            tf.add_to_collection('Summary',merged)
+            if self._loss_fn in ('hinge'):
+                self._predictions = {"indices": logits,
+                    "feature_vec": self._RF_layer}
+                indices = tf.greater(logits, 0)
+            elif self._loss_fn == 'log':
+                indices = tf.argmax(input=logits,axis=1)
+                self._predictions = {
+                    "indices": ,
+                    "probabilities": probab,
+                    "feature_vec": self._RF_layer}
+            train_err = tf.reduce_mean(tf.equal(y,indices))
+            tf.summary.scalar('train err', train_err)
+
+            self._merged = tf.summary.merge_all()
+            self._train_writer = tf.summary.FileWriter(self._tbdir,
+                tf.get_default_graph())
             self._sess.run(tf.global_variables_initializer())
         return 1
 
     def predict(self,data,batch_size=50):
-        with self._graph.as_default():
-            f_vec = tf.get_collection('Hidden')[0]
-            if self._loss_fn in ('hinge','squared'):
-                logits = tf.get_collection('Output')[0]
-                predictions = {"indices": logits,
-                    "feature_vec": f_vec}
-            elif self._loss_fn == 'log':
-                probab,logits,_ = tf.get_collection('Output')
-                predictions = {
-                    "indices": tf.argmax(input=logits,axis=1),
-                    "probabilities": probab,
-                    "feature_vec": f_vec}
+        predictions = self._predictions
         classes = []
         probabilities = []
         sparsity = 0
@@ -325,7 +328,7 @@ class RF:
                 'RF')
             out_weights = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
                 'Logits')
-            loss = tf.get_collection('Output')[-1]
+            loss = self._reg_loss
             global_step_1 = self._graph.get_tensor_by_name('global1:0')
             global_step_2 = self._graph.get_tensor_by_name('global2:0')
             merged = tf.get_collection('Summary')[0]
@@ -356,9 +359,6 @@ class RF:
 
             # initialize global variables in optimizer
             self._sess.run(tf.global_variables_initializer())
-        if self.log:
-            self._train_writer = tf.summary.FileWriter('tmp',
-                tf.get_default_graph())
         for idx in range(n_epoch):
             rand_indices = np.random.permutation(len(data)) - 1
             for jdx in range(len(data)//batch_size):
@@ -366,10 +366,10 @@ class RF:
                 feed_dict = {'features:0':data[batch_indices,:],
                              'labels:0':indices[batch_indices]}
                 if jdx % 10 == 1:
-                    print('epoch: {2:d}, iter: {0:d}, loss: {1:.4f}'.format(
-                        jdx, self._sess.run(loss,feed_dict),idx))
+                    print('RF, N: {1:d}, epoch: {2:d}, iter: {0:d}'.format(
+                        jdx, self._N,idx))
                     if self.log:
-                        summary = self._sess.run(merged)
+                        summary = self._sess.run(merged, feed_dict)
                         self._train_writer.add_summary(summary,self._total_iter)
                 self._sess.run(train_op,feed_dict)
                 if mode == 'layer 2' and self._Lambda == 0:
