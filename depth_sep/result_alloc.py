@@ -101,8 +101,8 @@ if __name__ == '__main__':
     parser.add_argument('--file', default='eldan-params',
             type=str, help='file name of params')
     args = parser.parse_args()
-    # params = read_params(args.file)
-    # params['N'] = args.N
-    # screen_params_alloc(params)
-    train_and_test_alloc(args.dataset,args.model,args.N,
-        args.n_epoch,args.trials)
+    params = read_params(args.file)
+    params['N'] = args.N
+    screen_params_alloc(params)
+    # train_and_test_alloc(args.dataset,args.model,args.N,
+    #    args.n_epoch,args.trials)

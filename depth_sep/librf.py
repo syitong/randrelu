@@ -205,7 +205,7 @@ class RF:
             # use_bias = False,
             kernel_regularizer=tf.contrib.layers.l2_regularizer(scale=
                 self._Lambda),
-            kernel_initializer=logits_init,
+            # kernel_initializer=logits_init,
             units=n_outputs,name='Logits')
         tf.summary.histogram('outer weights',
             self._graph.get_tensor_by_name('Logits/kernel:0'))
