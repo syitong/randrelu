@@ -110,7 +110,7 @@ def params_process(model, logGamma, lograte, params, tbdir, d):
             'Gamma':10. ** logGamma
         }
         fit_params = {
-            'bd':params['bd']
+            'bd':params['bd'],
         }
         model_type = librf.RF
     fit_params['n_epoch'] = params['n_epoch']
