@@ -1,1 +1,0 @@
-[[['log(rate)\\log(Gamma)', 0.0], [-3.0, 0.4199]], {'val_size': 20000, 'classes': [-1.0, 0.0, 1.0], 'logGamma': array([0.]), 'lograte': array([-3.]), 'bd': 100000, 'N': 2560, 'dataset': 'eldan', 'feature': 'ReLU', 'gpu': 0, 'loss_fn': 'log', 'folds': 5, 'n_epoch': 100, 'task': 'classification', 'trials': 1}]
