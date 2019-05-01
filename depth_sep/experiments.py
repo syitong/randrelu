@@ -244,5 +244,5 @@ if __name__ == '__main__':
             help='random seed')
     args = parser.parse_args()
     np.random.seed(args.seed)
-    # N_selecting(args.file, args.N, args.trial)
-    N_testing(args.dataset,args.model,args.N,args.H,args.trial)
+    N_selecting(args.file, args.N, args.trial)
+    # N_testing(args.dataset,args.model,args.N,args.H,args.trial)

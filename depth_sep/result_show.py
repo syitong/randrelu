@@ -116,6 +116,46 @@ def print_test_results(filename):
     _dict_print(result)
     _dict_print(model_params)
     _dict_print(fit_params)
+    return result
+
+# For RF, 1-hidden-NN and 2-hidden-NN comparison
+def plot_test_results():
+    rootNN1 = './result/eldan-NN-H1-test/'
+    rootNN2 = './result/eldan-NN-H2-test/'
+    rootRF = './result/eldan-RF-test/'
+    N_list_NN2 = [10,16,24,36,54,78,113,162,231]
+    N_list_RF = N_list_NN1 = [20,40,80,160,320,640,1280,2560,5120]
+    yNN1 = []
+    yerrNN1 = []
+    yNN2 = []
+    yerrNN2 = []
+    yRF = []
+    yerrRF = []
+    for idx in range(9):
+        filename_NN1 = rootNN1 + 'eldan-NN-test-N' + str(N_list_RF[idx]) + '-ep100/results/output-alloc'
+        result = print_test_results(filename_NN1)
+        yNN1 += [result['accuracy']['mean']]
+        yerrNN1 += [result['accuracy']['std']]
+
+        filename_NN2 = rootNN2 + 'eldan-NN-test-N' + str(N_list_NN2[idx]) + '-ep100/results/output-alloc'
+        result = print_test_results(filename_NN2)
+        yNN2 += [result['accuracy']['mean']]
+        yerrNN2 += [result['accuracy']['std']]
+
+        filename_RF = rootRF + 'eldan-RF-test-N' + str(N_list_RF[idx]) + '-ep100/results/output-alloc'
+        result = print_test_results(filename_RF)
+        yRF += [result['accuracy']['mean']]
+        yerrRF += [result['accuracy']['std']]
+
+    plt.title("Performance of Shallow and Deep Models")
+    plt.xlabel('log(# of parameters)')
+    plt.ylabel('accuracy')
+    plt.xticks(range(9))
+    plt.errorbar(range(9),yRF,yerr=yerrRF,fmt='rs--',label='RF',fillstyle='none')
+    plt.errorbar(range(9),yNN1,yerr=yerrNN1,fmt='gx:',label='NN1',fillstyle='none')
+    plt.errorbar(range(9),yNN2,yerr=yerrNN2,fmt='bo-.',label='NN2',fillstyle='none')
+    plt.legend(loc=4)
+    plt.savefig('fig/depth_sep.eps')
 
 if __name__ == '__main__':
     ## parse command line arguments

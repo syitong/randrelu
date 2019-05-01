@@ -26,20 +26,34 @@ if [ -n "$PBS_NODEFILE" ]; then cat $PBS_NODEFILE; fi
 if [ -n "$PBS_O_WORKDIR" ]; then cd $PBS_O_WORKDIR; fi
 
 #  Put your job commands here:
+# Params screen for RF
 # for N in 20 40 80 160 320 640 1280 2560 5120
 # do
 #     python experiments.py --N ${N} --trial ${PBS_ARRAYID} --file eldan-RF-params
 #     wait
 # done
+# Test for RF
 # for N in 20 40 80 160 320 640 1280 2560 5120
 # do
 #     python experiments.py --dataset eldan --model RF --N ${N} --H 1 --trial ${PBS_ARRAYID}
 #     wait
 # done
-for N in 20 40 80 160 320 640 1280 2560 5120
+# Test for NN1
+# for N in 20 40 80 160 320 640 1280 2560 5120
+# do
+#     python experiments.py --dataset eldan --model NN --N ${N} --H 1 --trial ${PBS_ARRAYID}
+#     wait
+# done
+# Params screen for NN2
+for N in 7 11 17 25 37 54 77 110 157
 do
-    python experiments.py --dataset eldan --model NN --N ${N} --H 1 --trial ${PBS_ARRAYID}
+        python experiments.py --N ${N} --trial ${PBS_ARRAYID} --file eldan-NN-params
+        wait
+    python result_alloc.py --file eldan-NN-params --N ${N}
     wait
-    # python result_alloc.py --dataset eldan --model NN --N ${N} --n_epoch 100 --trials 10
-    # wait
+done
+for N in 7 11 17 25 37 54 77 110 157
+do
+    python result_alloc.py --file eldan-NN-params --N ${N}
+    wait
 done
