@@ -1,0 +1,1 @@
+[{'testtime': 0.267994458000004, 'accuracy': 0.5384772727272727, 'traintime': 102.447788883, 'sparsity': 0.0}, 'eldan', {'depth': 1, 'tbdir': './result/eldan-NN-test-N160-ep100/tf/tensorboard-3/', 'task': 'classification', 'dim': 4, 'width': 160, 'classes': [-1, 0, 1], 'gpu': 0}, {'opt_rate': 0.01, 'opt_method': 'adam', 'n_epoch': 100}]

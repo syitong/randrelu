@@ -3854,3 +3854,129 @@ n_epoch = 100
 bd = 100000
 opt_method = adam
 
+train and test
+2019-04-30 20:47:03.518295
+dataset = eldan
+gpu = 0
+task = classification
+classes = [-1, 0, 1]
+dim = 4
+tbdir = ./result/eldan-NN-test-N20-ep100/tf/tensorboard-0/
+depth = 1
+width = 20
+opt_rate = 0.1
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-04-30 20:48:12.408349
+dataset = eldan
+dim = 4
+classes = [-1, 0, 1]
+gpu = 0
+depth = 1
+tbdir = ./result/eldan-NN-test-N40-ep100/tf/tensorboard-0/
+width = 40
+task = classification
+opt_rate = 0.01
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-04-30 20:49:26.701154
+dataset = eldan
+gpu = 0
+classes = [-1, 0, 1]
+task = classification
+width = 80
+tbdir = ./result/eldan-NN-test-N80-ep100/tf/tensorboard-0/
+dim = 4
+depth = 1
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.01
+
+train and test
+2019-04-30 20:50:47.880684
+dataset = eldan
+dim = 4
+tbdir = ./result/eldan-NN-test-N160-ep100/tf/tensorboard-0/
+task = classification
+depth = 1
+classes = [-1, 0, 1]
+width = 160
+gpu = 0
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.01
+
+train and test
+2019-04-30 20:52:40.654267
+dataset = eldan
+tbdir = ./result/eldan-NN-test-N320-ep100/tf/tensorboard-0/
+gpu = 0
+dim = 4
+width = 320
+depth = 1
+classes = [-1, 0, 1]
+task = classification
+opt_rate = 0.0031622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-04-30 20:55:16.866149
+dataset = eldan
+tbdir = ./result/eldan-NN-test-N640-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+width = 640
+depth = 1
+dim = 4
+gpu = 0
+task = classification
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-04-30 20:59:10.518297
+dataset = eldan
+classes = [-1, 0, 1]
+dim = 4
+width = 1280
+gpu = 0
+tbdir = ./result/eldan-NN-test-N1280-ep100/tf/tensorboard-0/
+depth = 1
+task = classification
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-04-30 21:05:42.661878
+dataset = eldan
+tbdir = ./result/eldan-NN-test-N2560-ep100/tf/tensorboard-0/
+depth = 1
+gpu = 0
+width = 2560
+task = classification
+dim = 4
+classes = [-1, 0, 1]
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-04-30 21:18:27.157762
+dataset = eldan
+width = 5120
+task = classification
+gpu = 0
+classes = [-1, 0, 1]
+depth = 1
+dim = 4
+tbdir = ./result/eldan-NN-test-N5120-ep100/tf/tensorboard-0/
+opt_method = adam
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+
