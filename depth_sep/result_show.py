@@ -162,5 +162,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="parse args")
     parser.add_argument('--file', type=str, help='name of result file')
     args = parser.parse_args()
-    # print_params(args.file)
-    print_test_results(args.file)
+    print_params(args.file)
+    # print_test_results(args.file)
