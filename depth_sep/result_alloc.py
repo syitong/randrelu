@@ -103,5 +103,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     params = read_params(args.file)
     params['N'] = args.N
-    screen_params_alloc(params)
-    # train_and_test_alloc(args.dataset,args.model,args.N,args.n_epoch,args.trials)
+    # screen_params_alloc(params)
+    train_and_test_alloc(args.dataset,args.model,args.N,args.n_epoch,args.trials)

@@ -123,7 +123,7 @@ def plot_test_results():
     rootNN1 = './result/eldan-NN-H1-test/'
     rootNN2 = './result/eldan-NN-H2-test/'
     rootRF = './result/eldan-RF-test/'
-    N_list_NN2 = [10,16,24,36,54,78,113,162,231]
+    N_list_NN2 = [7,11,17,25,37,54,77,110,157]
     N_list_RF = N_list_NN1 = [20,40,80,160,320,640,1280,2560,5120]
     yNN1 = []
     yerrNN1 = []
