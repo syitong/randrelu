@@ -3,7 +3,7 @@
     'N': 100,
     'bd': 100000,
     'mode': 'layer 2',
-    'n_epoch': 1,
+    'n_epoch': 100,
     'classes': [-1.,0.,1.],
     'loss_fn': 'squared',
     'model': 'RF',

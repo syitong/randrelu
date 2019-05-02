@@ -4,7 +4,7 @@
     'H': 2,
     'model': 'NN',
     'logGamma': [-100],
-    'n_epoch': 1,
+    'n_epoch': 100,
     'classes': [-1,0,1],
     'lograte': np.arange(-4.,0,0.5),
     'val_size': 20000,
