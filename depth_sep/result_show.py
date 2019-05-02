@@ -91,8 +91,14 @@ def print_params(filename):
         print('')
     F_result = [row[1:] for row in result[1:]]
     F_result = np.array(F_result)
-    x,y = np.unravel_index(np.argmax(F_result),
-        F_result.shape)
+    # Classification task outputs accuracy, while regression task
+    # outputs squared loss.
+    if params['task'] == 'classification':
+        x,y = np.unravel_index(np.argmax(F_result),
+            F_result.shape)
+    elif params['task'] == 'regression':
+        x,y = np.unravel_index(np.argmin(F_result),
+            F_result.shape)
     logGamma = result[0][y+1]
     lograte = result[x+1][0]
     print('best log(Gamma): ',logGamma)
