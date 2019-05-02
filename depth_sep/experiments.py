@@ -13,6 +13,10 @@ from multiprocessing import Pool
 from functools import partial
 from result_show import print_params
 from sklearn.svm import SVC
+import matplotlib as mpl
+mpl.use('agg')
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
 DATA_PATH = 'data/'
 
 def read_params(filename='params'):
@@ -89,7 +93,7 @@ def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     Ypr,_,sparsity = clf.predict(Xts)
     t3 = time.process_time()
     score = clf.score(Xts,Yts,predictions=Ypr)
-    return score,sparsity,t2-t1,t3-t2
+    return score,sparsity,t2-t1,t3-t2,Ypr
 
 def params_process(model, logGamma, lograte, params, tbdir, d):
     model_params = {}
@@ -143,7 +147,7 @@ def train_and_test(dataset,params='auto',
     dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,params['N'],params['n_epoch']
     )
-    _, resdir, _, tbdir = mkdir(dirname, prefix)
+    plotdir, resdir, _, tbdir = mkdir(dirname, prefix)
 
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
     d = len(Xtrain[0])
@@ -162,10 +166,20 @@ def train_and_test(dataset,params='auto',
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
 
-    score,sparsity,traintime,testtime = _train_and_test(
+    score,sparsity,traintime,testtime,Ypr = _train_and_test(
         Xtrain, Ytrain,Xtest,Ytest,model_type, model_params,
         fit_params
         )
+
+    fig = plt.figure()
+    R_sample = np.linalg.norm(Xtest[::10,:],axis=1)
+    sort_idx = np.argsort(R_sample)
+    Ypr = np.array(Ypr)
+    plt.scatter(R_sample[sort_idx],Ypr[::10][sort_idx],c='r')
+    plt.plot(R_sample[sort_idx],Ytest[::10][sort_idx],c='b')
+    plt.title("predicted y")
+    plt.savefig(plotdir+'predict_plot-{}.png'.format(prefix),dpi=300)
+
     output = {
             'accuracy':score,
             'sparsity':sparsity,

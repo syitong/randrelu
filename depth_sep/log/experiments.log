@@ -6132,3 +6132,54 @@ folds = 5
 model = NN
 val_size = 20000
 
+train and test
+2019-05-02 20:09:30.276784
+dataset = eldan-smooth
+n_old_features = 4
+classes = [-1.0, 0.0, 1.0]
+feature = ReLU
+gpu = 0
+loss_fn = squared
+Gamma = 0.001
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N20-ep100/tf/tensorboard-0/
+n_new_features = 20
+task = regression
+bd = 100000
+n_epoch = 100
+opt_rate = 0.03162277660168379
+opt_method = adam
+
+train and test
+2019-05-02 20:11:04.861290
+dataset = eldan-smooth
+gpu = 0
+classes = [-1.0, 0.0, 1.0]
+Gamma = 0.001
+n_old_features = 4
+task = regression
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N20-ep100/tf/tensorboard-0/
+loss_fn = squared
+n_new_features = 20
+feature = ReLU
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.03162277660168379
+bd = 100000
+
+train and test
+2019-05-02 20:20:38.161310
+dataset = eldan-smooth
+classes = [-1.0, 0.0, 1.0]
+n_new_features = 20
+feature = ReLU
+task = regression
+n_old_features = 4
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N20-ep100/tf/tensorboard-0/
+gpu = 0
+Gamma = 0.001
+loss_fn = squared
+bd = 100000
+opt_method = adam
+opt_rate = 0.03162277660168379
+n_epoch = 100
+
