@@ -126,10 +126,10 @@ def print_test_results(filename):
     return result
 
 # For RF, 1-hidden-NN and 2-hidden-NN comparison
-def plot_test_results():
-    rootNN1 = './result/eldan-NN-H1-test/'
-    rootNN2 = './result/eldan-NN-H2-test/'
-    rootRF = './result/eldan-RF-test/'
+def plot_test_results(dataset):
+    rootNN1 = './result/{}-NN-H1-test/'.format(dataset)
+    rootNN2 = './result/{}-NN-H2-test/'.format(dataset)
+    rootRF = './result/{}-RF-test/'.format(dataset)
     N_list_NN2 = [7,11,17,25,37,54,77,110,157]
     N_list_RF = N_list_NN1 = [20,40,80,160,320,640,1280,2560,5120]
     yNN1 = []
@@ -139,17 +139,17 @@ def plot_test_results():
     yRF = []
     yerrRF = []
     for idx in range(9):
-        filename_NN1 = rootNN1 + 'eldan-NN-test-N' + str(N_list_RF[idx]) + '-ep100/results/output-alloc'
+        filename_NN1 = rootNN1 + '{}-NN-N'.format(dataset) + str(N_list_RF[idx]) + '-ep100/results/output-alloc'
         result = print_test_results(filename_NN1)
         yNN1 += [result['accuracy']['mean']]
         yerrNN1 += [result['accuracy']['std']]
 
-        filename_NN2 = rootNN2 + 'eldan-NN-test-N' + str(N_list_NN2[idx]) + '-ep100/results/output-alloc'
+        filename_NN2 = rootNN2 + '{}-NN-N'.format(dataset) + str(N_list_NN2[idx]) + '-ep100/results/output-alloc'
         result = print_test_results(filename_NN2)
         yNN2 += [result['accuracy']['mean']]
         yerrNN2 += [result['accuracy']['std']]
 
-        filename_RF = rootRF + 'eldan-RF-test-N' + str(N_list_RF[idx]) + '-ep100/results/output-alloc'
+        filename_RF = rootRF + '{}-RF-N'.format(dataset) + str(N_list_RF[idx]) + '-ep100/results/output-alloc'
         result = print_test_results(filename_RF)
         yRF += [result['accuracy']['mean']]
         yerrRF += [result['accuracy']['std']]
@@ -162,17 +162,18 @@ def plot_test_results():
     plt.errorbar(range(9),yNN1,yerr=yerrNN1,fmt='gx:',label='NN1',fillstyle='none')
     plt.errorbar(range(9),yNN2,yerr=yerrNN2,fmt='bo-.',label='NN2',fillstyle='none')
     plt.legend(loc=4)
-    plt.savefig('fig/depth_sep.eps')
+    plt.savefig('fig/{}-depth_sep.eps'.format(dataset))
 
 if __name__ == '__main__':
     ## parse command line arguments
     parser = argparse.ArgumentParser(description="parse args")
     parser.add_argument('--file', type=str, help='name of result file')
     parser.add_argument('--action', type=str, help='function to run')
+    parser.add_argument('--dataset', type=str, help='dataset to plot')
     args = parser.parse_args()
     if args.action == 'screen':
         print_params(args.file)
     elif args.action == 'test':
         print_test_results(args.file)
     elif args.action == 'plot':
-        plot_test_results()
+        plot_test_results(args.dataset)
