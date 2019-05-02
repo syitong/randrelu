@@ -45,8 +45,8 @@ def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     # paper
     dom_scale = alpha * np.sqrt(d)
 
-    # Set the minimum gap in radius population for sampling according to pr. 
-    # It guarantees that every piece of target function, g_i, is supported by 
+    # Set the minimum gap in radius population for sampling according to pr.
+    # It guarantees that every piece of target function, g_i, is supported by
     # NSUPP points in the population.
     LBD = 0.2 * dom_scale
     RBD = 0.3 * dom_scale
@@ -70,7 +70,7 @@ def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     #    mass,err))
     plt.hist(R_sample,bins=300,density=True)
     plt.title("Histogram of Radius Density")
-    plt.savefig('fig/hist.png')
+    plt.savefig('fig/hist.eps')
 
     # Generate the uniform direction samples
     A_sample = np.random.randn(sample_size,d)
@@ -93,8 +93,8 @@ def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
                 idx += 1
             else:
                 # In the paper the constant on the denominator is chosen to be
-                # 80. It is related to the support of the target function. 
-                # Here we adjust it according to LBD. 
+                # 80. It is related to the support of the target function.
+                # Here we adjust it according to LBD.
                 criteria = (jr(R_grid[idx:idx + NSUPP]) * R_grid[idx:idx + NSUPP]
                             > 1 / (c_const * np.pi * R(d)))
                 if criteria.all():
@@ -123,27 +123,27 @@ def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     plt.scatter(R_sample[sort_idx[::10]],yg[sort_idx[::10]],c='r')
     plt.plot(R_sample[sort_idx[::10]],y_mol[sort_idx[::10]],c='b')
     plt.title("g and smoothed g")
-    plt.savefig('fig/gplot.png')
+    plt.savefig('fig/gplot.eps')
 
     # Save dataset
     print(x_sample.shape)
-    with open('data/eldan-train-data.npy','bw') as f:
-        np.save(f, x_sample[:int(0.8*len(x_sample))])
-    with open('data/eldan-train-label.npy', 'bw') as f:
-        np.save(f, yg[:int(0.8*len(x_sample))])
-    with open('data/eldan-test-data.npy', 'bw') as f:
-        np.save(f, x_sample[int(0.8*len(x_sample)):])
-    with open('data/eldan-test-label.npy', 'bw') as f:
-        np.save(f, yg[int(0.8*len(x_sample)):])
-
-    with open('data/eldan-smooth-train-data.npy','bw') as f:
-        np.save(f, x_sample[:int(0.8*len(x_sample))])
-    with open('data/eldan-smooth-train-label.npy', 'bw') as f:
-        np.save(f, y_mol[:int(0.8*len(x_sample))])
-    with open('data/eldan-smooth-test-data.npy', 'bw') as f:
-        np.save(f, x_sample[int(0.8*len(x_sample)):])
-    with open('data/eldan-smooth-test-label.npy', 'bw') as f:
-        np.save(f, y_mol[int(0.8*len(x_sample)):])
+    # with open('data/eldan-train-data.npy','bw') as f:
+    #     np.save(f, x_sample[:int(0.8*len(x_sample))])
+    # with open('data/eldan-train-label.npy', 'bw') as f:
+    #     np.save(f, yg[:int(0.8*len(x_sample))])
+    # with open('data/eldan-test-data.npy', 'bw') as f:
+    #     np.save(f, x_sample[int(0.8*len(x_sample)):])
+    # with open('data/eldan-test-label.npy', 'bw') as f:
+    #     np.save(f, yg[int(0.8*len(x_sample)):])
+    #
+    # with open('data/eldan-smooth-train-data.npy','bw') as f:
+    #     np.save(f, x_sample[:int(0.8*len(x_sample))])
+    # with open('data/eldan-smooth-train-label.npy', 'bw') as f:
+    #     np.save(f, y_mol[:int(0.8*len(x_sample))])
+    # with open('data/eldan-smooth-test-data.npy', 'bw') as f:
+    #     np.save(f, x_sample[int(0.8*len(x_sample)):])
+    # with open('data/eldan-smooth-test-label.npy', 'bw') as f:
+    #     np.save(f, y_mol[int(0.8*len(x_sample)):])
 
 if __name__ == '__main__':
     main(N_const=0.01,NSUPP=100000,mol_const=10000)

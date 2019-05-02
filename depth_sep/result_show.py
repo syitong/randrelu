@@ -3,6 +3,7 @@ from numpy import array
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
+plt.style.use('ggplot')
 import argparse
 
 # def plot_learning_rate():
@@ -162,5 +163,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="parse args")
     parser.add_argument('--file', type=str, help='name of result file')
     args = parser.parse_args()
-    print_params(args.file)
+    # print_params(args.file)
     # print_test_results(args.file)
+    plot_test_results()
