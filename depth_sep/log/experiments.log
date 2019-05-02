@@ -5664,3 +5664,471 @@ n_epoch = 100
 opt_method = adam
 opt_rate = 0.001
 
+screen params
+2019-05-02 13:49:51.848104
+classes = [-1.0, 0.0, 1.0]
+val_size = 20000
+H = 2
+task = regression
+dataset = eldan-smooth
+feature = ReLU
+loss_fn = squared
+bd = 100000
+gpu = 0
+model = RF
+N = 20
+trials = 10
+folds = 5
+n_epoch = 100
+mode = layer 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-05-02 13:50:47.177908
+bd = 100000
+n_epoch = 100
+mode = layer 2
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 40
+trials = 10
+task = regression
+H = 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+loss_fn = squared
+dataset = eldan-smooth
+model = RF
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+feature = ReLU
+val_size = 20000
+folds = 5
+
+screen params
+2019-05-02 13:51:35.500276
+loss_fn = squared
+folds = 5
+dataset = eldan-smooth
+task = regression
+mode = layer 2
+H = 2
+N = 80
+trials = 10
+feature = ReLU
+gpu = 0
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+model = RF
+val_size = 20000
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-05-02 13:52:25.288590
+val_size = 20000
+trials = 10
+gpu = 0
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 160
+task = regression
+feature = ReLU
+loss_fn = squared
+classes = [-1.0, 0.0, 1.0]
+mode = layer 2
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+bd = 100000
+n_epoch = 100
+model = RF
+dataset = eldan-smooth
+
+screen params
+2019-05-02 13:53:18.986576
+task = regression
+model = RF
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+bd = 100000
+gpu = 0
+trials = 10
+classes = [-1.0, 0.0, 1.0]
+n_epoch = 100
+feature = ReLU
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+loss_fn = squared
+H = 2
+N = 320
+mode = layer 2
+
+screen params
+2019-05-02 13:54:19.949619
+feature = ReLU
+loss_fn = squared
+mode = layer 2
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+task = regression
+model = RF
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 640
+H = 2
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+trials = 10
+gpu = 0
+val_size = 20000
+dataset = eldan-smooth
+
+screen params
+2019-05-02 13:55:36.654692
+n_epoch = 100
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+model = RF
+gpu = 0
+trials = 10
+loss_fn = squared
+folds = 5
+feature = ReLU
+bd = 100000
+val_size = 20000
+mode = layer 2
+N = 1280
+H = 2
+dataset = eldan-smooth
+task = regression
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-05-02 13:57:21.285790
+trials = 10
+gpu = 0
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 2560
+bd = 100000
+n_epoch = 100
+val_size = 20000
+classes = [-1.0, 0.0, 1.0]
+dataset = eldan-smooth
+loss_fn = squared
+mode = layer 2
+model = RF
+feature = ReLU
+H = 2
+task = regression
+
+screen params
+2019-05-02 14:00:04.804017
+gpu = 0
+task = regression
+trials = 10
+mode = layer 2
+loss_fn = squared
+N = 5120
+classes = [-1.0, 0.0, 1.0]
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+bd = 100000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+val_size = 20000
+n_epoch = 100
+dataset = eldan-smooth
+feature = ReLU
+folds = 5
+model = RF
+
+screen params
+2019-05-02 14:04:51.752447
+H = 2
+logGamma = [-100]
+N = 7
+trials = 10
+n_epoch = 100
+model = NN
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+dataset = eldan-smooth
+task = regression
+classes = [-1, 0, 1]
+folds = 5
+val_size = 20000
+
+screen params
+2019-05-02 14:04:59.876744
+dataset = eldan-smooth
+H = 2
+folds = 5
+task = regression
+logGamma = [-100]
+n_epoch = 100
+val_size = 20000
+gpu = 0
+classes = [-1, 0, 1]
+trials = 10
+N = 11
+model = NN
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-05-02 14:05:08.135233
+classes = [-1, 0, 1]
+logGamma = [-100]
+val_size = 20000
+N = 17
+model = NN
+task = regression
+H = 2
+dataset = eldan-smooth
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+trials = 10
+folds = 5
+n_epoch = 100
+
+screen params
+2019-05-02 14:05:16.593594
+dataset = eldan-smooth
+n_epoch = 100
+H = 2
+val_size = 20000
+task = regression
+logGamma = [-100]
+N = 25
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+classes = [-1, 0, 1]
+trials = 10
+model = NN
+gpu = 0
+
+screen params
+2019-05-02 14:05:25.476710
+task = regression
+trials = 10
+val_size = 20000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+model = NN
+dataset = eldan-smooth
+logGamma = [-100]
+N = 37
+folds = 5
+n_epoch = 100
+H = 2
+classes = [-1, 0, 1]
+
+screen params
+2019-05-02 14:05:35.086264
+model = NN
+folds = 5
+trials = 10
+n_epoch = 100
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-100]
+val_size = 20000
+H = 2
+dataset = eldan-smooth
+gpu = 0
+task = regression
+N = 54
+
+screen params
+2019-05-02 14:05:46.289067
+task = regression
+n_epoch = 100
+N = 77
+model = NN
+logGamma = [-100]
+folds = 5
+trials = 10
+val_size = 20000
+H = 2
+dataset = eldan-smooth
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+classes = [-1, 0, 1]
+
+screen params
+2019-05-02 14:06:01.267702
+task = regression
+val_size = 20000
+dataset = eldan-smooth
+H = 2
+logGamma = [-100]
+classes = [-1, 0, 1]
+gpu = 0
+N = 110
+model = NN
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+folds = 5
+
+screen params
+2019-05-02 14:06:18.260855
+n_epoch = 100
+gpu = 0
+logGamma = [-100]
+val_size = 20000
+folds = 5
+trials = 10
+N = 157
+dataset = eldan-smooth
+model = NN
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+classes = [-1, 0, 1]
+H = 2
+
+screen params
+2019-05-02 14:06:42.525744
+n_epoch = 100
+task = regression
+val_size = 20000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+trials = 10
+dataset = eldan-smooth
+gpu = 0
+H = 1
+N = 20
+model = NN
+logGamma = [-100]
+classes = [-1, 0, 1]
+
+screen params
+2019-05-02 14:06:50.421058
+trials = 10
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+gpu = 0
+n_epoch = 100
+logGamma = [-100]
+model = NN
+H = 1
+classes = [-1, 0, 1]
+N = 40
+dataset = eldan-smooth
+task = regression
+
+screen params
+2019-05-02 14:06:58.778331
+logGamma = [-100]
+gpu = 0
+N = 80
+dataset = eldan-smooth
+H = 1
+n_epoch = 100
+folds = 5
+trials = 10
+model = NN
+val_size = 20000
+task = regression
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-05-02 14:07:08.965626
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+n_epoch = 100
+logGamma = [-100]
+folds = 5
+trials = 10
+gpu = 0
+N = 160
+val_size = 20000
+dataset = eldan-smooth
+classes = [-1, 0, 1]
+model = NN
+H = 1
+
+screen params
+2019-05-02 14:07:18.852561
+classes = [-1, 0, 1]
+val_size = 20000
+gpu = 0
+task = regression
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+trials = 10
+model = NN
+n_epoch = 100
+N = 320
+folds = 5
+logGamma = [-100]
+H = 1
+
+screen params
+2019-05-02 14:07:30.904020
+task = regression
+val_size = 20000
+n_epoch = 100
+dataset = eldan-smooth
+model = NN
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+logGamma = [-100]
+H = 1
+N = 640
+classes = [-1, 0, 1]
+trials = 10
+
+screen params
+2019-05-02 14:07:46.857978
+gpu = 0
+model = NN
+task = regression
+folds = 5
+dataset = eldan-smooth
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1, 0, 1]
+val_size = 20000
+logGamma = [-100]
+H = 1
+n_epoch = 100
+N = 1280
+trials = 10
+
+screen params
+2019-05-02 14:08:13.364994
+task = regression
+n_epoch = 100
+logGamma = [-100]
+folds = 5
+gpu = 0
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+model = NN
+N = 2560
+H = 1
+dataset = eldan-smooth
+val_size = 20000
+
+screen params
+2019-05-02 14:08:58.097953
+logGamma = [-100]
+trials = 10
+H = 1
+task = regression
+n_epoch = 100
+classes = [-1, 0, 1]
+gpu = 0
+N = 5120
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+folds = 5
+model = NN
+val_size = 20000
+
