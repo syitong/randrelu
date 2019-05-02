@@ -42,7 +42,7 @@ do
     #   python experiments.py --action test --N ${N} --trial ${trial} --file eldan-smooth-RF-params
     #   wait
     # done
-    python result_alloc.py --action test --file eldan-smooth-RF-params --N ${N} --H 2
+    python result_alloc.py --action screen --file eldan-smooth-RF-params --N ${N} --H 2
     wait
 done
 
@@ -53,7 +53,7 @@ do
     #   python experiments.py --action test --N ${N} --trial ${trial} --file eldan-smooth-NN-params
     #   wait
     # done
-    python result_alloc.py --action test --file eldan-smooth-NN-params  --N ${N} --H 2
+    python result_alloc.py --action screen --file eldan-smooth-NN-params  --N ${N} --H 2
     wait
 done
 
@@ -64,6 +64,6 @@ do
     #   python experiments.py --action test --N ${N} --trial ${trial} --file eldan-smooth-RF-params
     #   wait
     # done
-    python result_alloc.py --action test --file eldan-smooth-NN-params --N ${N} --H 1
+    python result_alloc.py --action screen --file eldan-smooth-NN-params --N ${N} --H 1
     wait
 done

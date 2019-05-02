@@ -129,8 +129,9 @@ class Fullnn:
         sparsity = 0.
         return classes,probabilities,sparsity
 
-    def score(self,data,labels):
-        predictions,_,_ = self.predict(data)
+    def score(self,data,labels,predictions=None):
+        if predictions == None:
+            predictions,_,_ = self.predict(data)
         s = 0.
         for idx in range(len(data)):
             if self._task == 'classification':

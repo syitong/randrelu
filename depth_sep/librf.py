@@ -311,8 +311,9 @@ class RF:
         sparsity = sparsity / len(data)
         return classes,probabilities,sparsity
 
-    def score(self,data,labels):
-        predictions,_,_ = self.predict(data)
+    def score(self,data,labels,predictions=None):
+        if predictions == None:
+            predictions,_,_ = self.predict(data)
         if self._task == 'classification':
             accuracy = sum(predictions==labels) / len(data)
         elif self._task == 'regression':

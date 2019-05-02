@@ -88,7 +88,7 @@ def _train_and_test(Xtr,Ytr,Xts,Yts,model_type,model_params,fit_params):
     t2 = time.process_time()
     Ypr,_,sparsity = clf.predict(Xts)
     t3 = time.process_time()
-    score = sum(Ypr == Yts) / len(Yts)
+    score = clf.score(Xts,Yts,predictions=Ypr)
     return score,sparsity,t2-t1,t3-t2
 
 def params_process(model, logGamma, lograte, params, tbdir, d):
