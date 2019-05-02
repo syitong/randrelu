@@ -100,7 +100,7 @@ def params_process(model, logGamma, lograte, params, tbdir, d):
             'width':params['N'],
             'depth':params['H'],
         }
-        model_type = libnn.fullnn
+        model_type = libnn.Fullnn
     elif model == 'RF':
         model_params = {
             'n_old_features':d,
@@ -122,7 +122,7 @@ def params_process(model, logGamma, lograte, params, tbdir, d):
     model_params['gpu'] = params['gpu']
     return model_params, fit_params, model_type
 
-def train_and_test(dataset,model='RF',params='auto',
+def train_and_test(dataset,params='auto',
     prefix='0'):
     # If params is a string, treat it as the allocated
     # params screen results. And choose the best params
@@ -134,12 +134,22 @@ def train_and_test(dataset,model='RF',params='auto',
         lograte = params['lograte']
     model = params['model']
 
-    dirname = '{0:s}-{1:s}-test-N{2:d}-ep{3:d}'.format(dataset,model,params['N'],params['n_epoch'])
+    if model == 'NN':
+        root = './result/{0}-NN-H{1}-test/'.format(
+            dataset, params['H']
+        )
+    elif model == 'RF'
+        root = './result/{0}-RF-test/'.format(dataset)
+    dirname = root + '{0:s}-{1:s}-test-N{2:d}-ep{3:d}'.format(
+        dataset,model,params['N'],params['n_epoch']
+    )
     _, resdir, _, tbdir = mkdir(dirname, prefix)
 
     Xtrain,Ytrain,Xtest,Ytest = read_data(dataset)
+    d = len(Xtrain[0])
+
     model_params, fit_params, model_type = params_process(
-        model, logGamma, lograte, params, tbdir, len(Xtrain[0]))
+        model, logGamma, lograte, params, tbdir, d)
 
     # only write log file for trial 0
     if prefix == '0':
@@ -152,14 +162,15 @@ def train_and_test(dataset,model='RF',params='auto',
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
 
-    score1,sparsity1,traintime1,testtime1 = _train_and_test(Xtrain,
-        Ytrain,Xtest,Ytest,model_type,model_params,fit_params
+    score,sparsity,traintime,testtime = _train_and_test(
+        Xtrain, Ytrain,Xtest,Ytest,model_type, model_params,
+        fit_params
         )
     output = {
-            'accuracy':score1,
-            'sparsity':sparsity1,
-            'traintime':traintime1,
-            'testtime':testtime1
+            'accuracy':score,
+            'sparsity':sparsity,
+            'traintime':traintime,
+            'testtime':testtime
         }
     finalop = [output,dataset,model_params,fit_params]
     filename = resdir + 'output-' + prefix
@@ -172,6 +183,7 @@ def screen_params(params,prefix='0'):
     val_size = params['val_size']
     folds = params['folds']
     task = params['task']
+    n_epoch = params['n_epoch']
     N = params['N']
     lograte = params['lograte'][int(prefix)]
     if prefix == '0':
@@ -184,23 +196,37 @@ def screen_params(params,prefix='0'):
     Xtrain,Ytrain,_,_ = read_data(dataset)
 
     results = []
-    dirname = '{0:s}-{1:s}-N{2:d}-screen'.format(dataset,model,N)
+    if model == 'NN':
+        root = './result/{0}-NN-H{1}-screen/'.format(
+            dataset, params['H']
+        )
+    elif model == 'RF'
+        root = './result/{0}-RF-screen/'.format(dataset)
+
+    dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
+        dataset,model,N,n_epoch
+    )
     if model == 'RF':
         for logGamma in params['logGamma']:
             Gamma = 10**logGamma
-            _, resdir, _, tbdir = mkdir(dirname, '{:.1f}-{:.1f}'.format(lograte,logGamma))
+            _, resdir, _, tbdir = mkdir(dirname,
+                '{:.1f}-{:.1f}'.format(lograte,logGamma)
+            )
             model_params, fit_params, model_type = params_process(
-                model, logGamma, lograte, params, tbdir, len(Xtrain[0]))
+                model, logGamma, lograte, params, tbdir, d)
 
             model_params['Gamma'] = Gamma
             score = validate(Xtrain,Ytrain,val_size,model_type,
                 model_params, fit_params, folds)
             results.append({'Gamma':Gamma,'score':score})
-    else:
+    elif model == 'NN':
+        # For compatibility issue of old codes
         logGamma = -100
-        _, resdir, _, tbdir = mkdir(dirname, '{:.1f}-{:.1f}'.format(lograte,logGamma))
+        _, resdir, _, tbdir = mkdir(dirname,
+            '{:.1f}-'.format(lograte,logGamma)
+        )
         model_params, fit_params, model_type = params_process(
-            model, logGamma, lograte, params, tbdir, len(Xtrain[0]))
+            model, logGamma, lograte, params, tbdir, d)
         score = validate(Xtrain,Ytrain,val_size,model_type,
             model_params, fit_params, folds)
         results.append({'Gamma':-100,'score':score})
@@ -208,22 +234,25 @@ def screen_params(params,prefix='0'):
     with open(filename,'w') as f:
         f.write(str(results))
 
-def N_selecting(paramsfile, N, prefix='0'):
+def screening(paramsfile, N, prefix='0'):
     params = read_params(paramsfile)
     params['N'] = N
     screen_params(params, prefix)
 
-def N_testing(dataset, model, N, H, prefix='0'):
+def testing(dataset, model, N, H, n_epoch, prefix='0'):
     if model == 'NN':
-        root = './result/' + dataset + '-NN-H' + str(H) + '/'
-        dir = root + dataset + '-NN-N' + str(N) + '-screen/'
-        paramsfile = dir + 'results/output-alloc'
-    elif model == 'RF':
-        root = './result/' + dataset + '-RF/'
-        dir = root + dataset + '-RF-N' + str(N) + '-screen/'
-        paramsfile = dir + 'results/output-alloc'
+        root = './result/{0}-NN-H{1}-screen/'.format(
+            dataset, params['H']
+        )
+    elif model == 'RF'
+        root = './result/{0}-RF-screen/'.format(dataset)
 
-    train_and_test(dataset,model,params=paramsfile,prefix=prefix)
+    dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
+        dataset,model,N,n_epoch
+    )
+    paramsfile = dir + 'results/output-alloc'
+
+    train_and_test(dataset,params=paramsfile,prefix=prefix)
 
 if __name__ == '__main__':
     ## parse command line arguments
@@ -242,7 +271,14 @@ if __name__ == '__main__':
             type=str, help='file name of params')
     parser.add_argument('--seed', default=0, type=int,
             help='random seed')
+    parser.add_argument('--n_epoch', default=10, type=int,
+            help='# of epochs')
+    parser.add_argument('--action', type=str,
+            help='the function to run')
+
     args = parser.parse_args()
     np.random.seed(args.seed)
-    # N_selecting(args.file, args.N, args.trial)
-    N_testing(args.dataset,args.model,args.N,args.H,args.trial)
+    if args.action == 'screen':
+        screening(args.file, args.N, args.trial)
+    elif args.action == 'test':
+        testing(args.dataset,args.model,args.N,args.H,args.trial)

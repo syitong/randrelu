@@ -2,7 +2,7 @@ import numpy as np
 # from joblib import Parallel, delayed
 import tensorflow as tf
 
-class fullnn:
+class Fullnn:
     counter = 0
     """
     This class is used to generate a fully L-layer and W-node-per-layer
@@ -80,22 +80,10 @@ class fullnn:
                 kernel_initializer=initializer,
                 name='Logits')
                 probabs = tf.nn.softmax(logits)
-            elif self._task == 'regression':
-                logits = tf.layers.dense(inputs=hl,units=1,
-                        use_bias=False,
-                        kernel_initializer=initializer,
-                        name='Logits')
-                logits = tf.reshape(logits,shape=[-1])
-            if self._task == 'classification':
                 onehot_labels = tf.one_hot(indices=y,depth=self._n_classes)
                 self._tf_loss = tf.losses.softmax_cross_entropy(
                     onehot_labels=onehot_labels,logits=logits
                 )
-            elif self._task == 'regression':
-                self._tf_loss = tf.losses.mean_squared_error(labels=y,
-                    predictions=logits)
-
-            if self._task == 'classification':
                 indices = tf.argmax(input=logits,axis=1)
                 self._predictions = {
                     'indices':indices,
@@ -104,6 +92,13 @@ class fullnn:
                 tmp = tf.cast(tf.equal(indices,y),dtype=tf.float32)
                 train_err = tf.reduce_mean(tmp)
             elif self._task == 'regression':
+                logits = tf.layers.dense(inputs=hl,units=1,
+                        use_bias=False,
+                        kernel_initializer=initializer,
+                        name='Logits')
+                logits = tf.reshape(logits,shape=[-1])
+                self._tf_loss = tf.losses.mean_squared_error(labels=y,
+                    predictions=logits)
                 self._predictions = {
                     'labels':logits
                 }
@@ -145,7 +140,8 @@ class fullnn:
         accuracy = s / len(data)
         return accuracy
 
-    def fit(self,data,labels,opt_rate=1.,opt_method='sgd',batch_size=200,n_epoch=5):
+    def fit(self,data,labels,opt_rate=1.,
+        opt_method='sgd',batch_size=200,n_epoch=5):
         self._learn_rate = opt_rate
         with self._graph.as_default():
             loss = self._tf_loss

@@ -251,29 +251,33 @@ class RF:
             if self._loss_fn == 'hinge':
                 self._reg_loss = tf.losses.hinge_loss(labels=y,
                     logits=logits) + regularizer
+                self._predictions = {"indices": logits,
+                    "feature_vec": self._RF_layer}
+                indices = tf.cast(tf.greater(logits, 0.), dtype=tf.int64)
+                tmp = tf.cast(tf.equal(y,indices), dtype=tf.float32)
+                train_err = tf.reduce_mean(tmp)
             elif self._loss_fn == 'squared':
-                self._reg_loss = tf.losses.mean_squared_error(labels=y,
-                    predictions=logits) + regularizer
+                train_err = tf.losses.mean_squared_error(labels=y,
+                    predictions=logits)
+                self._reg_loss = train_err + regularizer
+                self._predictions = {
+                    "indices": logits,
+                    "feature_vec": self._RF_layer
+                }
             elif self._loss_fn == 'log':
                 onehot_labels = tf.one_hot(indices=y, depth=n_classes)
                 loss_log = tf.losses.softmax_cross_entropy(
                     onehot_labels=onehot_labels, logits=logits)
                 self._reg_loss = loss_log + regularizer
-
-            if self._loss_fn in ('hinge'):
-                self._predictions = {"indices": logits,
-                    "feature_vec": self._RF_layer}
-                indices = tf.cast(tf.greater(logits, 0.), dtype=tf.int64)
-            elif self._loss_fn == 'log':
                 indices = tf.argmax(input=logits,axis=1)
                 self._predictions = {
                     "indices": indices,
                     "probabilities": probab,
                     "feature_vec": self._RF_layer}
-            tmp = tf.cast(tf.equal(y,indices), dtype=tf.float32)
-            train_err = tf.reduce_mean(tmp)
-            tf.summary.scalar('train err', train_err)
+                tmp = tf.cast(tf.equal(y,indices), dtype=tf.float32)
+                train_err = tf.reduce_mean(tmp)
 
+            tf.summary.scalar('train err', train_err)
             self._merged = tf.summary.merge_all()
             self._train_writer = tf.summary.FileWriter(self._tbdir)
             self._sess.run(tf.global_variables_initializer())
@@ -362,8 +366,10 @@ class RF:
             rand_indices = np.random.permutation(len(data)) - 1
             for jdx in range(len(data)//batch_size):
                 batch_indices = rand_indices[jdx*batch_size:(jdx+1)*batch_size]
-                feed_dict = {'features:0':data[batch_indices,:],
-                             'labels:0':indices[batch_indices]}
+                feed_dict = {
+                    'features:0':data[batch_indices,:],
+                    'labels:0':indices[batch_indices]
+                }
                 if jdx % 100 == 1:
                     print('RF: {2:d}, epoch: {1:d}, iter: {0:d}'.format(
                         self._total_iter, idx, self._N))
