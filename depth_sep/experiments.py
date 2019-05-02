@@ -135,12 +135,12 @@ def train_and_test(dataset,params='auto',
     model = params['model']
 
     if model == 'NN':
-        root = './result/{0}-NN-H{1}-test/'.format(
+        root = '{0}-NN-H{1}-test/'.format(
             dataset, params['H']
         )
-    elif model == 'RF'
-        root = './result/{0}-RF-test/'.format(dataset)
-    dirname = root + '{0:s}-{1:s}-test-N{2:d}-ep{3:d}'.format(
+    elif model == 'RF':
+        root = '{0}-RF-test/'.format(dataset)
+    dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,params['N'],params['n_epoch']
     )
     _, resdir, _, tbdir = mkdir(dirname, prefix)
@@ -194,14 +194,15 @@ def screen_params(params,prefix='0'):
             logfile.record('{0} = {1}'.format(key,val))
         logfile.save()
     Xtrain,Ytrain,_,_ = read_data(dataset)
+    d = len(Xtrain[0])
 
     results = []
     if model == 'NN':
-        root = './result/{0}-NN-H{1}-screen/'.format(
+        root = '{0}-NN-H{1}-screen/'.format(
             dataset, params['H']
         )
-    elif model == 'RF'
-        root = './result/{0}-RF-screen/'.format(dataset)
+    elif model == 'RF':
+        root = '{0}-RF-screen/'.format(dataset)
 
     dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,N,n_epoch
@@ -234,33 +235,35 @@ def screen_params(params,prefix='0'):
     with open(filename,'w') as f:
         f.write(str(results))
 
-def screening(paramsfile, N, prefix='0'):
+def screening(paramsfile, N, H, prefix='0'):
     params = read_params(paramsfile)
     params['N'] = N
+    params['H'] = H
     screen_params(params, prefix)
 
-def testing(dataset, model, N, H, n_epoch, prefix='0'):
+def testing(paramsfile, N, H, prefix='0'):
+    params = read_params(paramsfile)
+    dataset = params['dataset']
+    model = params['model']
+    n_epoch = params['n_epoch']
     if model == 'NN':
-        root = './result/{0}-NN-H{1}-screen/'.format(
-            dataset, params['H']
+        root = '{0}-NN-H{1}-screen/'.format(
+            dataset, H
         )
-    elif model == 'RF'
-        root = './result/{0}-RF-screen/'.format(dataset)
+    elif model == 'RF':
+        root = '{0}-RF-screen/'.format(dataset)
 
     dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,N,n_epoch
     )
-    paramsfile = dir + 'results/output-alloc'
+    _, resdir, _, _ = mkdir(dirname)
+    paramsfile = resdir + 'output-alloc'
 
     train_and_test(dataset,params=paramsfile,prefix=prefix)
 
 if __name__ == '__main__':
     ## parse command line arguments
     parser = argparse.ArgumentParser(description="parse args")
-    parser.add_argument('--dataset', default='eldan', type=str,
-            help='name of dataset')
-    parser.add_argument('--model', default='NN', type=str,
-            help='type of model')
     parser.add_argument('--N', default=20, type=int,
             help='width of layer')
     parser.add_argument('--H', default=2, type=int,
@@ -271,14 +274,12 @@ if __name__ == '__main__':
             type=str, help='file name of params')
     parser.add_argument('--seed', default=0, type=int,
             help='random seed')
-    parser.add_argument('--n_epoch', default=10, type=int,
-            help='# of epochs')
     parser.add_argument('--action', type=str,
             help='the function to run')
 
     args = parser.parse_args()
     np.random.seed(args.seed)
     if args.action == 'screen':
-        screening(args.file, args.N, args.trial)
+        screening(args.file, args.N, args.H, args.trial)
     elif args.action == 'test':
-        testing(args.dataset,args.model,args.N,args.H,args.trial)
+        testing(args.file, args.N, args.H, args.trial)

@@ -192,7 +192,7 @@ class RF:
             bias_initializer=b_initializer,
             activation=activation_node,
             name='RF')
-        self._RF_layer = tf.div(trans_layer,tf.sqrt(N*1.0))
+        self._RF_layer = tf.divide(trans_layer,tf.sqrt(N*1.0))
         tf.summary.histogram('inner weights',
             self._graph.get_tensor_by_name('RF/kernel:0'))
         return self._RF_layer

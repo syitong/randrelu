@@ -16,11 +16,11 @@ def screen_params_alloc(params):
     N = params['N']
     n_epoch = params['n_epoch']
     if model == 'NN':
-        root = './result/{0}-NN-H{1}-screen/'.format(
+        root = '{0}-NN-H{1}-screen/'.format(
             dataset, params['H']
         )
-    elif model == 'RF'
-        root = './result/{0}-RF-screen/'.format(dataset)
+    elif model == 'RF':
+        root = '{0}-RF-screen/'.format(dataset)
 
     dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,N,n_epoch
@@ -54,11 +54,11 @@ def screen_params_append(params):
     N = params['N']
     n_epoch = params['n_epoch']
     if model == 'NN':
-        root = './result/{0}-NN-H{1}-screen/'.format(
+        root = '{0}-NN-H{1}-screen/'.format(
             dataset, params['H']
         )
-    elif model == 'RF'
-        root = './result/{0}-RF-screen/'.format(dataset)
+    elif model == 'RF':
+        root = '{0}-RF-screen/'.format(dataset)
 
     dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,N,n_epoch
@@ -95,11 +95,11 @@ def train_and_test_alloc(params):
     n_epoch = params['n_epoch']
     trials = params['trials']
     if model == 'NN':
-        root = './result/{0}-NN-H{1}-test/'.format(
+        root = '{0}-NN-H{1}-test/'.format(
             dataset, params['H']
         )
-    elif model == 'RF'
-        root = './result/{0}-RF-test/'.format(dataset)
+    elif model == 'RF':
+        root = '{0}-RF-test/'.format(dataset)
 
     dirname = root + '{0:s}-{1:s}-N{2:d}-ep{3:d}'.format(
         dataset,model,N,n_epoch

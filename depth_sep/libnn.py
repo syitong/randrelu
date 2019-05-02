@@ -102,7 +102,7 @@ class Fullnn:
                 self._predictions = {
                     'labels':logits
                 }
-                train_err = loss
+                train_err = self._tf_loss
             tf.summary.scalar('train err',train_err)
             self._merged = tf.summary.merge_all()
             self._train_writer = tf.summary.FileWriter(self._tbdir)

@@ -162,7 +162,11 @@ if __name__ == '__main__':
     ## parse command line arguments
     parser = argparse.ArgumentParser(description="parse args")
     parser.add_argument('--file', type=str, help='name of result file')
+    parser.add_argument('--action', type=str, help='function to run')
     args = parser.parse_args()
-    # print_params(args.file)
-    # print_test_results(args.file)
-    plot_test_results()
+    if args.action == 'screen':
+        print_params(args.file)
+    elif args.action == 'test':
+        print_test_results(args.file)
+    elif args.action == 'plot':
+        plot_test_results()
