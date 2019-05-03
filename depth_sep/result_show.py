@@ -156,12 +156,15 @@ def plot_test_results(dataset):
 
     plt.title("Performance of Shallow and Deep Models")
     plt.xlabel('log(# of parameters)')
-    plt.ylabel('accuracy')
+    if dataset == 'eldan':
+        plt.ylabel('accuracy')
+    elif dataset == 'eldan-smooth':
+        plt.ylabel('mse')
     plt.xticks(range(9))
     plt.errorbar(range(9),yRF,yerr=yerrRF,fmt='rs--',label='RF',fillstyle='none')
     plt.errorbar(range(9),yNN1,yerr=yerrNN1,fmt='gx:',label='NN1',fillstyle='none')
     plt.errorbar(range(9),yNN2,yerr=yerrNN2,fmt='bo-.',label='NN2',fillstyle='none')
-    plt.legend(loc=4)
+    plt.legend(loc=3)
     plt.savefig('fig/{}-depth_sep.eps'.format(dataset))
 
 if __name__ == '__main__':
