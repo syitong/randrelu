@@ -226,8 +226,13 @@ class RF:
             # one_hot for log loss or reshape for hinge and squared loss
             x = tf.placeholder(dtype=tf.float32,
                 shape=[None,d],name='features')
-            y = tf.placeholder(dtype=tf.int64,
-                shape=[None],name='labels')
+            if self._task == 'classification':
+                y = tf.placeholder(dtype=tf.int64,
+                    shape=[None],name='labels')
+            elif self._task == 'regression':
+                y = tf.placeholder(dtype=tf.float32,
+                    shape=[None],name='labels')
+
             RF_layer = self._feature_layer(x)
             if self._task == 'classification':
                 if self._loss_fn in ('hinge'):

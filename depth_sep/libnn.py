@@ -63,8 +63,12 @@ class Fullnn:
         with self._graph.as_default():
             x = tf.placeholder(dtype=tf.float32,
                 shape=[None,self._dim],name='features')
-            y = tf.placeholder(dtype=tf.int64,
-                shape=[None],name='labels')
+            if self._task == 'classification':
+                y = tf.placeholder(dtype=tf.int64,
+                    shape=[None],name='labels')
+            elif self._task == 'regression':
+                y = tf.placeholder(dtype=tf.float32,
+                    shape=[None],name='labels')
             hl = x
             initializer = tf.glorot_normal_initializer()
             for idx in range(self._depth):

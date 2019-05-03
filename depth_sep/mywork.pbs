@@ -2,7 +2,7 @@
 
 ####  PBS preamble
 
-#PBS -N eldan-smooth-test
+#PBS -N eldan-smooth-screen
 #PBS -M syitong@umich.edu
 #PBS -m abe
 
@@ -28,18 +28,18 @@ if [ -n "$PBS_O_WORKDIR" ]; then cd $PBS_O_WORKDIR; fi
 #  Put your job commands here:
 for N in 20 40 80 160 320 640 1280 2560 5120
 do
-    python experiments.py --action test --N ${N} --trial ${PBS_ARRAYID} --file eldan-smooth-RF-params
+    python experiments.py --action screen --N ${N} --trial ${PBS_ARRAYID} --file eldan-smooth-RF-params
     wait
 done
 
 for N in 7 11 17 25 37 54 77 110 157
 do
-    python experiments.py --action test --N ${N} --trial ${PBS_ARRAYID} --file eldan-smooth-NN-params --H 2
+    python experiments.py --action screen --N ${N} --trial ${PBS_ARRAYID} --file eldan-smooth-NN-params --H 2
     wait
 done
 
 for N in 20 40 80 160 320 640 1280 2560 5120
 do
-    python experiments.py --action test --N ${N} --trial ${PBS_ARRAYID} --file eldan-smooth-NN-params --H 1
+    python experiments.py --action screen --N ${N} --trial ${PBS_ARRAYID} --file eldan-smooth-NN-params --H 1
     wait
 done
