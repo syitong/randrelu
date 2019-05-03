@@ -1,0 +1,1 @@
+[{'accuracy': 0.5743021006807255, 'testtime': 0.18981144099999625, 'traintime': 46.718979908, 'sparsity': 0.0}, 'eldan-smooth', {'width': 25, 'dim': 4, 'tbdir': './result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N25-ep100/tf/tensorboard-3/', 'gpu': 0, 'depth': 2, 'classes': [-1, 0, 1], 'task': 'regression'}, {'opt_rate': 0.01, 'opt_method': 'adam', 'n_epoch': 100}]

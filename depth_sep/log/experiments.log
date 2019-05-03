@@ -6233,3 +6233,890 @@ n_epoch = 10
 opt_rate = 0.03162277660168379
 opt_method = adam
 
+screen params
+2019-05-02 20:57:00.283485
+model = RF
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+dataset = eldan-smooth
+H = 2
+val_size = 20000
+classes = [-1.0, 0.0, 1.0]
+loss_fn = squared
+feature = ReLU
+N = 20
+gpu = 0
+mode = layer 2
+trials = 10
+task = regression
+n_epoch = 100
+bd = 100000
+
+screen params
+2019-05-02 20:57:56.872846
+model = RF
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+bd = 100000
+n_epoch = 100
+mode = layer 2
+feature = ReLU
+folds = 5
+H = 2
+classes = [-1.0, 0.0, 1.0]
+val_size = 20000
+task = regression
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+loss_fn = squared
+gpu = 0
+N = 40
+
+screen params
+2019-05-02 20:58:49.136628
+model = RF
+H = 2
+feature = ReLU
+val_size = 20000
+gpu = 0
+loss_fn = squared
+bd = 100000
+n_epoch = 100
+mode = layer 2
+N = 80
+dataset = eldan-smooth
+task = regression
+classes = [-1.0, 0.0, 1.0]
+trials = 10
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+
+screen params
+2019-05-02 20:59:47.152074
+classes = [-1.0, 0.0, 1.0]
+H = 2
+loss_fn = squared
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+val_size = 20000
+bd = 100000
+n_epoch = 100
+feature = ReLU
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+mode = layer 2
+model = RF
+folds = 5
+gpu = 0
+N = 160
+trials = 10
+
+screen params
+2019-05-02 21:00:48.542434
+model = RF
+trials = 10
+gpu = 0
+val_size = 20000
+loss_fn = squared
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+task = regression
+bd = 100000
+n_epoch = 100
+H = 2
+dataset = eldan-smooth
+folds = 5
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 320
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+mode = layer 2
+
+screen params
+2019-05-02 21:02:02.548773
+val_size = 20000
+model = RF
+feature = ReLU
+n_epoch = 100
+loss_fn = squared
+N = 640
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+mode = layer 2
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+trials = 10
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+H = 2
+folds = 5
+dataset = eldan-smooth
+task = regression
+
+screen params
+2019-05-02 21:03:36.413128
+dataset = eldan-smooth
+n_epoch = 100
+feature = ReLU
+model = RF
+val_size = 20000
+H = 2
+gpu = 0
+trials = 10
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+loss_fn = squared
+mode = layer 2
+classes = [-1.0, 0.0, 1.0]
+bd = 100000
+N = 1280
+task = regression
+
+screen params
+2019-05-02 21:05:48.474688
+gpu = 0
+N = 2560
+mode = layer 2
+bd = 100000
+folds = 5
+model = RF
+feature = ReLU
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+H = 2
+task = regression
+trials = 10
+n_epoch = 100
+classes = [-1.0, 0.0, 1.0]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+loss_fn = squared
+
+screen params
+2019-05-02 21:09:11.409745
+model = RF
+val_size = 20000
+feature = ReLU
+task = regression
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+mode = layer 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+bd = 100000
+H = 2
+n_epoch = 100
+gpu = 0
+loss_fn = squared
+dataset = eldan-smooth
+N = 5120
+trials = 10
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-05-02 21:15:01.947575
+trials = 10
+dataset = eldan-smooth
+model = NN
+val_size = 20000
+folds = 5
+N = 7
+task = regression
+H = 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1, 0, 1]
+logGamma = [-100]
+n_epoch = 100
+gpu = 0
+
+screen params
+2019-05-02 21:15:10.795661
+H = 2
+gpu = 0
+trials = 10
+dataset = eldan-smooth
+folds = 5
+model = NN
+N = 11
+logGamma = [-100]
+val_size = 20000
+task = regression
+n_epoch = 100
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-05-02 21:15:20.114899
+folds = 5
+classes = [-1, 0, 1]
+N = 17
+dataset = eldan-smooth
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+model = NN
+gpu = 0
+logGamma = [-100]
+trials = 10
+val_size = 20000
+task = regression
+H = 2
+
+screen params
+2019-05-02 21:15:29.657356
+trials = 10
+n_epoch = 100
+N = 25
+H = 2
+gpu = 0
+task = regression
+folds = 5
+dataset = eldan-smooth
+logGamma = [-100]
+classes = [-1, 0, 1]
+model = NN
+val_size = 20000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-05-02 21:15:39.405913
+val_size = 20000
+gpu = 0
+task = regression
+model = NN
+H = 2
+logGamma = [-100]
+N = 37
+dataset = eldan-smooth
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+folds = 5
+n_epoch = 100
+
+screen params
+2019-05-02 21:15:50.034374
+N = 54
+n_epoch = 100
+classes = [-1, 0, 1]
+model = NN
+folds = 5
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+logGamma = [-100]
+trials = 10
+task = regression
+H = 2
+dataset = eldan-smooth
+
+screen params
+2019-05-02 21:16:04.514121
+classes = [-1, 0, 1]
+task = regression
+folds = 5
+logGamma = [-100]
+n_epoch = 100
+N = 77
+val_size = 20000
+model = NN
+dataset = eldan-smooth
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+trials = 10
+gpu = 0
+
+screen params
+2019-05-02 21:16:19.588087
+trials = 10
+dataset = eldan-smooth
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+N = 110
+logGamma = [-100]
+val_size = 20000
+gpu = 0
+H = 2
+model = NN
+classes = [-1, 0, 1]
+task = regression
+folds = 5
+
+screen params
+2019-05-02 21:16:39.704827
+dataset = eldan-smooth
+n_epoch = 100
+folds = 5
+N = 157
+logGamma = [-100]
+H = 2
+classes = [-1, 0, 1]
+trials = 10
+gpu = 0
+model = NN
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+task = regression
+
+screen params
+2019-05-02 21:17:10.125314
+logGamma = [-100]
+folds = 5
+task = regression
+classes = [-1, 0, 1]
+val_size = 20000
+n_epoch = 100
+N = 20
+dataset = eldan-smooth
+model = NN
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+H = 1
+
+screen params
+2019-05-02 21:17:18.701444
+dataset = eldan-smooth
+task = regression
+folds = 5
+n_epoch = 100
+val_size = 20000
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-100]
+N = 40
+classes = [-1, 0, 1]
+model = NN
+H = 1
+trials = 10
+
+screen params
+2019-05-02 21:17:27.497805
+model = NN
+logGamma = [-100]
+folds = 5
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = eldan-smooth
+val_size = 20000
+task = regression
+gpu = 0
+n_epoch = 100
+trials = 10
+N = 80
+H = 1
+
+screen params
+2019-05-02 21:17:36.836033
+model = NN
+logGamma = [-100]
+gpu = 0
+task = regression
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+val_size = 20000
+dataset = eldan-smooth
+N = 160
+classes = [-1, 0, 1]
+H = 1
+trials = 10
+folds = 5
+
+screen params
+2019-05-02 21:17:47.465425
+logGamma = [-100]
+dataset = eldan-smooth
+val_size = 20000
+gpu = 0
+classes = [-1, 0, 1]
+task = regression
+model = NN
+n_epoch = 100
+H = 1
+folds = 5
+trials = 10
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 320
+
+screen params
+2019-05-02 21:18:00.849996
+dataset = eldan-smooth
+H = 1
+n_epoch = 100
+logGamma = [-100]
+val_size = 20000
+task = regression
+N = 640
+trials = 10
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+classes = [-1, 0, 1]
+model = NN
+
+screen params
+2019-05-02 21:18:22.268253
+logGamma = [-100]
+task = regression
+classes = [-1, 0, 1]
+trials = 10
+N = 1280
+dataset = eldan-smooth
+n_epoch = 100
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+H = 1
+gpu = 0
+val_size = 20000
+model = NN
+
+screen params
+2019-05-02 21:18:51.862650
+gpu = 0
+logGamma = [-100]
+H = 1
+n_epoch = 100
+N = 2560
+trials = 10
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1, 0, 1]
+folds = 5
+val_size = 20000
+dataset = eldan-smooth
+task = regression
+model = NN
+
+screen params
+2019-05-02 21:19:49.073309
+logGamma = [-100]
+folds = 5
+N = 5120
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+H = 1
+dataset = eldan-smooth
+trials = 10
+classes = [-1, 0, 1]
+gpu = 0
+task = regression
+model = NN
+val_size = 20000
+
+train and test
+2019-05-02 21:26:50.946889
+dataset = eldan-smooth
+width = 7
+dim = 4
+depth = 2
+classes = [-1, 0, 1]
+gpu = 0
+task = regression
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N7-ep100/tf/tensorboard-0/
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.01
+
+train and test
+2019-05-02 21:43:55.911487
+dataset = eldan-smooth
+loss_fn = squared
+n_new_features = 20
+gpu = 0
+task = regression
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N20-ep100/tf/tensorboard-0/
+n_old_features = 4
+classes = [-1.0, 0.0, 1.0]
+feature = ReLU
+Gamma = 0.1
+opt_rate = 0.01
+n_epoch = 100
+bd = 100000
+opt_method = adam
+
+train and test
+2019-05-02 21:46:03.200209
+dataset = eldan-smooth
+loss_fn = squared
+gpu = 0
+Gamma = 0.31622776601683794
+feature = ReLU
+n_old_features = 4
+n_new_features = 40
+task = regression
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N40-ep100/tf/tensorboard-0/
+classes = [-1.0, 0.0, 1.0]
+n_epoch = 100
+opt_rate = 0.01
+bd = 100000
+opt_method = adam
+
+train and test
+2019-05-02 21:47:22.045836
+dataset = eldan-smooth
+loss_fn = squared
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N80-ep100/tf/tensorboard-0/
+Gamma = 0.31622776601683794
+gpu = 0
+feature = ReLU
+n_new_features = 80
+classes = [-1.0, 0.0, 1.0]
+task = regression
+n_old_features = 4
+opt_method = adam
+opt_rate = 0.01
+bd = 100000
+n_epoch = 100
+
+train and test
+2019-05-02 21:48:37.251929
+dataset = eldan-smooth
+gpu = 0
+feature = ReLU
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N160-ep100/tf/tensorboard-0/
+task = regression
+n_old_features = 4
+Gamma = 0.31622776601683794
+loss_fn = squared
+n_new_features = 160
+classes = [-1.0, 0.0, 1.0]
+bd = 100000
+opt_method = adam
+opt_rate = 0.03162277660168379
+n_epoch = 100
+
+train and test
+2019-05-02 21:50:00.871796
+dataset = eldan-smooth
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+n_old_features = 4
+loss_fn = squared
+n_new_features = 320
+task = regression
+Gamma = 0.1
+gpu = 0
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N320-ep100/tf/tensorboard-0/
+n_epoch = 100
+opt_rate = 0.1
+bd = 100000
+opt_method = adam
+
+train and test
+2019-05-02 21:51:42.820357
+dataset = eldan-smooth
+classes = [-1.0, 0.0, 1.0]
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N640-ep100/tf/tensorboard-0/
+loss_fn = squared
+Gamma = 0.31622776601683794
+feature = ReLU
+gpu = 0
+n_new_features = 640
+n_old_features = 4
+task = regression
+opt_rate = 0.03162277660168379
+n_epoch = 100
+opt_method = adam
+bd = 100000
+
+train and test
+2019-05-02 21:53:49.227728
+dataset = eldan-smooth
+loss_fn = squared
+n_old_features = 4
+n_new_features = 1280
+Gamma = 0.03162277660168379
+task = regression
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N1280-ep100/tf/tensorboard-0/
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+bd = 100000
+n_epoch = 100
+opt_rate = 0.1
+opt_method = adam
+
+train and test
+2019-05-02 21:56:49.048207
+dataset = eldan-smooth
+loss_fn = squared
+n_old_features = 4
+Gamma = 0.31622776601683794
+classes = [-1.0, 0.0, 1.0]
+task = regression
+feature = ReLU
+n_new_features = 2560
+gpu = 0
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N2560-ep100/tf/tensorboard-0/
+opt_rate = 0.1
+bd = 100000
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:01:29.998980
+dataset = eldan-smooth
+Gamma = 0.03162277660168379
+classes = [-1.0, 0.0, 1.0]
+task = regression
+feature = ReLU
+n_new_features = 5120
+loss_fn = squared
+n_old_features = 4
+gpu = 0
+tbdir = ./result/eldan-smooth-RF-test/eldan-smooth-RF-N5120-ep100/tf/tensorboard-0/
+opt_rate = 0.03162277660168379
+bd = 100000
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:10:23.384620
+dataset = eldan-smooth
+gpu = 0
+classes = [-1, 0, 1]
+width = 7
+dim = 4
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N7-ep100/tf/tensorboard-0/
+depth = 2
+task = regression
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.01
+
+train and test
+2019-05-02 22:11:16.430101
+dataset = eldan-smooth
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N11-ep100/tf/tensorboard-0/
+task = regression
+classes = [-1, 0, 1]
+dim = 4
+gpu = 0
+depth = 2
+width = 11
+opt_method = adam
+opt_rate = 0.01
+n_epoch = 100
+
+train and test
+2019-05-02 22:12:11.564077
+dataset = eldan-smooth
+dim = 4
+classes = [-1, 0, 1]
+task = regression
+gpu = 0
+depth = 2
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N17-ep100/tf/tensorboard-0/
+width = 17
+n_epoch = 100
+opt_rate = 0.01
+opt_method = adam
+
+train and test
+2019-05-02 22:13:06.709448
+dataset = eldan-smooth
+depth = 2
+classes = [-1, 0, 1]
+width = 25
+dim = 4
+task = regression
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N25-ep100/tf/tensorboard-0/
+gpu = 0
+opt_rate = 0.01
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:14:07.063670
+dataset = eldan-smooth
+task = regression
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N37-ep100/tf/tensorboard-0/
+width = 37
+gpu = 0
+classes = [-1, 0, 1]
+dim = 4
+depth = 2
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.001
+
+train and test
+2019-05-02 22:15:25.133264
+dataset = eldan-smooth
+width = 54
+dim = 4
+gpu = 0
+depth = 2
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N54-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+task = regression
+opt_rate = 0.0031622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:16:58.811825
+dataset = eldan-smooth
+dim = 4
+depth = 2
+gpu = 0
+classes = [-1, 0, 1]
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N77-ep100/tf/tensorboard-0/
+task = regression
+width = 77
+opt_rate = 0.0031622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:19:07.561799
+dataset = eldan-smooth
+task = regression
+width = 110
+gpu = 0
+depth = 2
+dim = 4
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N110-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+n_epoch = 100
+opt_rate = 0.0031622776601683794
+opt_method = adam
+
+train and test
+2019-05-02 22:22:09.351975
+dataset = eldan-smooth
+tbdir = ./result/eldan-smooth-NN-H2-test/eldan-smooth-NN-N157-ep100/tf/tensorboard-0/
+dim = 4
+width = 157
+depth = 2
+gpu = 0
+task = regression
+classes = [-1, 0, 1]
+opt_rate = 0.0031622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:26:48.718189
+dataset = eldan-smooth
+width = 20
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N20-ep100/tf/tensorboard-0/
+gpu = 0
+classes = [-1, 0, 1]
+depth = 1
+task = regression
+dim = 4
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-05-02 22:27:38.645839
+dataset = eldan-smooth
+width = 40
+gpu = 0
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N40-ep100/tf/tensorboard-0/
+depth = 1
+classes = [-1, 0, 1]
+dim = 4
+task = regression
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-05-02 22:28:31.028608
+dataset = eldan-smooth
+depth = 1
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N80-ep100/tf/tensorboard-0/
+width = 80
+dim = 4
+classes = [-1, 0, 1]
+gpu = 0
+task = regression
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-05-02 22:29:31.645999
+dataset = eldan-smooth
+gpu = 0
+classes = [-1, 0, 1]
+task = regression
+width = 160
+depth = 1
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N160-ep100/tf/tensorboard-0/
+dim = 4
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-05-02 22:30:47.893238
+dataset = eldan-smooth
+task = regression
+dim = 4
+depth = 1
+classes = [-1, 0, 1]
+gpu = 0
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N320-ep100/tf/tensorboard-0/
+width = 320
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-05-02 22:32:39.921456
+dataset = eldan-smooth
+gpu = 0
+dim = 4
+classes = [-1, 0, 1]
+depth = 1
+width = 640
+task = regression
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N640-ep100/tf/tensorboard-0/
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-05-02 22:35:34.856119
+dataset = eldan-smooth
+classes = [-1, 0, 1]
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N1280-ep100/tf/tensorboard-0/
+gpu = 0
+dim = 4
+width = 1280
+depth = 1
+task = regression
+opt_rate = 0.0031622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-05-02 22:40:30.334810
+dataset = eldan-smooth
+task = regression
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N2560-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+dim = 4
+width = 2560
+depth = 1
+gpu = 0
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.001
+
+train and test
+2019-05-02 22:50:31.893931
+dataset = eldan-smooth
+task = regression
+width = 5120
+dim = 4
+tbdir = ./result/eldan-smooth-NN-H1-test/eldan-smooth-NN-N5120-ep100/tf/tensorboard-0/
+depth = 1
+gpu = 0
+classes = [-1, 0, 1]
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.001
+
