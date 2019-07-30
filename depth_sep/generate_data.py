@@ -30,7 +30,7 @@ def mollify(idx_list, g, mol):
         y_list += [y]
     return np.array(y_list)
 
-def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
+def eldan(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     np.random.seed(seed)
     d = 4
     R = lambda d: gamma(d/2+1)**(1/d)/np.sqrt(np.pi)
@@ -147,5 +147,41 @@ def main(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     with open('data/eldan-smooth-test-label.npy', 'bw') as f:
         np.save(f, y_mol[int(0.8*len(x_sample)):])
 
+def daniely(N=10000, halfD=10, seed=0):
+    np.random.seed(seed)
+    X1 = np.random.randn(N, halfD)
+    X1 = X1 / np.linalg.norm(X1, axis=1, keepdims=True)
+
+    X2 = np.random.randn(N, halfD)
+    X2 = X2 / np.linalg.norm(X2, axis=1, keepdims=True)
+
+    T = np.sum(X1 * X2, axis=1)
+    Y = np.sin(np.pi * d**3. * T)
+
+    fig1 = plt.figure()
+    plt.hist(T,bins=300,density=True)
+    plt.title("Histogram of Inner Products")
+    plt.savefig('fig/daniely_hist.png',dpi=300)
+
+    fig2 = plt.figure()
+    plt.scatter(T[::10],Y[::10],c='r')
+    sort_idx = np.argsort(T)
+    plt.plot(T[sort_idx[::10]],Y[sort_idx[::10]],c='b')
+    plt.title("Labels of Data")
+    plt.savefig('fig/daniely_gplot.png',dpi=300)
+
+    X = np.concatenate((X1, X2), axis=1)
+
+    samplesize = int(0.8 * len(X))
+    with open('data/daniely-train-data.npy','bw') as f:
+        np.save(f, X[:samplesize])
+    with open('data/daniely-train-Y.npy', 'bw') as f:
+        np.save(f, Y[:samplesize])
+    with open('data/daniely-test-data.npy', 'bw') as f:
+        np.save(f, X[samplesize:])
+    with open('data/daniely-test-label.npy', 'bw') as f:
+        np.save(f, Y[samplesize:])
+
 if __name__ == '__main__':
-    main(N_const=0.01,NSUPP=100000,mol_const=100)
+    # eldan(N_const=0.01,NSUPP=100000,mol_const=100)
+    daniely()
