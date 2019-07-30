@@ -156,7 +156,7 @@ def daniely(N=10000, halfD=10, seed=0):
     X2 = X2 / np.linalg.norm(X2, axis=1, keepdims=True)
 
     T = np.sum(X1 * X2, axis=1)
-    Y = np.sin(np.pi * d**3. * T)
+    Y = np.sin(np.pi * halfD**3. * T)
 
     fig1 = plt.figure()
     plt.hist(T,bins=300,density=True)
@@ -164,9 +164,8 @@ def daniely(N=10000, halfD=10, seed=0):
     plt.savefig('fig/daniely_hist.png',dpi=300)
 
     fig2 = plt.figure()
-    plt.scatter(T[::10],Y[::10],c='r')
     sort_idx = np.argsort(T)
-    plt.plot(T[sort_idx[::10]],Y[sort_idx[::10]],c='b')
+    plt.plot(T[sort_idx[::100]],Y[sort_idx[::100]],c='b')
     plt.title("Labels of Data")
     plt.savefig('fig/daniely_gplot.png',dpi=300)
 
