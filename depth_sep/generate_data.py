@@ -174,7 +174,7 @@ def daniely(N=10000, halfD=10, seed=0):
     samplesize = int(0.8 * len(X))
     with open('data/daniely-train-data.npy','bw') as f:
         np.save(f, X[:samplesize])
-    with open('data/daniely-train-Y.npy', 'bw') as f:
+    with open('data/daniely-train-label.npy', 'bw') as f:
         np.save(f, Y[:samplesize])
     with open('data/daniely-test-data.npy', 'bw') as f:
         np.save(f, X[samplesize:])
