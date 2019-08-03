@@ -3,7 +3,7 @@
     'N': 100,
     'bd': 100000,
     'mode': 'layer 2',
-    'n_epoch': 1,
+    'n_epoch': 10,
     'classes': [-1.,0.,1.],
     'loss_fn': 'squared',
     'model': 'NN',
@@ -12,7 +12,7 @@
     'lograte': np.arange(-4.,0,0.5),
     'val_size': 2000,
     'folds': 5,
-    'trials': 1,
+    'trials': 10,
     'task': 'regression',
     'gpu': 0
 }
