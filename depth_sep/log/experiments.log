@@ -7120,3 +7120,123 @@ n_epoch = 100
 opt_method = adam
 opt_rate = 0.001
 
+screen params
+2019-08-03 15:26:27.265723
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+loss_fn = squared
+trials = 1
+mode = layer 2
+classes = [-1.0, 0.0, 1.0]
+model = RF
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+gpu = 0
+folds = 5
+bd = 100000
+n_epoch = 1
+N = 20
+H = 2
+feature = ReLU
+val_size = 2000
+
+screen params
+2019-08-03 15:26:36.933461
+dataset = daniely
+model = RF
+bd = 100000
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+folds = 5
+val_size = 2000
+loss_fn = squared
+mode = layer 2
+trials = 1
+N = 40
+n_epoch = 1
+task = regression
+
+screen params
+2019-08-03 15:26:45.481556
+dataset = daniely
+mode = layer 2
+val_size = 2000
+H = 2
+gpu = 0
+loss_fn = squared
+bd = 100000
+feature = ReLU
+model = NN
+task = regression
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+trials = 1
+folds = 5
+n_epoch = 1
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 12
+
+screen params
+2019-08-03 15:26:48.055839
+feature = ReLU
+n_epoch = 1
+N = 20
+folds = 5
+task = regression
+mode = layer 2
+bd = 100000
+trials = 1
+dataset = daniely
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+model = NN
+classes = [-1.0, 0.0, 1.0]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+loss_fn = squared
+gpu = 0
+H = 2
+val_size = 2000
+
+screen params
+2019-08-03 15:26:50.610338
+N = 20
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 1
+gpu = 0
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 1
+task = regression
+feature = ReLU
+trials = 1
+folds = 5
+bd = 100000
+val_size = 2000
+model = RF
+loss_fn = squared
+dataset = daniely
+classes = [-1.0, 0.0, 1.0]
+mode = layer 2
+
+screen params
+2019-08-03 15:26:59.273539
+H = 1
+N = 40
+model = RF
+task = regression
+n_epoch = 1
+gpu = 0
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+feature = ReLU
+trials = 1
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+bd = 100000
+folds = 5
+loss_fn = squared
+mode = layer 2
+val_size = 2000
+
