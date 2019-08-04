@@ -13,7 +13,7 @@
 #PBS -t 0-7
 
 # Change "example_flux" to the name of your Flux allocation:
-#PBS -A tewaria_flux
+#PBS -A lsa_flux
 #PBS -q flux
 #PBS -l qos=flux
 
