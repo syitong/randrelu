@@ -10,7 +10,7 @@
 #PBS -l procs=1,mem=4gb,walltime=04:10:00
 #PBS -j oe
 #PBS -V
-#PBS -t 0-9
+#PBS -t 0-7
 
 # Change "example_flux" to the name of your Flux allocation:
 #PBS -A tewaria_flux
