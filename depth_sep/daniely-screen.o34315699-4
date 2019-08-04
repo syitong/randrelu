@@ -1,0 +1,1216 @@
+nyx6245
+2019-08-04 00:27:24.276587: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:27:24.276662: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:27:24.276677: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:27:24.276691: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:27:24.276704: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N20-ep10
+RF: 20, epoch: 0, iter: 1
+RF: 20, epoch: 1, iter: 9
+RF: 20, epoch: 2, iter: 17
+RF: 20, epoch: 3, iter: 25
+RF: 20, epoch: 4, iter: 33
+RF: 20, epoch: 5, iter: 41
+RF: 20, epoch: 6, iter: 49
+RF: 20, epoch: 7, iter: 57
+RF: 20, epoch: 8, iter: 65
+RF: 20, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:28:39.253217: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:39.253290: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:39.253306: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:39.253319: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:39.253332: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N40-ep10
+RF: 40, epoch: 0, iter: 1
+RF: 40, epoch: 1, iter: 9
+RF: 40, epoch: 2, iter: 17
+RF: 40, epoch: 3, iter: 25
+RF: 40, epoch: 4, iter: 33
+RF: 40, epoch: 5, iter: 41
+RF: 40, epoch: 6, iter: 49
+RF: 40, epoch: 7, iter: 57
+RF: 40, epoch: 8, iter: 65
+RF: 40, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:28:57.682645: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:57.682708: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:57.682733: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:57.682747: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:28:57.682759: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N80-ep10
+RF: 80, epoch: 0, iter: 1
+RF: 80, epoch: 1, iter: 9
+RF: 80, epoch: 2, iter: 17
+RF: 80, epoch: 3, iter: 25
+RF: 80, epoch: 4, iter: 33
+RF: 80, epoch: 5, iter: 41
+RF: 80, epoch: 6, iter: 49
+RF: 80, epoch: 7, iter: 57
+RF: 80, epoch: 8, iter: 65
+RF: 80, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:29:15.401792: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:15.401855: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:15.401872: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:15.401897: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:15.401911: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N160-ep10
+RF: 160, epoch: 0, iter: 1
+RF: 160, epoch: 1, iter: 9
+RF: 160, epoch: 2, iter: 17
+RF: 160, epoch: 3, iter: 25
+RF: 160, epoch: 4, iter: 33
+RF: 160, epoch: 5, iter: 41
+RF: 160, epoch: 6, iter: 49
+RF: 160, epoch: 7, iter: 57
+RF: 160, epoch: 8, iter: 65
+RF: 160, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:29:32.767182: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:32.767246: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:32.767262: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:32.767285: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:32.767299: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N320-ep10
+RF: 320, epoch: 0, iter: 1
+RF: 320, epoch: 1, iter: 9
+RF: 320, epoch: 2, iter: 17
+RF: 320, epoch: 3, iter: 25
+RF: 320, epoch: 4, iter: 33
+RF: 320, epoch: 5, iter: 41
+RF: 320, epoch: 6, iter: 49
+RF: 320, epoch: 7, iter: 57
+RF: 320, epoch: 8, iter: 65
+RF: 320, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:29:51.293837: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:51.293916: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:51.293940: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:51.293957: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:29:51.293983: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N640-ep10
+RF: 640, epoch: 0, iter: 1
+RF: 640, epoch: 1, iter: 9
+RF: 640, epoch: 2, iter: 17
+RF: 640, epoch: 3, iter: 25
+RF: 640, epoch: 4, iter: 33
+RF: 640, epoch: 5, iter: 41
+RF: 640, epoch: 6, iter: 49
+RF: 640, epoch: 7, iter: 57
+RF: 640, epoch: 8, iter: 65
+RF: 640, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:30:09.556915: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:09.556987: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:09.557003: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:09.557016: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:09.557041: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N1280-ep10
+RF: 1280, epoch: 0, iter: 1
+RF: 1280, epoch: 1, iter: 9
+RF: 1280, epoch: 2, iter: 17
+RF: 1280, epoch: 3, iter: 25
+RF: 1280, epoch: 4, iter: 33
+RF: 1280, epoch: 5, iter: 41
+RF: 1280, epoch: 6, iter: 49
+RF: 1280, epoch: 7, iter: 57
+RF: 1280, epoch: 8, iter: 65
+RF: 1280, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:30:28.282121: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:28.282196: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:28.282212: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:28.282227: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:28.282253: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N2560-ep10
+RF: 2560, epoch: 0, iter: 1
+RF: 2560, epoch: 1, iter: 9
+RF: 2560, epoch: 2, iter: 17
+RF: 2560, epoch: 3, iter: 25
+RF: 2560, epoch: 4, iter: 33
+RF: 2560, epoch: 5, iter: 41
+RF: 2560, epoch: 6, iter: 49
+RF: 2560, epoch: 7, iter: 57
+RF: 2560, epoch: 8, iter: 65
+RF: 2560, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:30:47.299838: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:47.299904: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:47.299920: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:47.300108: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:30:47.300133: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+Results saved in ./result/daniely-RF-screen/daniely-RF-N5120-ep10
+RF: 5120, epoch: 0, iter: 1
+RF: 5120, epoch: 1, iter: 9
+RF: 5120, epoch: 2, iter: 17
+RF: 5120, epoch: 3, iter: 25
+RF: 5120, epoch: 4, iter: 33
+RF: 5120, epoch: 5, iter: 41
+RF: 5120, epoch: 6, iter: 49
+RF: 5120, epoch: 7, iter: 57
+RF: 5120, epoch: 8, iter: 65
+RF: 5120, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:11.857658: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:11.857732: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:11.857748: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:11.857762: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:11.857787: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N12-ep10
+NN: 12, epoch: 0, iter: 1
+NN: 12, epoch: 1, iter: 9
+NN: 12, epoch: 2, iter: 17
+NN: 12, epoch: 3, iter: 25
+NN: 12, epoch: 4, iter: 33
+NN: 12, epoch: 5, iter: 41
+NN: 12, epoch: 6, iter: 49
+NN: 12, epoch: 7, iter: 57
+NN: 12, epoch: 8, iter: 65
+NN: 12, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:16.587310: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:16.587385: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:16.587401: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:16.587414: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:16.587428: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N20-ep10
+NN: 20, epoch: 0, iter: 1
+NN: 20, epoch: 1, iter: 9
+NN: 20, epoch: 2, iter: 17
+NN: 20, epoch: 3, iter: 25
+NN: 20, epoch: 4, iter: 33
+NN: 20, epoch: 5, iter: 41
+NN: 20, epoch: 6, iter: 49
+NN: 20, epoch: 7, iter: 57
+NN: 20, epoch: 8, iter: 65
+NN: 20, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:20.989497: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:20.989561: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:20.989577: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:20.989590: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:20.989603: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N31-ep10
+NN: 31, epoch: 0, iter: 1
+NN: 31, epoch: 1, iter: 9
+NN: 31, epoch: 2, iter: 17
+NN: 31, epoch: 3, iter: 25
+NN: 31, epoch: 4, iter: 33
+NN: 31, epoch: 5, iter: 41
+NN: 31, epoch: 6, iter: 49
+NN: 31, epoch: 7, iter: 57
+NN: 31, epoch: 8, iter: 65
+NN: 31, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:25.349303: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:25.349371: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:25.349387: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:25.349413: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:25.349428: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N48-ep10
+NN: 48, epoch: 0, iter: 1
+NN: 48, epoch: 1, iter: 9
+NN: 48, epoch: 2, iter: 17
+NN: 48, epoch: 3, iter: 25
+NN: 48, epoch: 4, iter: 33
+NN: 48, epoch: 5, iter: 41
+NN: 48, epoch: 6, iter: 49
+NN: 48, epoch: 7, iter: 57
+NN: 48, epoch: 8, iter: 65
+NN: 48, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:29.967096: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:29.967167: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:29.967190: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:29.967204: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:29.967218: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N72-ep10
+NN: 72, epoch: 0, iter: 1
+NN: 72, epoch: 1, iter: 9
+NN: 72, epoch: 2, iter: 17
+NN: 72, epoch: 3, iter: 25
+NN: 72, epoch: 4, iter: 33
+NN: 72, epoch: 5, iter: 41
+NN: 72, epoch: 6, iter: 49
+NN: 72, epoch: 7, iter: 57
+NN: 72, epoch: 8, iter: 65
+NN: 72, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:34.414366: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:34.414438: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:34.414453: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:34.414467: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:34.414480: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N105-ep10
+NN: 105, epoch: 0, iter: 1
+NN: 105, epoch: 1, iter: 9
+NN: 105, epoch: 2, iter: 17
+NN: 105, epoch: 3, iter: 25
+NN: 105, epoch: 4, iter: 33
+NN: 105, epoch: 5, iter: 41
+NN: 105, epoch: 6, iter: 49
+NN: 105, epoch: 7, iter: 57
+NN: 105, epoch: 8, iter: 65
+NN: 105, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:39.036111: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:39.036187: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:39.036203: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:39.036216: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:39.036230: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N153-ep10
+NN: 153, epoch: 0, iter: 1
+NN: 153, epoch: 1, iter: 9
+NN: 153, epoch: 2, iter: 17
+NN: 153, epoch: 3, iter: 25
+NN: 153, epoch: 4, iter: 33
+NN: 153, epoch: 5, iter: 41
+NN: 153, epoch: 6, iter: 49
+NN: 153, epoch: 7, iter: 57
+NN: 153, epoch: 8, iter: 65
+NN: 153, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:43.782228: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:43.782289: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:43.782304: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:43.782317: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:43.782330: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N221-ep10
+NN: 221, epoch: 0, iter: 1
+NN: 221, epoch: 1, iter: 9
+NN: 221, epoch: 2, iter: 17
+NN: 221, epoch: 3, iter: 25
+NN: 221, epoch: 4, iter: 33
+NN: 221, epoch: 5, iter: 41
+NN: 221, epoch: 6, iter: 49
+NN: 221, epoch: 7, iter: 57
+NN: 221, epoch: 8, iter: 65
+NN: 221, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:48.458414: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:48.458474: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:48.458489: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:48.458503: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:48.458516: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H2-screen/daniely-NN-N317-ep10
+NN: 317, epoch: 0, iter: 1
+NN: 317, epoch: 1, iter: 9
+NN: 317, epoch: 2, iter: 17
+NN: 317, epoch: 3, iter: 25
+NN: 317, epoch: 4, iter: 33
+NN: 317, epoch: 5, iter: 41
+NN: 317, epoch: 6, iter: 49
+NN: 317, epoch: 7, iter: 57
+NN: 317, epoch: 8, iter: 65
+NN: 317, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:53.443804: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:53.443879: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:53.443894: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:53.443912: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:53.443938: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N20-ep10
+NN: 20, epoch: 0, iter: 1
+NN: 20, epoch: 1, iter: 9
+NN: 20, epoch: 2, iter: 17
+NN: 20, epoch: 3, iter: 25
+NN: 20, epoch: 4, iter: 33
+NN: 20, epoch: 5, iter: 41
+NN: 20, epoch: 6, iter: 49
+NN: 20, epoch: 7, iter: 57
+NN: 20, epoch: 8, iter: 65
+NN: 20, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:31:57.617711: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:57.617769: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:57.617784: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:57.617798: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:31:57.617811: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N40-ep10
+NN: 40, epoch: 0, iter: 1
+NN: 40, epoch: 1, iter: 9
+NN: 40, epoch: 2, iter: 17
+NN: 40, epoch: 3, iter: 25
+NN: 40, epoch: 4, iter: 33
+NN: 40, epoch: 5, iter: 41
+NN: 40, epoch: 6, iter: 49
+NN: 40, epoch: 7, iter: 57
+NN: 40, epoch: 8, iter: 65
+NN: 40, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:01.790402: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:01.790462: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:01.790477: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:01.790490: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:01.790503: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N80-ep10
+NN: 80, epoch: 0, iter: 1
+NN: 80, epoch: 1, iter: 9
+NN: 80, epoch: 2, iter: 17
+NN: 80, epoch: 3, iter: 25
+NN: 80, epoch: 4, iter: 33
+NN: 80, epoch: 5, iter: 41
+NN: 80, epoch: 6, iter: 49
+NN: 80, epoch: 7, iter: 57
+NN: 80, epoch: 8, iter: 65
+NN: 80, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:06.069206: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:06.069281: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:06.069297: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:06.069311: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:06.069325: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N160-ep10
+NN: 160, epoch: 0, iter: 1
+NN: 160, epoch: 1, iter: 9
+NN: 160, epoch: 2, iter: 17
+NN: 160, epoch: 3, iter: 25
+NN: 160, epoch: 4, iter: 33
+NN: 160, epoch: 5, iter: 41
+NN: 160, epoch: 6, iter: 49
+NN: 160, epoch: 7, iter: 57
+NN: 160, epoch: 8, iter: 65
+NN: 160, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:10.738818: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:10.738880: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:10.738895: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:10.738909: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:10.738922: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N320-ep10
+NN: 320, epoch: 0, iter: 1
+NN: 320, epoch: 1, iter: 9
+NN: 320, epoch: 2, iter: 17
+NN: 320, epoch: 3, iter: 25
+NN: 320, epoch: 4, iter: 33
+NN: 320, epoch: 5, iter: 41
+NN: 320, epoch: 6, iter: 49
+NN: 320, epoch: 7, iter: 57
+NN: 320, epoch: 8, iter: 65
+NN: 320, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:15.682303: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:15.682369: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:15.682386: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:15.682400: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:15.682424: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N640-ep10
+NN: 640, epoch: 0, iter: 1
+NN: 640, epoch: 1, iter: 9
+NN: 640, epoch: 2, iter: 17
+NN: 640, epoch: 3, iter: 25
+NN: 640, epoch: 4, iter: 33
+NN: 640, epoch: 5, iter: 41
+NN: 640, epoch: 6, iter: 49
+NN: 640, epoch: 7, iter: 57
+NN: 640, epoch: 8, iter: 65
+NN: 640, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:20.006467: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:20.006550: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:20.006567: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:20.006581: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:20.006595: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N1280-ep10
+NN: 1280, epoch: 0, iter: 1
+NN: 1280, epoch: 1, iter: 9
+NN: 1280, epoch: 2, iter: 17
+NN: 1280, epoch: 3, iter: 25
+NN: 1280, epoch: 4, iter: 33
+NN: 1280, epoch: 5, iter: 41
+NN: 1280, epoch: 6, iter: 49
+NN: 1280, epoch: 7, iter: 57
+NN: 1280, epoch: 8, iter: 65
+NN: 1280, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:24.406068: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:24.406126: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:24.406141: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:24.406154: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:24.406168: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N2560-ep10
+NN: 2560, epoch: 0, iter: 1
+NN: 2560, epoch: 1, iter: 9
+NN: 2560, epoch: 2, iter: 17
+NN: 2560, epoch: 3, iter: 25
+NN: 2560, epoch: 4, iter: 33
+NN: 2560, epoch: 5, iter: 41
+NN: 2560, epoch: 6, iter: 49
+NN: 2560, epoch: 7, iter: 57
+NN: 2560, epoch: 8, iter: 65
+NN: 2560, epoch: 9, iter: 73
+Session is closed.
+2019-08-04 00:32:29.312645: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:29.312718: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:29.312746: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:29.312760: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2019-08-04 00:32:29.312773: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Results saved in ./result/daniely-NN-H1-screen/daniely-NN-N5120-ep10
+NN: 5120, epoch: 0, iter: 1
+NN: 5120, epoch: 1, iter: 9
+NN: 5120, epoch: 2, iter: 17
+NN: 5120, epoch: 3, iter: 25
+NN: 5120, epoch: 4, iter: 33
+NN: 5120, epoch: 5, iter: 41
+NN: 5120, epoch: 6, iter: 49
+NN: 5120, epoch: 7, iter: 57
+NN: 5120, epoch: 8, iter: 65
+NN: 5120, epoch: 9, iter: 73
+Session is closed.
