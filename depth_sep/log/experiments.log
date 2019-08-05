@@ -7780,3 +7780,471 @@ lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
 N = 5120
 loss_fn = squared
 
+screen params
+2019-08-04 10:10:01.729217
+trials = 10
+val_size = 20000
+N = 20
+folds = 5
+H = 2
+feature = ReLU
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+bd = 100000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+mode = layer 2
+loss_fn = squared
+n_epoch = 100
+model = RF
+dataset = daniely
+
+screen params
+2019-08-04 10:10:54.809918
+H = 2
+loss_fn = squared
+val_size = 20000
+mode = layer 2
+gpu = 0
+model = RF
+classes = [-1.0, 0.0, 1.0]
+trials = 10
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+bd = 100000
+task = regression
+N = 40
+n_epoch = 100
+folds = 5
+
+screen params
+2019-08-04 10:11:45.100067
+bd = 100000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+loss_fn = squared
+model = RF
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+val_size = 20000
+N = 80
+trials = 10
+H = 2
+n_epoch = 100
+task = regression
+dataset = daniely
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+mode = layer 2
+gpu = 0
+
+screen params
+2019-08-04 10:12:36.964239
+gpu = 0
+model = RF
+H = 2
+N = 160
+task = regression
+mode = layer 2
+classes = [-1.0, 0.0, 1.0]
+dataset = daniely
+n_epoch = 100
+loss_fn = squared
+feature = ReLU
+val_size = 20000
+bd = 100000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+folds = 5
+
+screen params
+2019-08-04 10:13:35.401587
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+mode = layer 2
+loss_fn = squared
+N = 320
+dataset = daniely
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+n_epoch = 100
+gpu = 0
+folds = 5
+feature = ReLU
+bd = 100000
+classes = [-1.0, 0.0, 1.0]
+model = RF
+H = 2
+task = regression
+
+screen params
+2019-08-04 10:14:44.473922
+N = 640
+model = RF
+classes = [-1.0, 0.0, 1.0]
+H = 2
+bd = 100000
+gpu = 0
+dataset = daniely
+trials = 10
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+folds = 5
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+loss_fn = squared
+val_size = 20000
+mode = layer 2
+
+screen params
+2019-08-04 10:16:15.210131
+n_epoch = 100
+classes = [-1.0, 0.0, 1.0]
+val_size = 20000
+feature = ReLU
+folds = 5
+model = RF
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+mode = layer 2
+bd = 100000
+task = regression
+dataset = daniely
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 1280
+loss_fn = squared
+H = 2
+gpu = 0
+trials = 10
+
+screen params
+2019-08-04 10:18:27.404375
+trials = 10
+loss_fn = squared
+mode = layer 2
+task = regression
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+dataset = daniely
+N = 2560
+val_size = 20000
+n_epoch = 100
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+folds = 5
+bd = 100000
+gpu = 0
+model = RF
+
+screen params
+2019-08-04 10:22:02.526099
+N = 5120
+gpu = 0
+bd = 100000
+val_size = 20000
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+mode = layer 2
+trials = 10
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+loss_fn = squared
+H = 2
+task = regression
+model = RF
+n_epoch = 100
+
+screen params
+2019-08-04 10:28:37.654614
+classes = [-1, 0, 1]
+logGamma = [-100]
+dataset = daniely
+model = NN
+gpu = 0
+task = regression
+trials = 10
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+n_epoch = 100
+folds = 5
+val_size = 20000
+N = 12
+
+screen params
+2019-08-04 10:28:45.707256
+gpu = 0
+task = regression
+folds = 5
+dataset = daniely
+n_epoch = 100
+val_size = 20000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+N = 20
+classes = [-1, 0, 1]
+model = NN
+logGamma = [-100]
+trials = 10
+
+screen params
+2019-08-04 10:28:54.181818
+n_epoch = 100
+classes = [-1, 0, 1]
+N = 31
+logGamma = [-100]
+folds = 5
+val_size = 20000
+H = 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+trials = 10
+gpu = 0
+model = NN
+dataset = daniely
+
+screen params
+2019-08-04 10:29:03.382000
+dataset = daniely
+N = 48
+task = regression
+model = NN
+trials = 10
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+classes = [-1, 0, 1]
+folds = 5
+val_size = 20000
+logGamma = [-100]
+n_epoch = 100
+H = 2
+
+screen params
+2019-08-04 10:29:13.557531
+model = NN
+N = 72
+folds = 5
+gpu = 0
+task = regression
+trials = 10
+H = 2
+val_size = 20000
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+logGamma = [-100]
+n_epoch = 100
+dataset = daniely
+
+screen params
+2019-08-04 10:29:25.887364
+N = 105
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+gpu = 0
+folds = 5
+classes = [-1, 0, 1]
+n_epoch = 100
+task = regression
+H = 2
+model = NN
+trials = 10
+val_size = 20000
+logGamma = [-100]
+
+screen params
+2019-08-04 10:29:44.603634
+dataset = daniely
+trials = 10
+N = 153
+task = regression
+logGamma = [-100]
+H = 2
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+model = NN
+n_epoch = 100
+val_size = 20000
+folds = 5
+gpu = 0
+
+screen params
+2019-08-04 10:30:09.380150
+logGamma = [-100]
+H = 2
+n_epoch = 100
+val_size = 20000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+folds = 5
+task = regression
+classes = [-1, 0, 1]
+gpu = 0
+model = NN
+N = 221
+trials = 10
+
+screen params
+2019-08-04 10:30:50.488785
+N = 317
+model = NN
+dataset = daniely
+classes = [-1, 0, 1]
+folds = 5
+n_epoch = 100
+task = regression
+logGamma = [-100]
+H = 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+gpu = 0
+val_size = 20000
+
+screen params
+2019-08-04 10:32:01.003339
+trials = 10
+dataset = daniely
+task = regression
+N = 20
+val_size = 20000
+H = 1
+classes = [-1, 0, 1]
+n_epoch = 100
+logGamma = [-100]
+gpu = 0
+folds = 5
+model = NN
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-08-04 10:32:08.809312
+classes = [-1, 0, 1]
+logGamma = [-100]
+N = 40
+n_epoch = 100
+model = NN
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+val_size = 20000
+dataset = daniely
+trials = 10
+H = 1
+task = regression
+gpu = 0
+folds = 5
+
+screen params
+2019-08-04 10:32:16.806364
+n_epoch = 100
+classes = [-1, 0, 1]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+val_size = 20000
+task = regression
+dataset = daniely
+logGamma = [-100]
+N = 80
+model = NN
+folds = 5
+trials = 10
+H = 1
+
+screen params
+2019-08-04 10:32:25.665823
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 1
+dataset = daniely
+logGamma = [-100]
+val_size = 20000
+task = regression
+model = NN
+folds = 5
+N = 160
+trials = 10
+gpu = 0
+classes = [-1, 0, 1]
+n_epoch = 100
+
+screen params
+2019-08-04 10:32:36.231047
+gpu = 0
+n_epoch = 100
+model = NN
+val_size = 20000
+dataset = daniely
+task = regression
+trials = 10
+logGamma = [-100]
+N = 320
+H = 1
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1, 0, 1]
+folds = 5
+
+screen params
+2019-08-04 10:32:50.173391
+model = NN
+folds = 5
+n_epoch = 100
+gpu = 0
+trials = 10
+classes = [-1, 0, 1]
+H = 1
+logGamma = [-100]
+dataset = daniely
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+val_size = 20000
+N = 640
+
+screen params
+2019-08-04 10:33:13.242949
+trials = 10
+dataset = daniely
+n_epoch = 100
+logGamma = [-100]
+task = regression
+gpu = 0
+folds = 5
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+N = 1280
+H = 1
+model = NN
+val_size = 20000
+classes = [-1, 0, 1]
+
+screen params
+2019-08-04 10:33:48.190257
+logGamma = [-100]
+trials = 10
+val_size = 20000
+folds = 5
+n_epoch = 100
+H = 1
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+model = NN
+dataset = daniely
+gpu = 0
+classes = [-1, 0, 1]
+task = regression
+N = 2560
+
+screen params
+2019-08-04 10:34:58.001519
+n_epoch = 100
+logGamma = [-100]
+N = 5120
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+model = NN
+trials = 10
+dataset = daniely
+classes = [-1, 0, 1]
+gpu = 0
+folds = 5
+H = 1
+val_size = 20000
+
