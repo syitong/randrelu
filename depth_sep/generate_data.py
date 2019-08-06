@@ -147,7 +147,7 @@ def eldan(N_const=0.1, NSUPP=10000, mol_const=100, c_const=80, seed=0):
     with open('data/eldan-smooth-test-label.npy', 'bw') as f:
         np.save(f, y_mol[int(0.8*len(x_sample)):])
 
-def daniely(N=200000, halfD=10, seed=0):
+def daniely(N=200000, halfD=3, seed=0):
     np.random.seed(seed)
     X1 = np.random.randn(N, halfD)
     X1 = X1 / np.linalg.norm(X1, axis=1, keepdims=True)

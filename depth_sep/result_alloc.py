@@ -37,7 +37,7 @@ def screen_params_alloc(params):
                 result = eval(f.read())
         except:
             print('lograte list is not run out')
-            break
+            continue
         row.append(rate)
         for item in result:
             row.append(item['score'])

@@ -1,10 +1,10 @@
-for N in 7 11 17 25 37 54 77 110 157
+for N in 12 20 31 48 72 105 153 221 317
 do
-    # for t in 1 # {0..9}
-    # do
-    #     python experiments.py --dataset eldan --model NN --N ${N} --H 2 --trial ${t}
-    #     wait
-    # done
-    python result_alloc.py --dataset eldan --model NN --N ${N} --n_epoch 100 --trials 10
+    for trial in 2 # {0..9}
+    do
+        python experiments.py --action screen --N ${N} --trial ${trial} --file daniely-NN-params --H 2
+        wait
+    done
+    python result_alloc.py --action screen --file daniely-NN-params --N ${N} --H 2
     wait
 done
