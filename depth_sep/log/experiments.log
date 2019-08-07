@@ -9920,3 +9920,59 @@ lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
 H = 1
 classes = [-1, 0, 1]
 
+train and test
+2019-08-07 17:09:20.259816
+dataset = daniely
+width = 7
+dim = 4
+classes = [-1, 0, 1]
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N7-ep100/tf/tensorboard-0/
+gpu = 0
+task = regression
+depth = 2
+opt_method = adam
+opt_rate = 0.01
+n_epoch = 100
+
+train and test
+2019-08-07 17:23:54.319844
+dataset = daniely
+depth = 2
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N11-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+dim = 4
+gpu = 0
+task = regression
+width = 11
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.01
+
+train and test
+2019-08-07 17:32:35.065962
+dataset = daniely
+gpu = 0
+width = 7
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N7-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+depth = 2
+dim = 4
+task = regression
+n_epoch = 100
+opt_rate = 0.01
+opt_method = adam
+
+train and test
+2019-08-07 17:35:21.500258
+dataset = daniely
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N7-ep100/tf/tensorboard-0/
+task = regression
+depth = 2
+width = 7
+dim = 4
+gpu = 0
+classes = [-1, 0, 1]
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.01
+

@@ -172,7 +172,10 @@ def train_and_test(dataset,params='auto',
         )
 
     fig = plt.figure()
-    R_sample = np.linalg.norm(Xtest[::10,:],axis=1)
+    if dataset == 'daniely':
+        R_sample = np.sum(Xtest[::10, int(d/2):] * Xtest[::10, :int(d/2)], axis=1)
+    else:
+        R_sample = np.linalg.norm(Xtest[::10,:],axis=1)
     sort_idx = np.argsort(R_sample)
     Ypr = np.array(Ypr)
     plt.scatter(R_sample[sort_idx],Ypr[::10][sort_idx],c='r')
