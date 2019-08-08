@@ -158,7 +158,7 @@ def plot_test_results(dataset):
     plt.xlabel('log(# of parameters)')
     if dataset == 'eldan':
         plt.ylabel('accuracy')
-    elif dataset == 'eldan-smooth':
+    elif dataset in ['eldan-smooth', 'daniely']:
         plt.ylabel('mse')
     plt.xticks(range(9))
     plt.errorbar(range(9),yRF,yerr=yerrRF,fmt='rs--',label='RF',fillstyle='none')
