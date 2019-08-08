@@ -10408,3 +10408,156 @@ opt_method = adam
 opt_rate = 0.0001
 n_epoch = 100
 
+train and test
+2019-08-07 21:56:13.450636
+dataset = daniely
+classes = [-1.0, 0.0, 1.0]
+Gamma = 0.03162277660168379
+n_old_features = 4
+tbdir = ./result/daniely-RF-test/daniely-RF-N20-ep100/tf/tensorboard-0/
+loss_fn = squared
+gpu = 0
+task = regression
+n_new_features = 20
+feature = ReLU
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.1
+bd = 100000
+
+train and test
+2019-08-07 21:57:14.223126
+dataset = daniely
+task = regression
+n_old_features = 4
+classes = [-1.0, 0.0, 1.0]
+loss_fn = squared
+feature = ReLU
+n_new_features = 40
+tbdir = ./result/daniely-RF-test/daniely-RF-N40-ep100/tf/tensorboard-0/
+gpu = 0
+Gamma = 0.03162277660168379
+bd = 100000
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.0031622776601683794
+
+train and test
+2019-08-07 21:58:11.946612
+dataset = daniely
+loss_fn = squared
+gpu = 0
+n_new_features = 80
+n_old_features = 4
+tbdir = ./result/daniely-RF-test/daniely-RF-N80-ep100/tf/tensorboard-0/
+Gamma = 0.31622776601683794
+classes = [-1.0, 0.0, 1.0]
+feature = ReLU
+task = regression
+bd = 100000
+opt_method = adam
+opt_rate = 0.1
+n_epoch = 100
+
+train and test
+2019-08-07 21:59:13.235269
+dataset = daniely
+n_old_features = 4
+tbdir = ./result/daniely-RF-test/daniely-RF-N160-ep100/tf/tensorboard-0/
+n_new_features = 160
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+task = regression
+loss_fn = squared
+Gamma = 0.31622776601683794
+gpu = 0
+n_epoch = 100
+opt_rate = 0.1
+opt_method = adam
+bd = 100000
+
+train and test
+2019-08-07 22:00:21.375750
+dataset = daniely
+Gamma = 0.001
+classes = [-1.0, 0.0, 1.0]
+feature = ReLU
+task = regression
+gpu = 0
+n_new_features = 320
+loss_fn = squared
+n_old_features = 4
+tbdir = ./result/daniely-RF-test/daniely-RF-N320-ep100/tf/tensorboard-0/
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.01
+bd = 100000
+
+train and test
+2019-08-07 22:01:38.292035
+dataset = daniely
+classes = [-1.0, 0.0, 1.0]
+Gamma = 0.01
+gpu = 0
+task = regression
+feature = ReLU
+loss_fn = squared
+n_old_features = 4
+n_new_features = 640
+tbdir = ./result/daniely-RF-test/daniely-RF-N640-ep100/tf/tensorboard-0/
+bd = 100000
+opt_rate = 0.03162277660168379
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-08-07 22:03:13.835238
+dataset = daniely
+n_old_features = 4
+feature = ReLU
+Gamma = 0.1
+loss_fn = squared
+n_new_features = 1280
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+task = regression
+tbdir = ./result/daniely-RF-test/daniely-RF-N1280-ep100/tf/tensorboard-0/
+opt_method = adam
+bd = 100000
+opt_rate = 0.1
+n_epoch = 100
+
+train and test
+2019-08-07 22:05:26.296178
+dataset = daniely
+classes = [-1.0, 0.0, 1.0]
+n_new_features = 2560
+gpu = 0
+feature = ReLU
+n_old_features = 4
+task = regression
+tbdir = ./result/daniely-RF-test/daniely-RF-N2560-ep100/tf/tensorboard-0/
+loss_fn = squared
+Gamma = 0.01
+n_epoch = 100
+opt_rate = 0.03162277660168379
+opt_method = adam
+bd = 100000
+
+train and test
+2019-08-07 22:08:55.330913
+dataset = daniely
+feature = ReLU
+loss_fn = squared
+gpu = 0
+task = regression
+classes = [-1.0, 0.0, 1.0]
+tbdir = ./result/daniely-RF-test/daniely-RF-N5120-ep100/tf/tensorboard-0/
+n_old_features = 4
+Gamma = 0.01
+n_new_features = 5120
+bd = 100000
+n_epoch = 100
+opt_rate = 0.01
+opt_method = adam
+
