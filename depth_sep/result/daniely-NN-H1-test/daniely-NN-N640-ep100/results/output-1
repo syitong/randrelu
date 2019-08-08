@@ -1,0 +1,1 @@
+[{'accuracy': 0.3788041994734615, 'traintime': 133.466766931, 'sparsity': 0.0, 'testtime': 0.22414557300001547}, 'daniely', {'task': 'regression', 'dim': 4, 'gpu': 0, 'depth': 1, 'tbdir': './result/daniely-NN-H1-test/daniely-NN-N640-ep100/tf/tensorboard-1/', 'width': 640, 'classes': [-1, 0, 1]}, {'opt_method': 'adam', 'opt_rate': 0.00031622776601683794, 'n_epoch': 100}]

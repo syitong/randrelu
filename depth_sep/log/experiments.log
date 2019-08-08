@@ -9976,3 +9976,435 @@ opt_method = adam
 n_epoch = 100
 opt_rate = 0.01
 
+screen params
+2019-08-07 06:04:16.243139
+val_size = 20000
+mode = layer 2
+H = 2
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+trials = 10
+loss_fn = squared
+folds = 5
+gpu = 0
+model = RF
+task = regression
+n_epoch = 100
+N = 20
+classes = [-1.0, 0.0, 1.0]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+bd = 100000
+dataset = daniely
+
+screen params
+2019-08-07 06:05:59.237739
+gpu = 0
+val_size = 20000
+task = regression
+trials = 10
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+N = 40
+bd = 100000
+mode = layer 2
+n_epoch = 100
+H = 2
+loss_fn = squared
+model = RF
+folds = 5
+dataset = daniely
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+classes = [-1.0, 0.0, 1.0]
+
+screen params
+2019-08-07 06:06:48.340739
+loss_fn = squared
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+model = RF
+dataset = daniely
+val_size = 20000
+bd = 100000
+H = 2
+n_epoch = 100
+trials = 10
+mode = layer 2
+gpu = 0
+N = 80
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+task = regression
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-08-07 06:07:40.283341
+dataset = daniely
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+bd = 100000
+model = RF
+val_size = 20000
+mode = layer 2
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+feature = ReLU
+folds = 5
+trials = 10
+classes = [-1.0, 0.0, 1.0]
+loss_fn = squared
+task = regression
+n_epoch = 100
+H = 2
+N = 160
+
+screen params
+2019-08-07 06:08:34.971582
+classes = [-1.0, 0.0, 1.0]
+n_epoch = 100
+model = RF
+loss_fn = squared
+folds = 5
+feature = ReLU
+val_size = 20000
+mode = layer 2
+bd = 100000
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+task = regression
+N = 320
+H = 2
+dataset = daniely
+trials = 10
+gpu = 0
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-08-07 06:09:39.077034
+N = 640
+model = RF
+feature = ReLU
+classes = [-1.0, 0.0, 1.0]
+dataset = daniely
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+gpu = 0
+task = regression
+n_epoch = 100
+val_size = 20000
+bd = 100000
+folds = 5
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+H = 2
+loss_fn = squared
+trials = 10
+mode = layer 2
+
+screen params
+2019-08-07 06:10:58.656924
+N = 1280
+trials = 10
+feature = ReLU
+gpu = 0
+classes = [-1.0, 0.0, 1.0]
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+bd = 100000
+task = regression
+dataset = daniely
+mode = layer 2
+loss_fn = squared
+model = RF
+H = 2
+n_epoch = 100
+val_size = 20000
+folds = 5
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+
+screen params
+2019-08-07 06:12:49.273580
+model = RF
+mode = layer 2
+folds = 5
+classes = [-1.0, 0.0, 1.0]
+gpu = 0
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+task = regression
+val_size = 20000
+trials = 10
+bd = 100000
+loss_fn = squared
+N = 2560
+H = 2
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+n_epoch = 100
+
+screen params
+2019-08-07 06:15:42.549059
+gpu = 0
+mode = layer 2
+n_epoch = 100
+N = 5120
+folds = 5
+trials = 10
+model = RF
+feature = ReLU
+lograte = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+dataset = daniely
+H = 2
+logGamma = [-4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5]
+loss_fn = squared
+val_size = 20000
+bd = 100000
+task = regression
+classes = [-1.0, 0.0, 1.0]
+
+train and test
+2019-08-07 06:20:45.206322
+dataset = daniely
+depth = 2
+task = regression
+classes = [-1, 0, 1]
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N7-ep100/tf/tensorboard-0/
+dim = 4
+gpu = 0
+width = 7
+opt_rate = 0.01
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-08-07 06:21:28.109645
+dataset = daniely
+dim = 4
+task = regression
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N11-ep100/tf/tensorboard-0/
+gpu = 0
+classes = [-1, 0, 1]
+width = 11
+depth = 2
+n_epoch = 100
+opt_rate = 0.01
+opt_method = adam
+
+train and test
+2019-08-07 06:22:15.378599
+dataset = daniely
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N17-ep100/tf/tensorboard-0/
+width = 17
+depth = 2
+dim = 4
+gpu = 0
+classes = [-1, 0, 1]
+task = regression
+opt_rate = 0.01
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-08-07 06:23:02.605126
+dataset = daniely
+gpu = 0
+width = 25
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N25-ep100/tf/tensorboard-0/
+task = regression
+dim = 4
+depth = 2
+classes = [-1, 0, 1]
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.01
+
+train and test
+2019-08-07 06:23:54.617068
+dataset = daniely
+task = regression
+width = 37
+depth = 2
+classes = [-1, 0, 1]
+dim = 4
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N37-ep100/tf/tensorboard-0/
+gpu = 0
+opt_rate = 0.01
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-08-07 06:24:55.429762
+dataset = daniely
+dim = 4
+gpu = 0
+task = regression
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N54-ep100/tf/tensorboard-0/
+width = 54
+classes = [-1, 0, 1]
+depth = 2
+opt_rate = 0.01
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-08-07 06:26:10.340534
+dataset = daniely
+task = regression
+gpu = 0
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N77-ep100/tf/tensorboard-0/
+depth = 2
+dim = 4
+classes = [-1, 0, 1]
+width = 77
+n_epoch = 100
+opt_rate = 0.0031622776601683794
+opt_method = adam
+
+train and test
+2019-08-07 06:27:47.436701
+dataset = daniely
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N110-ep100/tf/tensorboard-0/
+gpu = 0
+classes = [-1, 0, 1]
+width = 110
+dim = 4
+task = regression
+depth = 2
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-08-07 06:30:06.966004
+dataset = daniely
+gpu = 0
+task = regression
+classes = [-1, 0, 1]
+width = 157
+dim = 4
+tbdir = ./result/daniely-NN-H2-test/daniely-NN-N157-ep100/tf/tensorboard-0/
+depth = 2
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-08-07 06:33:43.463224
+dataset = daniely
+classes = [-1, 0, 1]
+depth = 1
+width = 20
+dim = 4
+gpu = 0
+task = regression
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N20-ep100/tf/tensorboard-0/
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.01
+
+train and test
+2019-08-07 06:34:23.749938
+dataset = daniely
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N40-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+task = regression
+gpu = 0
+depth = 1
+dim = 4
+width = 40
+opt_method = adam
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+
+train and test
+2019-08-07 06:35:08.635558
+dataset = daniely
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N80-ep100/tf/tensorboard-0/
+dim = 4
+depth = 1
+classes = [-1, 0, 1]
+task = regression
+width = 80
+gpu = 0
+opt_rate = 0.0031622776601683794
+n_epoch = 100
+opt_method = adam
+
+train and test
+2019-08-07 06:35:56.493899
+dataset = daniely
+classes = [-1, 0, 1]
+width = 160
+gpu = 0
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N160-ep100/tf/tensorboard-0/
+depth = 1
+dim = 4
+task = regression
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.001
+
+train and test
+2019-08-07 06:36:57.904648
+dataset = daniely
+width = 320
+task = regression
+classes = [-1, 0, 1]
+gpu = 0
+dim = 4
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N320-ep100/tf/tensorboard-0/
+depth = 1
+n_epoch = 100
+opt_method = adam
+opt_rate = 0.00031622776601683794
+
+train and test
+2019-08-07 06:38:20.779412
+dataset = daniely
+depth = 1
+task = regression
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N640-ep100/tf/tensorboard-0/
+width = 640
+gpu = 0
+dim = 4
+classes = [-1, 0, 1]
+opt_rate = 0.00031622776601683794
+opt_method = adam
+n_epoch = 100
+
+train and test
+2019-08-07 06:40:29.550429
+dataset = daniely
+task = regression
+classes = [-1, 0, 1]
+depth = 1
+width = 1280
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N1280-ep100/tf/tensorboard-0/
+dim = 4
+gpu = 0
+opt_method = adam
+opt_rate = 0.001
+n_epoch = 100
+
+train and test
+2019-08-07 06:44:10.257197
+dataset = daniely
+depth = 1
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N2560-ep100/tf/tensorboard-0/
+classes = [-1, 0, 1]
+dim = 4
+width = 2560
+task = regression
+gpu = 0
+opt_method = adam
+n_epoch = 100
+opt_rate = 0.001
+
+train and test
+2019-08-07 06:51:35.126740
+dataset = daniely
+gpu = 0
+depth = 1
+width = 5120
+tbdir = ./result/daniely-NN-H1-test/daniely-NN-N5120-ep100/tf/tensorboard-0/
+dim = 4
+task = regression
+classes = [-1, 0, 1]
+opt_method = adam
+opt_rate = 0.0001
+n_epoch = 100
+
