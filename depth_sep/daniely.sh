@@ -48,13 +48,24 @@ do
     wait
 done
 
-# for N in 20 40 80 160 320 640 1280 2560 5120
-# do
+for N in 20 40 80 160 320 640 1280 2560 5120
+do
 #     for trial in 8 9 # 0 1 2 3 4 5 6 7 8 9
 #     do
 #       python experiments.py --action test --N ${N} --trial ${trial} --file daniely-NN-params --H 1
 #       wait
 #     done
-#     python result_alloc.py --action test --file daniely-NN-params --N ${N} --H 1
-#     wait
-# done
+    python result_alloc.py --action test --file daniely-NN-params --N ${N} --H 1
+    wait
+done
+
+for N in 20 40 80 160 320 640 1280 2560 5120
+do
+  # for trial in 0 1 2 3 4 5 6 7
+  # do
+  #   python experiments.py --action screen --N ${N} --trial ${trial} --file daniely-RF-params
+  #   wait
+  # done
+    python result_alloc.py --action test --file daniely-RF-params --N ${N}
+    wait
+done
